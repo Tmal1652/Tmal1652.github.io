@@ -4,104 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tyler's Professional Portfolio showcasing projects and skills in software development.">
-    <title>Tyler's Portfolio</title>
+    <meta name="description" content="Tyler Malovrh's Professional Portfolio showcasing education, projects, work experience, and recommendations.">
+    <title>Tyler Malovrh's Portfolio</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
-    <style>
-        /* Inline CSS (for demo purposes, move this to styles.css) */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #0073e6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            margin-top: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .intro {
-            background-color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .projects, .videos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            background-color: white;
-            padding: 20px;
-        }
-
-        .project, .video {
-            background-color: #e6e6e6;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .contact {
-            background-color: #0073e6;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .contact a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
 
     <!-- Header Section -->
     <header>
-        <h1>Tyler's Portfolio</h1>
+        <h1>Tyler Malovrh's Portfolio</h1>
         <nav>
             <a href="#about">About Me</a>
+            <a href="#education">Education</a>
             <a href="#projects">Projects</a>
-            <a href="#videos">Videos</a>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#experience">Work Experience</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Introduction Section -->
+    <!-- About Me Section -->
     <section class="intro" id="about">
         <h2>About Me</h2>
-        <p>Welcome to my professional portfolio. I am a software developer with experience in building applications using various technologies such as HTML, CSS, JavaScript, and more. Take a look at my work and feel free to connect with me.</p>
+        <p>
+            Welcome to my portfolio! I am Tyler Malovrh, a recent graduate with a Bachelor of Science in Information Technology - Software Development 
+            from the University of Cincinnati. I am passionate about web development, software engineering, and creating accessible digital experiences. 
+            Explore my education, work experience, projects, and recommendations to learn more about my skills and achievements.
+        </p>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <div>
+            <h3>University of Cincinnati</h3>
+            <p>Bachelor of Science in Information Technology - Software Development (August 2021 - April 2024) - GPA: 3.8</p>
+            <ul>
+                <li>System Administration</li>
+                <li>Web Development Fundamentals</li>
+                <li>Database Management I & II</li>
+                <li>Enterprise App Development</li>
+                <li>Game Engine Lab I & II</li>
+                <!-- Add more relevant courses -->
+            </ul>
+            <h3>Lakeland Community College</h3>
+            <p>Associate of Applied Business - Application Programming and Development Concentration (August 2017 - May 2021) - GPA: 3.6</p>
+            <ul>
+                <li>Java Programming I-III</li>
+                <li>iOS Programming I-III</li>
+                <li>SQL, .Net Programming</li>
+                <li>Network+ Certification</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -109,41 +64,67 @@
         <h2>Projects</h2>
         <div class="project">
             <h3>Project 1: Portfolio Website</h3>
-            <p>Description: A responsive portfolio website built using HTML, CSS, and JavaScript.</p>
+            <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
             <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
         </div>
         <div class="project">
             <h3>Project 2: E-commerce App</h3>
-            <p>Description: A full-stack e-commerce application developed using React and Node.js.</p>
+            <p>A full-stack e-commerce application developed using React and Node.js for product management and checkout functionality.</p>
             <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
         </div>
         <!-- Add more projects as needed -->
     </section>
 
-    <!-- Videos Section -->
-    <section class="videos" id="videos">
-        <h2>Videos</h2>
-        <div class="video">
-            <h3>Project Demo 1</h3>
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example1" frameborder="0" allowfullscreen></iframe>
+    <!-- Recommendations Section -->
+    <section class="recommendations" id="recommendations">
+        <h2>Recommendation Letters</h2>
+        <div class="recommendation">
+            <h3>Janet Dorsey - IT Manager, Universal Metal Products</h3>
+            <p>"Tyler was a bright and engaging member of our department, quick to help, and a good team player. He worked efficiently and accurately."</p>
+            <a href="/path-to-full-recommendation.pdf" target="_blank">Read Full Recommendation</a> <!-- You can link to the PDF here -->
         </div>
-        <div class="video">
-            <h3>Project Demo 2</h3>
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example2" frameborder="0" allowfullscreen></iframe>
+        <div class="recommendation">
+            <h3>Melinda O’Connor - IT & CS Adjunct Faculty, Lakeland Community College</h3>
+            <p>"Tyler’s passion for software development shines through his assignments and work with his peers."</p>
+            <a href="/path-to-full-recommendation.pdf" target="_blank">Read Full Recommendation</a>
         </div>
-        <!-- Add more videos as needed -->
+        <div class="recommendation">
+            <h3>Manuel Salazar - Accessibility QA Analyst, University of Cincinnati</h3>
+            <p>"Tyler demonstrated exceptional skills and dedication, contributing significantly to improving the user experience for people with disabilities."</p>
+            <a href="/path-to-full-recommendation.pdf" target="_blank">Read Full Recommendation</a>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="experience" id="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-item">
+            <h3>Digital Accessibility Analyst - University of Cincinnati (May 2022 - August 2024)</h3>
+            <ul>
+                <li>Conducted accessibility testing on UC websites and applications, ensuring WCAG 2.1 and Section 508 compliance.</li>
+                <li>Utilized Access Assistant and ANDI for automated and manual inspections of web elements.</li>
+                <li>Managed accessibility issues using Jira, contributing to the continuous improvement of digital accessibility.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>IT Specialist - Universal Metal Products (Feb 2019 - Feb 2020)</h3>
+            <ul>
+                <li>Provided software and hardware support, including installation and repairs.</li>
+                <li>Maintained a competitor database and optimized file storage through digitization efforts.</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Me</h2>
-        <p>If you’d like to work together or have any questions, feel free to reach out.</p>
-        <a href="mailto:your-email@example.com">Email Me</a>
+        <p>If you’d like to collaborate or have any questions, feel free to reach out via email.</p>
+        <a href="mailto:malovrh1652tyler@gmail.com">Email Me</a>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Tyler. All Rights Reserved.</p>
+        <p>&copy; 2024 Tyler Malovrh. All Rights Reserved.</p>
     </footer>
 
 </body>
