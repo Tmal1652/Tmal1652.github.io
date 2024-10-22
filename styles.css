@@ -82,6 +82,22 @@ section {
     color: #34495e;
 }
 
+/* Profile picture styling */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between the image and text */
+}
+
+.profile-picture {
+    width: 150px; /* Control the size */
+    height: 150px; /* Ensure it's a square */
+    border-radius: 50%; /* Make it a circle */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a clean look */
+}
+
 /* Projects, Experience, and Recommendations sections */
 .projects, .experience, .recommendations {
     display: grid;
