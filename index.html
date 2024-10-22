@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tyler's Professional Portfolio showcasing projects and skills in software development.">
+    <title>Tyler's Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <style>
+        /* Inline CSS (for demo purposes, move this to styles.css) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .projects, .videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .project, .video {
+            background-color: #e6e6e6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .contact {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Tyler's Portfolio</h1>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#videos">Videos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="intro" id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my professional portfolio. I am a software developer with experience in building applications using various technologies such as HTML, CSS, JavaScript, and more. Take a look at my work and feel free to connect with me.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: Portfolio Website</h3>
+            <p>Description: A responsive portfolio website built using HTML, CSS, and JavaScript.</p>
+            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Project 2: E-commerce App</h3>
+            <p>Description: A full-stack e-commerce application developed using React and Node.js.</p>
+            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos" id="videos">
+        <h2>Videos</h2>
+        <div class="video">
+            <h3>Project Demo 1</h3>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+            <h3>Project Demo 2</h3>
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/example2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- Add more videos as needed -->
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>If you’d like to work together or have any questions, feel free to reach out.</p>
+        <a href="mailto:your-email@example.com">Email Me</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Tyler. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
