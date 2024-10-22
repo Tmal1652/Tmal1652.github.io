@@ -1,6 +1,6 @@
-/* External CSS file: styles.css */
+/* External CSS file to handle styling */
 
-/* Google Fonts */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 body {
@@ -12,18 +12,18 @@ body {
     line-height: 1.6;
 }
 
-/* Styling for the main heading (h1) */
+/* Main heading styling (h1) */
 h1 {
     font-size: 3rem; 
     font-weight: 700; 
     color: white; 
     text-align: center; 
     margin: 0; 
-    padding: 20px 0; 
-    display: block; 
+    padding: 20px 0;
+    display: block;
 }
 
-/* General styling */
+/* General heading styling */
 h2, h3 {
     color: #00509e;
     margin-bottom: 15px;
@@ -68,7 +68,7 @@ section {
     padding: 0 20px;
 }
 
-/* Introduction section */
+/* Intro section styling */
 .intro {
     text-align: center;
     background-color: white;
@@ -82,39 +82,39 @@ section {
     color: #34495e;
 }
 
-/* Profile picture styling */
+/* Styling for the profile picture */
 .about-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align the image and text to the left */
-    gap: 20px; /* Space between the image and text */
+    justify-content: flex-start; /* Keep the text and image aligned to the left */
+    gap: 20px; /* Space between the profile picture and text */
     max-width: 800px;
-    margin: 0 auto; /* Center the entire content on the page */
+    margin: 0 auto; /* Center the content */
 }
 
 .profile-picture {
-    width: 200px; /* Increased size */
-    height: auto; /* Keep aspect ratio */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a clean look */
+    width: 200px; /* Slightly larger image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Make sure the image fills the container */
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
-/* Adjust for mobile */
+/* Media query for tablets */
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column; /* Stack the image and text vertically on mobile */
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
         align-items: center;
     }
 
     .profile-picture {
-        width: 150px; /* Slightly smaller for tablet and mobile */
-        margin-bottom: 20px; /* Add space below the image */
+        width: 150px; /* Smaller profile picture for tablets and mobile */
+        margin-bottom: 20px; /* Add some space below the image */
     }
 }
 
-/* Projects, Experience, and Recommendations sections */
+/* Grid layout for projects, experience, and recommendations */
 .projects, .experience, .recommendations {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -154,7 +154,7 @@ section {
     background-color: #00b4d8;
 }
 
-/* Styling for the View Video button */
+/* Styling for the 'View Video' button */
 .view-video-btn {
     display: inline-block;
     margin-top: 10px;
@@ -171,7 +171,7 @@ section {
     background-color: #00b4d8;
 }
 
-/* Styling for the View Poster Button */
+/* Styling for the 'View Poster' button */
 .view-poster-btn {
     display: inline-block;
     margin-top: 10px;
@@ -188,7 +188,7 @@ section {
     background-color: #00b4d8;
 }
 
-/* Education section */
+/* Education section styling */
 .education-item {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -213,7 +213,7 @@ section {
     margin-left: 20px;
 }
 
-/* Contact section */
+/* Contact section styling */
 .contact {
     text-align: center;
     background-color: #00509e;
@@ -236,7 +236,7 @@ section {
     color: white;
 }
 
-/* Footer */
+/* Footer styling */
 footer {
     background-color: #2c3e50;
     color: white;
@@ -249,54 +249,54 @@ footer p {
     margin: 0;
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive styles */
 
-/* Tablet View */
+/* Adjustments for tablets */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem; /* Adjust heading size for tablets */
+        font-size: 2.5rem; /* Reduce heading size for tablets */
     }
 
     nav a {
-        padding: 8px 10px; /* Adjust navigation link padding for smaller screens */
+        padding: 8px 10px; /* Adjust navigation padding for smaller screens */
     }
 
     section {
-        padding: 0 15px; /* Reduce padding for sections on tablets */
+        padding: 0 15px; /* Reduce section padding for tablets */
     }
 
     .projects, .experience, .recommendations {
-        grid-template-columns: 1fr; /* Make project and experience sections single-column */
+        grid-template-columns: 1fr; /* Use a single-column layout on tablets */
     }
 }
 
-/* Mobile View */
+/* Adjustments for mobile devices */
 @media (max-width: 480px) {
     h1 {
-        font-size: 2rem; /* Smaller heading size for mobile */
+        font-size: 2rem; /* Even smaller heading size for mobile */
     }
 
     nav a {
         display: block;
         margin: 10px 0; /* Stack navigation links on mobile */
-        text-align: center; /* Center align links */
+        text-align: center; /* Center navigation links */
     }
 
     section {
-        padding: 0 10px; /* Reduce padding even more for mobile */
+        padding: 0 10px; /* Reduce section padding even more for mobile */
     }
 
     .projects, .experience, .recommendations {
-        grid-template-columns: 1fr; /* Keep sections single-column for mobile */
-        gap: 15px; /* Adjust the gap for a more compact layout */
+        grid-template-columns: 1fr; /* Keep single-column layout for mobile */
+        gap: 15px; /* Adjust spacing for a compact layout */
     }
 
     .intro p {
-        font-size: 1rem; /* Adjust font size for smaller screens */
+        font-size: 1rem; /* Smaller font size for mobile screens */
     }
 
     .contact {
-        padding: 30px; /* Adjust padding for mobile contact section */
+        padding: 30px; /* Adjust padding for the contact section on mobile */
     }
 
     footer {
