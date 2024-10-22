@@ -11,6 +11,7 @@ body {
     padding: 0;
     line-height: 1.6;
 }
+
 /* Styling for the main heading (h1) */
 h1 {
     font-size: 3rem; 
@@ -23,7 +24,7 @@ h1 {
 }
 
 /* General styling */
-    h2, h3 {
+h2, h3 {
     color: #00509e;
     margin-bottom: 15px;
 }
@@ -81,7 +82,7 @@ section {
     color: #34495e;
 }
 
-/* Projects and Experience sections */
+/* Projects, Experience, and Recommendations sections */
 .projects, .experience, .recommendations {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -119,6 +120,31 @@ section {
 
 .project a:hover, .recommendation a:hover {
     background-color: #00b4d8;
+}
+
+/* Education section */
+.education-item {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.education-item h3 {
+    color: #00509e;
+    margin-bottom: 10px;
+}
+
+.education-item ul {
+    list-style: disc;
+    margin-left: 20px;
 }
 
 /* Contact section */
