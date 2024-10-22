@@ -86,16 +86,32 @@ section {
 .about-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align the image and text to the left */
     gap: 20px; /* Space between the image and text */
+    max-width: 800px;
+    margin: 0 auto; /* Center the entire content on the page */
 }
 
 .profile-picture {
-    width: 150px; /* Control the size */
-    height: 150px; /* Ensure it's a square */
-    border-radius: 50%; /* Make it a circle */
+    width: 200px; /* Increased size */
+    height: auto; /* Keep aspect ratio */
     object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a clean look */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack the image and text vertically on mobile */
+        align-items: center;
+    }
+
+    .profile-picture {
+        width: 150px; /* Slightly smaller for tablet and mobile */
+        margin-bottom: 20px; /* Add space below the image */
+    }
 }
 
 /* Projects, Experience, and Recommendations sections */
