@@ -25,7 +25,7 @@
     :root {
         --background-color: rgba(18, 18, 18, 0.95); /* Slightly darker for better readability */
         --text-color: #e0e0e0; /* Light gray for text */
-        --primary-color: #ffffff; /* White for headings and primary elements */
+        --primary-color: #e0e0e0; /* White for headings and primary elements */
         --secondary-color: rgba(200, 200, 200, 0.8); /* Lighter gray for secondary elements */
         --accent-color: #3399ff; /* Bright blue for accents */
         --button-bg: #3399ff; /* Bright blue button background */
