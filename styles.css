@@ -612,6 +612,13 @@ nav a:hover {
     }
 }
 
+/* Hide Floating Tab Bar on Mobile */
+@media (max-width: 768px) {
+    .floating-tab-bar {
+        display: none; /* Completely hide the tab bar on mobile */
+    }
+}
+
 /* Grid layout for projects, experience, and recommendations */
 .projects, .experience, .recommendations {
     display: grid;
