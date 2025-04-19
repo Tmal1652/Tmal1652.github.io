@@ -7,136 +7,152 @@
     <meta name="description" content="Tyler Malovrh's Professional Portfolio showcasing education, projects, work experience, and recommendations.">
     <title>Tyler Malovrh's Portfolio</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
+    <!-- Floating Tab Bar -->
+    <div class="floating-tab-bar">
+        <a href="#about" class="tab-link">About</a>
+        <a href="#projects" class="tab-link">Projects</a>
+        <a href="#experience" class="tab-link">Experience</a>
+        <a href="#education" class="tab-link">Education</a>
+        <a href="#contact" class="tab-link">Contact</a>
+    </div>
 
-    <!-- Header Section -->
-    <header>
-        <h1>Tyler Malovrh's Portfolio</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Work Experience</a>
-            <a href="#education">Education</a>
-            <a href="#recommendations">Recommendations</a>
-            <a href="#diploma">Diploma</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Tyler Malovrh</h1>
+        <p>Software Developer | Web Enthusiast | Accessibility Advocate</p>
+        <button class="btn">Explore My Work</button>
+    </section>
 
     <!-- About Me Section -->
-<section class="intro" id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-        <img src="Malovrh Tyler.jpeg" alt="Profile Picture of Tyler Malovrh" class="profile-picture">
-        <p>
-            Welcome to my portfolio! I am Tyler Malovrh, a recent graduate with a Bachelor of Science in Information Technology - Software Development 
-            from the University of Cincinnati. I am passionate about web development, software engineering, and creating accessible digital experiences. 
-            Explore my education, work experience, projects, and recommendations to learn more about my skills and achievements.
-        </p>
-    </div>
-</section>
-<!-- Projects Section (Moved Up) -->
-<section class="projects" id="projects">
-    <h2>Projects</h2>
-
-    <!-- Project 1 -->
-    <div class="project">
-        <h3>Project 1: Portfolio Website</h3>
-        <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-        <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank">View on GitHub</a>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project">
-        <h3>Project 2: Protify AI-Powered Calendar App</h3>
-        <p>Protify is an AI-powered calendar app that helps users manage their schedules, offering personalized recommendations for workouts, recipes, and productivity tips while optimizing time based on external factors like weather and traffic.</p>
-        <a href="https://github.com/brendanpayne/protifyapp" target="_blank">View on GitHub</a>
-        <a href="ProtifyExpoDemo.mp4" class="view-video-btn" target="_blank">View Video</a>
-        <a href="Protify_Poster.pdf" class="view-poster-btn" target="_blank">View Poster</a>
-    </div>
-        <!-- Project 3 -->
-        <div class="project">
-            <h3>Project 3: CollabConnect(Work in Progress)</h3>
-            <p>CollabConnect is a collaborative platform designed to help teams manage projects, share ideas, and work together seamlessly across devices. It uses HTML, CSS, and JavaScript for development, with Visual Studio Code as the primary coding application.</p>
-            <a href="https://github.com/Tmal1652/CollabConnect" target="_blank">View on GitHub</a>
-            <a href="https://tmal1652.github.io/CollabConnect/" class="view-website-btn" target="_blank">View Website</a>
-        </div>
-</section>
-
-    <!-- Work Experience Section (Moved Up) -->
-    <section class="experience" id="experience">
-        <h2>Work Experience</h2>
-        <div class="experience-item">
-            <h3>Digital Accessibility Analyst - University of Cincinnati (May 2022 - August 2024)</h3>
-            <ul>
-                <li>Conducted accessibility testing on UC websites and applications, ensuring WCAG 2.1 and Section 508 compliance.</li>
-                <li>Utilized Access Assistant and ANDI for automated and manual inspections of web elements.</li>
-                <li>Managed accessibility issues using Jira, contributing to the continuous improvement of digital accessibility.</li>
-            </ul>
-        </div>
-        <div class="experience-item">
-            <h3>IT Specialist - Universal Metal Products (Feb 2019 - Feb 2020)</h3>
-            <ul>
-                <li>Provided software and hardware support, including installation and repairs.</li>
-                <li>Maintained a competitor database and optimized file storage through digitization efforts.</li>
-            </ul>
+    <section class="intro" id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="Malovrh Tyler.jpeg" alt="Profile Picture of Tyler Malovrh" class="profile-picture">
+            <p>
+                Welcome to my portfolio! I am Tyler Malovrh, a recent graduate with a Bachelor of Science in Information Technology - Software Development 
+                from the University of Cincinnati. I am passionate about web development, software engineering, and creating accessible digital experiences. 
+                Explore my education, work experience, projects, and recommendations to learn more about my skills and achievements.
+            </p>
         </div>
     </section>
 
- <!-- Education Section -->
-<section class="education" id="education">
-    <h2>Education</h2>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+                <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank" class="btn">View on GitHub</a>
+            </div>
+            <div class="card">
+                <h3>Protify AI-Powered Calendar App</h3>
+                <p>Protify is an AI-powered calendar app that helps users manage their schedules, offering personalized recommendations for workouts, recipes, and productivity tips while optimizing time based on external factors like weather and traffic.</p>
+                <a href="https://github.com/brendanpayne/protifyapp" target="_blank" class="btn">View on GitHub</a>
+                <a href="ProtifyExpoDemo.mp4" class="btn" target="_blank">View Video</a>
+            </div>
+            <div class="card">
+                <h3>CollabConnect (Work in Progress)</h3>
+                <p>CollabConnect is a collaborative platform designed to help teams manage projects, share ideas, and work together seamlessly across devices.</p>
+                <a href="https://github.com/Tmal1652/CollabConnect" target="_blank" class="btn">View on GitHub</a>
+                <a href="https://tmal1652.github.io/CollabConnect/" class="btn" target="_blank">View Website</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- University of Cincinnati -->
-    <div class="education-item">
-        <h3>University of Cincinnati</h3>
-        <p><strong>Bachelor of Science in Information Technology - Software Development</strong></p>
-        <p><em>August 2021 - April 2024</em> | GPA: 3.8</p>
-        <p><strong>Relevant Coursework:</strong></p>
-        <ul>
-            <li>Web Development & Server Application Development</li>
-            <li>Database Management I & II</li>
-            <li>System Administration & Info Security</li>
-            <li>Game Engine Labs I & II</li>
-            <li>Enterprise App Development</li>
-        </ul>
-    </div>
+    <!-- Work Experience Section -->
+    <section class="experience" id="experience">
+        <h2>Work Experience</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Systems Accessibility Analyst</h3>
+                <p><strong>The Ohio State University</strong> | December 2024 - Present</p>
+                <ul>
+                    <li>Conducted Quick Tests and Full Manual Evaluations to ensure compliance with University and Accessibility Standards.</li>
+                    <li>Collaborated with teams to evaluate third-party software, websites, and applications for accessibility compliance.</li>
+                    <li>Provided detailed reports and recommendations to improve accessibility for OSU's digital platforms.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Digital Accessibility Analyst</h3>
+                <p><strong>University of Cincinnati</strong> | May 2022 - August 2024</p>
+                <ul>
+                    <li>Conducted accessibility testing on UC websites and applications, ensuring WCAG 2.1 and Section 508 compliance.</li>
+                    <li>Utilized Access Assistant and ANDI for automated and manual inspections of web elements.</li>
+                    <li>Managed accessibility issues using Jira, contributing to the continuous improvement of digital accessibility.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>IT Specialist</h3>
+                <p><strong>Universal Metal Products</strong> | Feb 2019 - Feb 2020</p>
+                <ul>
+                    <li>Provided software and hardware support, including installation and repairs.</li>
+                    <li>Maintained a competitor database and optimized file storage through digitization efforts.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <!-- Lakeland Community College -->
-    <div class="education-item">
-        <h3>Lakeland Community College</h3>
-        <p><strong>Associate of Applied Business - Application Programming and Development Concentration</strong></p>
-        <p><em>August 2017 - May 2021</em> | GPA: 3.6</p>
-        <p><strong>Relevant Coursework:</strong></p>
-        <ul>
-            <li>Java & Android Programming I-III</li>
-            <li>iOS Programming I-III</li>
-            <li>Programming Logic & .Net Programming</li>
-            <li>SQL & Network+</li>
-            <li>Operating Systems & Ethics in IT</li>
-        </ul>
-    </div>
-</section>
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2>Education</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>University of Cincinnati</h3>
+                <p><strong>Bachelor of Science in Information Technology - Software Development</strong></p>
+                <p><em>August 2021 - April 2024</em> | GPA: 3.8</p>
+                <p><strong>Relevant Coursework:</strong></p>
+                <ul>
+                    <li>Web Development & Server Application Development</li>
+                    <li>Database Management I & II</li>
+                    <li>System Administration & Info Security</li>
+                    <li>Game Engine Labs I & II</li>
+                    <li>Enterprise App Development</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Lakeland Community College</h3>
+                <p><strong>Associate of Applied Business - Application Programming and Development Concentration</strong></p>
+                <p><em>August 2017 - May 2021</em> | GPA: 3.6</p>
+                <p><strong>Relevant Coursework:</strong></p>
+                <ul>
+                    <li>Java & Android Programming I-III</li>
+                    <li>iOS Programming I-III</li>
+                    <li>Programming Logic & .Net Programming</li>
+                    <li>SQL & Network+</li>
+                    <li>Operating Systems & Ethics in IT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <!-- Recommendations Section -->
     <section class="recommendations" id="recommendations">
         <h2>Recommendation Letters</h2>
-        <div class="recommendation">
-            <h3>Janet Dorsey - IT Manager, Universal Metal Products</h3>
-            <p>"Tyler was a bright and engaging member of our department, quick to help, and a good team player. He worked efficiently and accurately."</p>
-            <a href="/Letter of Recommendation UMP.pdf" target="_blank">Read Full Recommendation</a>
-        </div>
-        <div class="recommendation">
-            <h3>Melinda O’Connor - IT & CS Adjunct Faculty, Lakeland Community College</h3>
-            <p>"Tyler’s passion for software development shines through his assignments and work with his peers."</p>
-            <a href="/Recommendation Letter Lakeland.pdf" target="_blank">Read Full Recommendation</a>
-        </div>
-        <div class="recommendation">
-            <h3>Manuel Salazar - Accessibility QA Analyst, University of Cincinnati</h3>
-            <p>"Tyler demonstrated exceptional skills and dedication, contributing significantly to improving the user experience for people with disabilities."</p>
-            <a href="/Tyler Malovrh Recommendation.pdf" target="_blank">Read Full Recommendation</a>
+        <div class="card-container">
+            <div class="card">
+                <h3>Janet Dorsey</h3>
+                <p><strong>IT Manager, Universal Metal Products</strong></p>
+                <p>"Tyler was a bright and engaging member of our department, quick to help, and a good team player. He worked efficiently and accurately."</p>
+                <a href="/Letter of Recommendation UMP.pdf" target="_blank" class="btn">Read Full Recommendation</a>
+            </div>
+            <div class="card">
+                <h3>Melinda O’Connor</h3>
+                <p><strong>IT & CS Adjunct Faculty, Lakeland Community College</strong></p>
+                <p>"Tyler’s passion for software development shines through his assignments and work with his peers."</p>
+                <a href="/Recommendation Letter Lakeland.pdf" target="_blank" class="btn">Read Full Recommendation</a>
+            </div>
+            <div class="card">
+                <h3>Manuel Salazar</h3>
+                <p><strong>Accessibility QA Analyst, University of Cincinnati</strong></p>
+                <p>"Tyler demonstrated exceptional skills and dedication, contributing significantly to improving the user experience for people with disabilities."</p>
+                <a href="/Tyler Malovrh Recommendation.pdf" target="_blank" class="btn">Read Full Recommendation</a>
+            </div>
         </div>
     </section>
 
@@ -151,15 +167,22 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2>Contact Me</h2>
-        <p>If you’d like to collaborate or have any questions, feel free to reach out via email.</p>
-        <a href="mailto:malovrh1652tyler@gmail.com">Email Me</a>
+        <p>Have a question or want to work together? Feel free to reach out!</p>
+        <form action="https://formspree.io/f/{your_form_id}" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <a href="mailto:your-email@example.com">Or email me directly</a>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Tyler Malovrh. All Rights Reserved.</p>
+        <p>&copy; 2025 Tyler Malovrh. All Rights Reserved.</p>
     </footer>
 
+    <script src="scripts.js" defer></script>
 </body>
 
 </html>

@@ -3,13 +3,369 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+/* Modern minimalist design with glass-like effects */
+
+/* Default (Light Mode) */
+:root {
+    --background-color: rgba(255, 255, 255, 0.8); /* Slightly brighter for better readability */
+    --text-color: #1a1a1a; /* Dark gray for text */
+    --primary-color: #000000; /* Solid black for primary elements */
+    --secondary-color: rgba(100, 100, 100, 0.7); /* Medium gray for secondary elements */
+    --accent-color: #007bff; /* Modern blue for accents */
+    --button-bg: #007bff; /* Blue button background */
+    --button-text: #ffffff; /* White button text */
+    --link-color: #007bff; /* Blue for links */
+    --link-hover: #0056b3; /* Darker blue for hover */
+    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    --backdrop-blur: blur(10px); /* Glass effect blur */
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: rgba(18, 18, 18, 0.9); /* Slightly less transparent for better readability */
+        --text-color: #f5f5f5; /* Off-white text for better contrast */
+        --primary-color: #ffffff; /* White for primary elements */
+        --secondary-color: rgba(136, 136, 136, 0.8); /* Lighter gray for secondary elements */
+        --accent-color: #3399ff; /* Lighter blue for accents */
+        --button-bg: #3399ff; /* Lighter blue button background */
+        --button-text: #ffffff; /* White button text */
+        --link-color: #3399ff; /* Lighter blue for links */
+        --link-hover: #1a73e8; /* Slightly darker blue for hover */
+        --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+        --backdrop-blur: blur(15px); /* Stronger blur for dark mode */
+    }
+}
+
+/* Glass-like effect for sections */
+.glass {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1)
+    );
+}
+
+/* Ensure specific elements are adjusted for dark mode */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--background-color);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    color: var(--text-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+    color: var(--text-color);
+}
+
+.hero .cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--button-text);
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .cta-btn:hover {
+    background-color: var(--link-hover);
+    transform: scale(1.05);
+}
+
+/* Floating Tab Bar (Top Position) */
+.floating-tab-bar {
+    position: fixed; /* Keep it fixed at the top */
+    top: 0; /* Align it to the top of the page */
+    left: 0;
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    background: var(--background-color); /* Matches the page background */
+    backdrop-filter: var(--backdrop-blur); /* Glass-like effect */
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    border-radius: 0 0 15px 15px; /* Add rounded corners at the bottom */
+}
+
+.floating-tab-bar .tab-link {
+    color: var(--text-color); /* Matches the text color */
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px; /* Add spacing between links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-tab-bar .tab-link:hover {
+    background-color: var(--accent-color); /* Highlight on hover */
+    color: var(--button-text); /* Ensure text remains visible */
+    transform: scale(1.05); /* Slight scaling for hover effect */
+}
+
+/* Active Tab Styling */
+.floating-tab-bar .tab-link.active {
+    background-color: var(--accent-color); /* Highlight active tab */
+    color: var(--button-text); /* Ensure text remains visible */
+    font-weight: bold; /* Make the active tab stand out */
+    transform: scale(1.1); /* Slightly enlarge the active tab */
+}
+
+.btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 2px 6px rgba(255, 255, 255, 0.2);
+}
+
+a:focus, .btn:focus, .tab-link:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Contact Section Styling */
+.contact {
+    text-align: center;
+    background: var(--background-color); /* Use the glass-like background */
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    color: var(--text-color);
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    margin: 40px auto;
+    max-width: 800px; /* Limit the width for better readability */
+}
+
+.contact h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
+    outline: none;
+}
+
+.contact button {
+    background-color: var(--accent-color);
+    color: var(--button-text);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: var(--link-hover);
+    transform: scale(1.05);
+}
+
+.contact a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--link-hover);
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    background: var(--background-color); /* Match the page background */
+    color: var(--text-color); /* Ensure text is visible */
+    padding: 10px 20px; /* Add spacing */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Body Styling */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
-    color: #2c3e50;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a {
+    color: var(--text-color);
+    margin: 0 15px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--button-text);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    transform: scale(1.1);
+}
+
+/* General Section Styling */
+section {
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Styling */
+section {
+    background: var(--background-color);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin: 40px auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Main heading styling (h1) */
@@ -23,9 +379,13 @@ h1 {
     display: block;
 }
 
+h1, .name {
+    color: var(--text-color); /* Ensure it uses the updated text color */
+}
+
 /* General heading styling */
 h2, h3 {
-    color: #00509e;
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
@@ -33,20 +393,13 @@ p {
     margin-bottom: 20px;
 }
 
-a {
-    color: #0284c7;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 header {
-    background-color: #00509e;
-    color: white;
     padding: 20px 0;
     text-align: center;
+}
+
+header nav {
+    display: none; /* Hide the top navigation bar */
 }
 
 nav a {
@@ -57,29 +410,23 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #00b4d8;
+    background-color: var(--accent-color);
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-
-section {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
 }
 
 /* Intro section styling */
 .intro {
     text-align: center;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px var(--box-shadow);
     padding: 40px;
     border-radius: 10px;
 }
 
 .intro p {
     font-size: 1.1rem;
-    color: #34495e;
+    color: var(--text-color);
 }
 
 /* Styling for the profile picture */
@@ -97,7 +444,7 @@ section {
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Make sure the image fills the container */
     border-radius: 15px; /* Add rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 6px var(--box-shadow); /* Subtle shadow for depth */
     flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
@@ -112,6 +459,38 @@ section {
         width: 150px; /* Smaller profile picture for tablets and mobile */
         margin-bottom: 20px; /* Add some space below the image */
     }
+
+    .floating-tab-bar {
+        bottom: 10px;
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+
+    .floating-tab-bar .tab-link {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .contact {
+        padding: 30px 15px;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+
+    .contact form {
+        gap: 10px;
+    }
+
+    .contact button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Grid layout for projects, experience, and recommendations */
@@ -122,36 +501,42 @@ section {
 }
 
 .project, .experience-item, .recommendation {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px var(--box-shadow);
     padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover, .experience-item:hover, .recommendation:hover {
+.project {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .project h3, .experience-item h3, .recommendation h3 {
     margin-bottom: 10px;
-    color: #00509e;
+    color: var(--primary-color);
 }
 
 .project a, .recommendation a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #0284c7;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--button-text);
     border-radius: 5px;
     font-weight: 500;
     text-decoration: none;
 }
 
 .project a:hover, .recommendation a:hover {
-    background-color: #00b4d8;
+    background-color: var(--accent-color);
 }
 
 /* Styling for the 'View Video' button */
@@ -159,8 +544,8 @@ section {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #0284c7;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--button-text);
     border-radius: 5px;
     font-weight: 500;
     text-decoration: none;
@@ -168,7 +553,7 @@ section {
 }
 
 .view-video-btn:hover {
-    background-color: #00b4d8;
+    background-color: var(--accent-color);
 }
 
 /* Styling for the 'View Poster' button */
@@ -176,8 +561,8 @@ section {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #0284c7;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--button-text);
     border-radius: 5px;
     font-weight: 500;
     text-decoration: none;
@@ -185,13 +570,29 @@ section {
 }
 
 .view-poster-btn:hover {
-    background-color: #00b4d8;
+    background-color: var(--accent-color);
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.stack-icons img {
+    width: 50px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.stack-icons img:hover {
+    transform: scale(1.2);
 }
 
 /* Education section styling */
 .education-item {
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    box-shadow: 0 4px 6px var(--box-shadow);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -200,11 +601,11 @@ section {
 
 .education-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px var(--box-shadow);
 }
 
 .education-item h3 {
-    color: #00509e;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -213,40 +614,27 @@ section {
     margin-left: 20px;
 }
 
-/* Contact section styling */
-.contact {
-    text-align: center;
-    background-color: #00509e;
-    color: white;
-    padding: 40px;
-    border-radius: 10px;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.contact a {
-    background-color: white;
-    color: #00509e;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.contact a:hover {
-    background-color: #00b4d8;
-    color: white;
-}
-
-/* Footer styling */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 0;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Responsive styles */
@@ -296,10 +684,40 @@ footer p {
     }
 
     .contact {
+        padding: 20px 10px;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+    }
+
+    .contact button {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .contact {
         padding: 30px; /* Adjust padding for the contact section on mobile */
     }
 
     footer {
         padding: 10px 0; /* Smaller footer padding for mobile */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-tab-bar {
+        bottom: 10px;
+        padding: 8px 15px;
     }
 }
