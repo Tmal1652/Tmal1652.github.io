@@ -580,6 +580,38 @@ nav a:hover {
     }
 }
 
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    /* Floating Tab Bar */
+    .floating-tab-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%; /* Full width */
+        height: auto; /* Ensure it doesn't take unnecessary height */
+        padding: 10px 0; /* Add padding for better spacing */
+        background: var(--background-color); /* Match the page background */
+        backdrop-filter: var(--backdrop-blur); /* Glass-like effect */
+        -webkit-backdrop-filter: var(--backdrop-blur);
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+        border-radius: 15px 15px 0 0; /* Rounded corners at the top */
+        z-index: 1000; /* Ensure it stays above other elements */
+    }
+
+    .floating-tab-bar .tab-link {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+        padding: 8px 10px; /* Add padding for better spacing */
+        margin: 0 5px; /* Add spacing between links */
+        text-align: center; /* Center-align the text */
+        display: inline-block; /* Ensure links are inline */
+    }
+
+    /* Prevent Content Overlap */
+    body {
+        padding-bottom: 60px; /* Add padding to prevent content from being hidden behind the tab bar */
+    }
+}
+
 /* Grid layout for projects, experience, and recommendations */
 .projects, .experience, .recommendations {
     display: grid;
