@@ -23,17 +23,80 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: rgba(18, 18, 18, 0.9); /* Slightly less transparent for better readability */
-        --text-color: #f5f5f5; /* Off-white text for better contrast */
-        --primary-color: #ffffff; /* White for primary elements */
-        --secondary-color: rgba(136, 136, 136, 0.8); /* Lighter gray for secondary elements */
-        --accent-color: #3399ff; /* Lighter blue for accents */
-        --button-bg: #3399ff; /* Lighter blue button background */
+        --background-color: rgba(18, 18, 18, 0.95); /* Slightly darker for better readability */
+        --text-color: #e0e0e0; /* Light gray for text */
+        --primary-color: #ffffff; /* White for headings and primary elements */
+        --secondary-color: rgba(200, 200, 200, 0.8); /* Lighter gray for secondary elements */
+        --accent-color: #3399ff; /* Bright blue for accents */
+        --button-bg: #3399ff; /* Bright blue button background */
         --button-text: #ffffff; /* White button text */
-        --link-color: #3399ff; /* Lighter blue for links */
+        --link-color: #3399ff; /* Bright blue for links */
         --link-hover: #1a73e8; /* Slightly darker blue for hover */
-        --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+        --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); /* Stronger shadow for dark mode */
         --backdrop-blur: blur(15px); /* Stronger blur for dark mode */
+    }
+
+    /* Ensure text contrast in sections */
+    section {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    /* Adjust card styles for dark mode */
+    .card {
+        background-color: rgba(30, 30, 30, 0.9); /* Darker background for cards */
+        color: var(--text-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+    }
+
+    /* Adjust floating tab bar for dark mode */
+    .floating-tab-bar {
+        background-color: rgba(30, 30, 30, 0.95); /* Darker background for the tab bar */
+        color: var(--text-color);
+    }
+
+    .floating-tab-bar .tab-link {
+        color: var(--text-color);
+    }
+
+    .floating-tab-bar .tab-link:hover {
+        background-color: var(--accent-color);
+        color: var(--button-text);
+    }
+
+    /* Adjust hero section for dark mode */
+    .hero {
+        background-color: rgba(30, 30, 30, 0.9);
+        color: var(--text-color);
+    }
+
+    .hero h1, .hero p {
+        color: var(--text-color);
+    }
+
+    /* Adjust contact section for dark mode */
+    .contact {
+        background-color: rgba(30, 30, 30, 0.9);
+        color: var(--text-color);
+    }
+
+    .contact h2, .contact p {
+        color: var(--text-color);
+    }
+
+    .contact button {
+        background-color: var(--accent-color);
+        color: var(--button-text);
+    }
+
+    .contact button:hover {
+        background-color: var(--link-hover);
+    }
+
+    /* Adjust footer for dark mode */
+    footer {
+        background-color: rgba(30, 30, 30, 0.95);
+        color: var(--text-color);
     }
 }
 
