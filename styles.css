@@ -539,16 +539,6 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-/* Styling for the explore text */
-.explore-text {
-    font-size: 0.85rem; /* Smaller font size */
-    color: var(--secondary-color); /* Subtle color */
-    text-align: center; /* Center-align the text */
-    margin-top: 10px; /* Add some spacing from the text above */
-    font-style: italic; /* Optional: Keep it italic for emphasis */
-    line-height: 1.4; /* Adjust line height for better readability */
-}
-
 /* Media query for tablets */
 @media (max-width: 768px) {
     .about-container {
