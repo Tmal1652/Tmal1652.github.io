@@ -98,6 +98,52 @@
         background-color: rgba(30, 30, 30, 0.95);
         color: var(--text-color);
     }
+
+    /* Dark mode styles */
+    body {
+        background-color: #121212; /* Dark background */
+        color: #ffffff; /* Light text color */
+    }
+
+    .floating-tab-bar {
+        background-color: #1e1e1e; /* Darker background for the tab bar */
+        border-top: 1px solid #333; /* Subtle border for separation */
+    }
+
+    .tab-link {
+        color: #ffffff; /* Light text color for links */
+    }
+
+    .tab-link:hover {
+        color: #00bcd4; /* Highlight color for hover state */
+    }
+
+    .hero {
+        background-color: #1e1e1e; /* Dark background for hero section */
+        color: #ffffff; /* Light text color */
+    }
+
+    .card-container .card {
+        background-color: #1e1e1e; /* Dark background for cards */
+        color: #ffffff; /* Light text color */
+        border: 1px solid #333; /* Subtle border for cards */
+    }
+
+    .btn {
+        background-color: #333; /* Dark button background */
+        color: #ffffff; /* Light button text */
+        border: 1px solid #555; /* Subtle border for buttons */
+    }
+
+    .btn:hover {
+        background-color: #444; /* Slightly lighter background on hover */
+        color: #00bcd4; /* Highlight text color on hover */
+    }
+
+    footer {
+        background-color: #1e1e1e; /* Dark footer background */
+        color: #ffffff; /* Light footer text */
+    }
 }
 
 /* Glass-like effect for sections */
