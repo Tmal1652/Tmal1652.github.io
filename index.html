@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Floating Tab Bar -->
     <div class="floating-tab-bar">
         <a href="#about" class="tab-link">About</a>
@@ -182,12 +187,30 @@
         <button onclick="window.location.href='mailto:malovrh1652tyler@gmail.com';">Email Me</button>
     </section>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">↑</button>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Tyler Malovrh. All Rights Reserved.</p>
     </footer>
 
     <script src="scripts.js" defer></script>
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html>
