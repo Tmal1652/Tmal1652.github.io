@@ -752,6 +752,158 @@ nav a:hover {
         padding: 10px 15px;
         font-size: 0.8rem;
     }
+
+    /* General Body and Layout */
+    body {
+        font-size: 18px; /* Larger font for readability */
+        line-height: 1.8;
+        padding: 0 15px; /* Add more padding for better spacing */
+        background-color: #ffffff; /* Clean white background */
+    }
+
+    /* Header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        color: var(--button-text);
+        padding: 10px 20px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    header .menu-toggle {
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    /* Bottom Navigation Bar */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .bottom-nav a {
+        color: var(--button-text);
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+
+    .bottom-nav a:hover {
+        color: var(--accent-color);
+    }
+
+    .bottom-nav a .icon {
+        font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .hero .cta-btn {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border-radius: 8px;
+    }
+
+    /* Section Styling */
+    section {
+        padding: 20px 15px;
+        margin: 20px 0;
+        background-color: var(--background-color);
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    /* Card Layout */
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .contact p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact button {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+        text-align: center;
+        background-color: var(--primary-color);
+        color: var(--button-text);
+    }
 }
 
 /* Mobile-Specific Adjustments */
