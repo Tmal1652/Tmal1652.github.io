@@ -793,6 +793,163 @@ nav a:hover {
     }
 }
 
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+    /* General Body and Layout */
+    body {
+        font-size: 16px; /* Slightly larger font for readability */
+        line-height: 1.8;
+        padding: 0 10px; /* Add padding for better spacing */
+        background-color: #f5f5f5; /* Light background for better contrast */
+    }
+
+    /* Header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        color: var(--button-text);
+        padding: 15px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    header .menu-toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Mobile Navigation */
+    nav {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        color: var(--button-text);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    nav a {
+        color: var(--button-text);
+        text-decoration: none;
+        font-size: 1.2rem;
+        margin: 10px 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: var(--accent-color);
+    }
+
+    .menu-open nav {
+        display: flex; /* Show menu when open */
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .hero .cta-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    /* Section Styling */
+    section {
+        padding: 20px 10px;
+        margin: 20px 0;
+        background-color: var(--background-color);
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    /* Card Layout */
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .contact p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .contact button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+        text-align: center;
+        background-color: var(--primary-color);
+        color: var(--button-text);
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
 /* Grid layout for projects, experience, and recommendations */
 .projects, .experience, .recommendations {
     display: grid;
