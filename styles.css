@@ -156,15 +156,24 @@
 }
 
 /* Ensure specific elements are adjusted for dark mode */
+/* Glassmorphism Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: var(--background-color);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     color: var(--text-color);
-    border-radius: 15px;
-    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.hero:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 48px rgba(31, 38, 135, 0.45);
 }
 
 .hero h1 {
@@ -200,20 +209,29 @@
 
 /* Floating Tab Bar (Top Position) */
 .floating-tab-bar {
-    position: fixed; /* Keep it fixed at the top */
-    top: 0; /* Align it to the top of the page */
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%; /* Full width */
+    width: 100%;
     display: flex;
-    justify-content: center; /* Center the links */
+    justify-content: center;
     align-items: center;
-    background: var(--background-color); /* Matches the page background */
-    backdrop-filter: var(--backdrop-blur); /* Glass-like effect */
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     padding: 10px 0;
-    z-index: 1000; /* Ensure it stays above other elements */
-    border-radius: 0 0 15px 15px; /* Add rounded corners at the bottom */
+    z-index: 1000;
+    border-radius: 0 0 20px 20px;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+ 
+.floating-tab-bar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 48px rgba(31, 38, 135, 0.45);
 }
 
 .floating-tab-bar .tab-link {
@@ -241,43 +259,27 @@
 }
 
 .btn {
-    background-color: var(--button-bg);
+    background: var(--button-bg);
     color: var(--button-text);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.btn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
-}
-
-.btn:active::after {
-    width: 200px;
-    height: 200px;
-    opacity: 1;
-    transition: 0s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 2px 6px rgba(255, 255, 255, 0.2);
+    transform: scale(1.08);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
 }
 
 a:focus, .btn:focus, .tab-link:focus {
@@ -288,15 +290,23 @@ a:focus, .btn:focus, .tab-link:focus {
 /* Contact Section Styling */
 .contact {
     text-align: center;
-    background: var(--background-color); /* Use the glass-like background */
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     color: var(--text-color);
     padding: 50px 20px;
-    border-radius: 15px;
-    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     margin: 40px auto;
-    max-width: 800px; /* Limit the width for better readability */
+    max-width: 800px;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.contact:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 48px rgba(31, 38, 135, 0.45);
 }
 
 .contact h2 {
@@ -325,11 +335,14 @@ a:focus, .btn:focus, .tab-link:focus {
     width: 100%;
     padding: 15px;
     border: 1px solid var(--secondary-color);
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1rem;
     color: var(--text-color);
-    background: rgba(255, 255, 255, 0.8); /* Slight transparency for inputs */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .contact input:focus, .contact textarea:focus {
@@ -472,30 +485,39 @@ section:nth-child(even) {
 
 /* Card Styling */
 .card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Lift the card slightly */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+    transform: scale(1.03);
+    box-shadow: 0 12px 48px rgba(31, 38, 135, 0.45);
 }
 
 /* Section Styling */
 section {
-    background: var(--background-color);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    border-radius: 15px;
-    box-shadow: var(--box-shadow);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     padding: 20px;
     margin: 40px auto;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease-in-out forwards;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 @keyframes fadeInUp {
@@ -510,8 +532,8 @@ section {
 }
 
 section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+    box-shadow: 0 12px 48px rgba(31, 38, 135, 0.45);
 }
 
 /* Main heading styling (h1) */
