@@ -474,38 +474,8 @@ html {
     scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--background-color);
-    backdrop-filter: var(--backdrop-blur);
-    -webkit-backdrop-filter: var(--backdrop-blur);
-    box-shadow: var(--box-shadow);
-    z-index: 1000;
-    padding: 10px 20px;
-}
 
-header nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-header nav a {
-    color: var(--text-color);
-    margin: 0 15px;
-    font-weight: 500;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--button-text);
-}
 
 a {
     color: var(--link-color);
@@ -1148,10 +1118,6 @@ p {
         font-size: 2.5rem; /* Reduce heading size for tablets */
     }
 
-    nav a {
-        padding: 8px 10px; /* Adjust navigation padding for smaller screens */
-    }
-
     section {
         padding: 0 15px; /* Reduce section padding for tablets */
     }
@@ -1165,12 +1131,6 @@ p {
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem; /* Even smaller heading size for mobile */
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0; /* Stack navigation links on mobile */
-        text-align: center; /* Center navigation links */
     }
 
     section {
