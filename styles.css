@@ -52,118 +52,8 @@
         --glass-outer: 0 12px 40px rgba(0, 0, 0, 0.55);
         --depth-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
     }
-
-    /* Ensure text contrast in sections */
-    section {
-        background-color: var(--background-color);
-        color: var(--text-color);
-    }
-
-    /* Adjust card styles for dark mode */
-    .card {
-        background-color: rgba(30, 30, 30, 0.9); /* Darker background for cards */
-        color: var(--text-color);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
-    }
-
-    /* Adjust floating tab bar for dark mode */
-    .floating-tab-bar {
-        background-color: rgba(30, 30, 30, 0.95); /* Darker background for the tab bar */
-        color: var(--text-color);
-    }
-
-    .floating-tab-bar .tab-link {
-        color: var(--text-color);
-    }
-
-    .floating-tab-bar .tab-link:hover {
-        background-color: var(--accent-color);
-        color: var(--button-text);
-    }
-
-    /* Adjust hero section for dark mode */
-    .hero {
-        background-color: rgba(30, 30, 30, 0.9);
-        color: var(--text-color);
-    }
-
-    .hero h1, .hero p {
-        color: var(--text-color);
-    }
-
-    /* Adjust contact section for dark mode */
-    .contact {
-        background-color: rgba(30, 30, 30, 0.9);
-        color: var(--text-color);
-    }
-
-    .contact h2, .contact p {
-        color: var(--text-color);
-    }
-
-    .contact button {
-        background-color: var(--accent-color);
-        color: var(--button-text);
-    }
-
-    .contact button:hover {
-        background-color: var(--link-hover);
-    }
-
-    /* Adjust footer for dark mode */
-    footer {
-        background-color: rgba(30, 30, 30, 0.95);
-        color: var(--text-color);
-    }
-
-    /* Dark mode styles */
-    body {
-        background-color: #121212; /* Dark background */
-        color: #ffffff; /* Light text color */
-    }
-
-    .floating-tab-bar {
-        background-color: #1e1e1e; /* Darker background for the tab bar */
-        border-top: 1px solid #333; /* Subtle border for separation */
-    }
-
-    .tab-link {
-        color: #ffffff; /* Light text color for links */
-    }
-
-    .tab-link:hover {
-        color: #00bcd4; /* Highlight color for hover state */
-    }
-
-    .hero {
-        background-color: #1e1e1e; /* Dark background for hero section */
-        color: #ffffff; /* Light text color */
-    }
-
-    .card-container .card {
-        background-color: #1e1e1e; /* Dark background for cards */
-        color: #ffffff; /* Light text color */
-        border: 1px solid #333; /* Subtle border for cards */
-    }
-
-    .btn {
-        background-color: #333; /* Dark button background */
-        color: #ffffff; /* Light button text */
-        border: 1px solid #555; /* Subtle border for buttons */
-    }
-
-    .btn:hover {
-        background-color: #444; /* Slightly lighter background on hover */
-        color: #00bcd4; /* Highlight text color on hover */
-    }
-
-    footer {
-        background-color: #1e1e1e; /* Dark footer background */
-        color: #ffffff; /* Light footer text */
-    }
 }
 
-. 
 /* Glass-like effect for sections */
 /* Glassy flow keyframes */
 @keyframes glassFlow {
@@ -193,7 +83,6 @@
     will-change: transform, box-shadow;
     isolation: isolate;
 }
-. 
 /* Subtle glassy underlay for glass */
 .glass::before {
     content: "";
@@ -397,7 +286,7 @@
     -webkit-backdrop-filter: blur(6px) saturate(120%);
     border: 1px solid rgba(255,255,255,0.45);
     box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
@@ -629,25 +518,6 @@ a:hover {
     transform: scale(1.1);
 }
 
-/* General Section Styling */
-section {
-    padding: 50px 20px;
-    margin: 0 auto;
-    max-width: 1200px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-section:nth-child(odd) {
-    animation-delay: 0.2s; /* Stagger animations for odd sections */
-}
-
-section:nth-child(even) {
-    animation-delay: 0.4s; /* Stagger animations for even sections */
-}
 
 /* Card Container */
 .card-container {
@@ -783,27 +653,6 @@ p {
     margin-bottom: 20px;
 }
 
-header {
-    padding: 20px 0;
-    text-align: center;
-}
-
-header nav {
-    display: none; /* Hide the top navigation bar */
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    font-weight: 500;
-    padding: 10px 15px;
-}
-
-nav a:hover {
-    background-color: var(--accent-color);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
 
 /* Intro section styling */
 .intro {
@@ -878,16 +727,6 @@ nav a:hover {
         margin-bottom: 20px; /* Add some space below the image */
     }
 
-    .floating-tab-bar {
-        bottom: 10px;
-        padding: 8px 15px;
-        border-radius: 20px;
-    }
-
-    .floating-tab-bar .tab-link {
-        padding: 8px 10px;
-        font-size: 0.9rem;
-    }
 
     .contact {
         padding: 30px 15px;
@@ -924,13 +763,6 @@ nav a:hover {
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 15px 15px 0 0;
         z-index: 1000;
-    }
-
-    .floating-tab-bar .tab-link {
-        font-size: 0.9rem;
-        padding: 8px 10px;
-        margin: 0 5px;
-        text-align: center;
     }
 
     /* Hero Section */
@@ -1031,123 +863,7 @@ nav a:hover {
         cursor: pointer;
     }
 
-    /* Bottom Navigation Bar */
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-color);
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 10px 0;
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
 
-    .bottom-nav a {
-        color: var(--button-text);
-        text-decoration: none;
-        font-size: 1.2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: color 0.3s ease;
-    }
-
-    .bottom-nav a:hover {
-        color: var(--accent-color);
-    }
-
-    .bottom-nav a .icon {
-        font-size: 1.5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: 60px 20px;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        border-radius: 10px;
-        box-shadow: var(--box-shadow);
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-
-    .hero .cta-btn {
-        font-size: 1.2rem;
-        padding: 12px 25px;
-        border-radius: 8px;
-    }
-
-    /* Section Styling */
-    section {
-        padding: 20px 15px;
-        margin: 20px 0;
-        background-color: var(--background-color);
-        border-radius: 10px;
-        box-shadow: var(--box-shadow);
-    }
-
-    /* Card Layout */
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .card {
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: var(--box-shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Contact Section */
-    .contact {
-        padding: 30px 15px;
-        text-align: center;
-    }
-
-    .contact h2 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-    }
-
-    .contact p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    .contact button {
-        font-size: 1.2rem;
-        padding: 12px 20px;
-        border-radius: 8px;
-    }
-
-    /* Footer */
-    footer {
-        padding: 15px 20px;
-        font-size: 0.9rem;
-        text-align: center;
-        background-color: var(--primary-color);
-        color: var(--button-text);
-    }
 }
 
 /* Mobile-Specific Adjustments */
@@ -1182,169 +898,7 @@ nav a:hover {
     }
 }
 
-/* Hide Floating Tab Bar on Mobile */
-@media (max-width: 768px) {
-    .floating-tab-bar {
-        display: none; /* Completely hide the tab bar on mobile */
-    }
-}
 
-/* Mobile-Specific Styles */
-@media (max-width: 768px) {
-    /* General Body and Layout */
-    body {
-        font-size: 16px; /* Slightly larger font for readability */
-        line-height: 1.8;
-        padding: 0 10px; /* Add padding for better spacing */
-        background-color: #f5f5f5; /* Light background for better contrast */
-    }
-
-    /* Header */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-color);
-        color: var(--button-text);
-        padding: 15px;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    header .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    header .menu-toggle {
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    /* Mobile Navigation */
-    nav {
-        display: none; /* Hidden by default */
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-color);
-        color: var(--button-text);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-    }
-
-    nav a {
-        color: var(--button-text);
-        text-decoration: none;
-        font-size: 1.2rem;
-        margin: 10px 0;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-        background-color: var(--accent-color);
-    }
-
-    .menu-open nav {
-        display: flex; /* Show menu when open */
-    }
-
-    /* Hero Section */
-    .hero {
-        text-align: center;
-        padding: 50px 20px;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        border-radius: 10px;
-        box-shadow: var(--box-shadow);
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    .hero .cta-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    /* Section Styling */
-    section {
-        padding: 20px 10px;
-        margin: 20px 0;
-        background-color: var(--background-color);
-        border-radius: 10px;
-        box-shadow: var(--box-shadow);
-    }
-
-    /* Card Layout */
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .card {
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: var(--box-shadow);
-    }
-
-    /* Contact Section */
-    .contact {
-        padding: 20px 10px;
-        text-align: center;
-    }
-
-    .contact h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    .contact p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    .contact button {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-
-    /* Footer */
-    footer {
-        padding: 10px 15px;
-        font-size: 0.8rem;
-        text-align: center;
-        background-color: var(--primary-color);
-        color: var(--button-text);
-    }
-
-    /* Back to Top Button */
-    #back-to-top {
-        bottom: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-}
 
 /* Grid layout for projects, experience, and recommendations */
 .projects, .experience, .recommendations {
