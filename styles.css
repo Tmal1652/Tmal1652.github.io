@@ -1023,6 +1023,12 @@ p {
     }
 }
 
+/* Hide Back to Top Button on Mobile */
+@media (max-width: 768px) {
+    #back-to-top {
+        display: none !important;
+    }
+}
 
 /* === Light mode hover visibility boost (keeps dark mode as-is) === */
 @media (prefers-color-scheme: light) {
@@ -1079,24 +1085,26 @@ p {
     .mobile-tab-bar {
         display: flex;
         position: fixed;
-        bottom: 0;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
-        width: calc(100% - 20px);
+        width: calc(100% - 40px);
         max-width: 520px;
         justify-content: space-around;
-        background: var(--glass-bg);
-        border: var(--glass-border);
+        background: linear-gradient(135deg, var(--glassy1), var(--glassy2));
+        border: 1px solid var(--glassy2);
         backdrop-filter: blur(12px) saturate(120%);
         -webkit-backdrop-filter: blur(12px) saturate(120%);
-        border-radius: 22px 22px 0 0;
-        padding: 10px calc(12px + env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left));
+        border-radius: 30px;
+        padding: 15px;
         box-shadow:
-          0 -10px 35px rgba(31,38,135,0.28),
-          0 -2px 10px rgba(255,255,255,0.18) inset;
+            0 10px 35px rgba(31,38,135,0.28),
+            0 2px 10px rgba(255,255,255,0.18) inset;
         z-index: 1000;
         isolation: isolate;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .mobile-tab-bar::before {
         content: "";
         position: absolute;
@@ -1110,21 +1118,23 @@ p {
         will-change: background-position;
         border-radius: inherit;
     }
+
     .mobile-tab-bar a {
         flex: 1;
         text-align: center;
         font-size: 0.9rem;
         color: inherit;
-        text-decoration: none;
+        text-decoration: none; /* Removed underlining */
         padding: 10px 0; /* comfy tap target */
         min-height: 48px;
         position: relative;
         overflow: hidden;
         border-radius: 999px; /* pill */
-        transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
+        transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s var(--spring), box-shadow 0.22s ease;
         border: 1px solid transparent;
         background: transparent;
     }
+
     .mobile-tab-bar a:hover,
     .mobile-tab-bar a:active {
         background: var(--glass-hover-bg);
@@ -1142,29 +1152,6 @@ p {
     .mobile-tab-bar .label {
         display: block;
         font-size: 0.75rem;
-    }
-    /* Mobile-specific ripple effect */
-    .mobile-tab-bar.glassy-hover::after,
-    .mobile-tab-bar a.glassy-hover::after {
-        background: rgba(0, 140, 255, 0.25); /* stronger color for mobile */
-        animation: ripple-mobile 0.6s ease-out;
-    }
-
-    @keyframes ripple-mobile {
-        from {
-            width: 0;
-            height: 0;
-            opacity: 0.4;
-        }
-        to {
-            width: 350%;
-            height: 350%;
-            opacity: 0;
-        }
-    }
-    /* Hide back-to-top on mobile */
-    #back-to-top {
-        display: none !important;
     }
 }
 
