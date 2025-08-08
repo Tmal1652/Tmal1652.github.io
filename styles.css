@@ -65,7 +65,7 @@
 }
 
 /* Glass-like effect for sections */
-/* Glassy flow keyframes */
+/* Optimized glassy flow keyframes */
 @keyframes glassFlow {
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }
@@ -1072,12 +1072,12 @@ p {
         justify-content: space-around;
         background: linear-gradient(135deg, var(--glassy1), var(--glassy2));
         border: 1px solid var(--glassy2);
-        backdrop-filter: blur(12px) saturate(120%);
-        -webkit-backdrop-filter: blur(12px) saturate(120%);
+        backdrop-filter: blur(8px) saturate(100%);
+        -webkit-backdrop-filter: blur(8px) saturate(100%);
         border-radius: 30px;
         padding: 15px;
         box-shadow:
-            0 10px 35px rgba(31,38,135,0.28),
+            0 4px 12px rgba(31,38,135,0.2),
             0 2px 10px rgba(255,255,255,0.18) inset;
         z-index: 1000;
         isolation: isolate;
@@ -1109,7 +1109,7 @@ p {
         position: relative;
         overflow: hidden;
         border-radius: 999px; /* pill */
-        transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s var(--spring), box-shadow 0.22s ease;
+        transition: background 0.2s ease, transform 0.2s ease;
         border: 1px solid transparent;
         background: transparent;
     }
@@ -1169,3 +1169,4 @@ a:hover {
     color: var(--link-hover);
     text-decoration: underline;
 }
+
