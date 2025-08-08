@@ -1,7 +1,6 @@
 /* External CSS file to handle styling */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+/* Fonts are loaded via <link> in HTML for better performance */
 
 /* Modern minimalist design with effects */
 
@@ -25,6 +24,15 @@
     --depth-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     --spring: cubic-bezier(0.2, 0.8, 0.2, 1.2);
     --sheen: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 40%, rgba(255,255,255,0) 80%);
+    /* Glassy gradient variables used throughout */
+    --glassy1: rgba(255,255,255,0.66);
+    --glassy2: rgba(255,255,255,0.35);
+    --glassy3: rgba(255,255,255,0.18);
+    --glassy-opacity: 0.16;
+    /* Hover helpers for glassy elements */
+    --glass-hover-bg: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.38));
+    --hover-ring-color: rgba(0,123,255,0.45);
+    --hover-glow: 0 12px 28px rgba(31,38,135,0.28), inset 0 1px 2px rgba(255,255,255,0.65), 0 0 0 2px var(--hover-ring-color);
 }
 
 /* Utility: Glassy Hover Effect */
@@ -49,14 +57,26 @@
         --button-text: #ffffff; /* White button text */
         --link-color: #3399ff; /* Bright blue for links */
         --link-hover: #1a73e8; /* Slightly darker blue for hover */
-        --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); /* Stronger shadow for dark mode */
-        --backdrop-blur: blur(15px); /* Stronger blur for dark mode */
-        --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-        --glass-border: 1px solid rgba(255,255,255,0.12);
+    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); /* Stronger shadow for dark mode */
+    --backdrop-blur: blur(15px); /* Stronger blur for dark mode */
+    --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    --glass-border: 1px solid rgba(255,255,255,0.12);
         --glass-inner: inset 0 1px 0 rgba(255,255,255,0.06);
         --glass-outer: 0 12px 40px rgba(0, 0, 0, 0.55);
         --depth-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+    --glassy1: rgba(255,255,255,0.14);
+    --glassy2: rgba(255,255,255,0.08);
+    --glassy3: rgba(255,255,255,0.04);
+    --glassy-opacity: 0.12;
+    --glass-hover-bg: linear-gradient(145deg, rgba(255,255,255,0.22), rgba(255,255,255,0.12));
+    --hover-ring-color: rgba(51,153,255,0.55);
+    --hover-glow: 0 12px 28px rgba(0,0,0,0.45), inset 0 1px 1px rgba(255,255,255,0.06), 0 0 0 2px var(--hover-ring-color);
     }
+}
+
+/* Diploma CTA spacing to match other CTAs */
+.diploma .btn {
+    margin-top: 10px;
 }
 
 /* Glass-like effect for sections */
@@ -163,6 +183,7 @@
     overflow: hidden;
     isolation: isolate;
 }
+/* Dark mode variant not needed for neutral hero gradient */
 /* Glassy underlay for hero */
 .hero::before {
     content: "";
@@ -305,11 +326,12 @@
     -webkit-backdrop-filter: blur(6px) saturate(120%);
     border: 1px solid rgba(255,255,255,0.45);
     box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-    transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
+    transition: background .18s ease, border-color .18s ease, transform .18s var(--spring), box-shadow .18s ease, outline-color .18s ease;
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
     perspective: 1000px;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -317,8 +339,9 @@
   border: 1px solid rgba(255,255,255,0.55);
   color: var(--text-color);
   box-shadow: var(--hover-glow);
-  transform: scale(1.05);
+    transform: scale(1.07);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    text-decoration: underline;
 }
 
 .btn:focus-visible{
@@ -336,7 +359,7 @@
 
 a:focus, .btn:focus, .tab-link:focus {
     outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+    outline-offset: 3px;
 }
 
 /* Contact Section Styling */
@@ -602,6 +625,9 @@ section {
     transition: all 0.4s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
+    /* Paint containment for performance on large sections */
+    content-visibility: auto;
+    contain-intrinsic-size: 600px 800px;
 }
 
 
@@ -664,7 +690,7 @@ p {
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Make sure the image fills the container */
     border-radius: 15px; /* Add rounded corners */
-    box-shadow: 0 4px 6px var(--box-shadow); /* Subtle shadow for depth */
+    box-shadow: var(--default-box-shadow); /* Subtle shadow for depth */
     flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
@@ -684,6 +710,8 @@ p {
         align-items: center;
         text-align: center;
     }
+    /* Use the single desktop tab bar on mobile; reposition it at the bottom */
+    
     /* Contact Section */
     .contact {
         padding: 30px 15px;
@@ -701,27 +729,40 @@ p {
         padding: 12px;
         font-size: 0.9rem;
     }
-    /* Floating Tab Bar */
+    /* Floating Tab Bar on mobile */
     .floating-tab-bar {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        top: auto;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        max-width: 520px;
         height: auto;
-        padding: 10px 0;
-        background: var(--background-color);
-        backdrop-filter: var(--backdrop-blur);
-        -webkit-backdrop-filter: var(--backdrop-blur);
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 15px 15px 0 0;
-        z-index: 1000;
+        padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        background: var(--glass-bg);
+        border: var(--glass-border);
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
+        box-shadow: 0 8px 22px rgba(31,38,135,0.20);
+        border-radius: 20px;
+        z-index: 1200;
+        justify-content: space-between;
+        gap: 8px;
     }
     .floating-tab-bar .tab-link {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         padding: 8px 10px;
         margin: 0 5px;
         text-align: center;
-        display: inline-block;
+        display: inline-flex;
+        flex: 1 1 0;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 999px;
     }
     /* Hero Section */
     .hero {
@@ -792,6 +833,7 @@ p {
 
     /* Full-width buttons for mobile */
     button,
+    a.btn,
     a.button,
     a.btn-primary,
     a.glassy-hover.button {
@@ -825,41 +867,39 @@ p {
         border-radius: 15px; /* Softer corners for mobile */
     }
 
-    /* Modern tab bar for mobile */
+    /* Reposition desktop tab bar to bottom on mobile */
     .floating-tab-bar {
         position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        top: auto;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        max-width: 520px;
+        height: auto;
+        padding: 10px 12px;
         background: var(--glass-bg);
-        border-top: var(--glass-border);
+        border: var(--glass-border);
         backdrop-filter: blur(10px) saturate(120%);
         -webkit-backdrop-filter: blur(10px) saturate(120%);
-        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        z-index: 1000;
+        box-shadow: 0 8px 22px rgba(31,38,135,0.20);
+        border-radius: 20px;
+        z-index: 1200;
+        justify-content: space-between;
+        gap: 8px;
     }
-
-    .floating-tab-bar a {
-        flex: 1;
+    .floating-tab-bar .tab-link {
+        font-size: 0.95rem;
+        padding: 8px 10px;
+        margin: 0 5px;
         text-align: center;
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 14px;
-        padding: 5px 0;
-        transition: color 0.3s ease;
-    }
-
-    .floating-tab-bar a:hover {
-        color: var(--accent-color);
-    }
-
-    .floating-tab-bar a.active {
-        color: var(--accent-color);
-        font-weight: bold;
+        display: inline-flex;
+        flex: 1 1 0;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 999px;
     }
 }
 
@@ -909,15 +949,17 @@ p {
     box-shadow: 0 8px 22px rgba(31,38,135,0.20);
     font-weight: 500;
     text-decoration: none;
-    transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
+    transition: background .18s ease, border-color .18s ease, transform .18s var(--spring), box-shadow .18s ease;
+    cursor: pointer;
 }
 
 .project a:hover, .recommendation a:hover {
   background: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.38));
   border: 1px solid rgba(255,255,255,0.75);
   color: var(--text-color);
-  box-shadow: 0 12px 28px rgba(31,38,135,0.28), inset 0 1px 2px rgba(255,255,255,0.65);
-  transform: translateY(-1px) scale(1.03);
+    box-shadow: var(--hover-glow);
+    transform: translateY(-1px) scale(1.06);
+    text-decoration: underline;
 }
 
 /* Animations */
@@ -926,7 +968,7 @@ p {
         opacity: 0;
         transform: translateY(20px);
     }
-    to {
+    section {
         opacity: 1;
         transform: translateY(0);
     }
@@ -941,6 +983,9 @@ p {
     color: var(--button-text);
     border: none;
     border-radius: 50%;
+        /* Paint containment for perf; provides initial size to avoid layout jumps */
+        content-visibility: auto;
+        contain-intrinsic-size: 600px 800px;
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
@@ -951,16 +996,7 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
-#back-to-top:hover {
-    transform: scale(1.1);
-}
-
-#back-to-top.show {
-    display: flex; /* Show when scrolled down */
-}
-
-/* Button to the Top with Glassy Look */
+/* Link transitions consolidated below */
 .button-to-top {
     position: fixed;
     bottom: 20px;
@@ -1132,87 +1168,9 @@ p {
       0 0 0 1px rgba(0,0,0,0.10);
   }
 }
-/* Default: hide mobile tab bar */
-.mobile-tab-bar {
-    display: none;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .floating-tab-bar {
-        display: none;
-    }
-    .mobile-tab-bar {
-        display: flex;
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 40px);
-        max-width: 520px;
-        justify-content: space-around;
-        background: linear-gradient(135deg, var(--glassy1), var(--glassy2));
-        border: 1px solid var(--glassy2);
-        backdrop-filter: blur(8px) saturate(100%);
-        -webkit-backdrop-filter: blur(8px) saturate(100%);
-        border-radius: 30px;
-        padding: 15px;
-        box-shadow:
-            0 4px 12px rgba(31,38,135,0.2),
-            0 2px 10px rgba(255,255,255,0.18) inset;
-        z-index: 1000;
-        isolation: isolate;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .mobile-tab-bar::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1; /* behind links */
-        pointer-events: none;
-        opacity: var(--glassy-opacity);
-        background: linear-gradient(120deg, var(--glassy1) 0%, var(--glassy2) 45%, var(--glassy3) 100%);
-        background-size: 200% 200%;
-        animation: glassFlow 24s linear infinite;
-        will-change: background-position;
-        border-radius: inherit;
-    }
-
-    .mobile-tab-bar a {
-        flex: 1;
-        text-align: center;
-        font-size: 0.9rem;
-        color: inherit;
-        text-decoration: none; /* Removed underlining */
-        padding: 10px 0; /* comfy tap target */
-        min-height: 48px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 999px; /* pill */
-        transition: background 0.2s ease, transform 0.2s ease;
-        border: 1px solid transparent;
-        background: transparent;
-    }
-
-    .mobile-tab-bar a:hover,
-    .mobile-tab-bar a:active {
-        background: var(--glass-hover-bg);
-        border: 1px solid rgba(255,255,255,0.55);
-        box-shadow: 0 6px 18px rgba(31,38,135,0.22), inset 0 1px 2px rgba(255,255,255,0.65);
-        transform: translateY(-1px) scale(1.03);
-    }
-
-    .mobile-tab-bar .icon {
-        display: block;
-        font-size: 1.4rem; /* bigger icons */
-        margin-bottom: 2px;
-    }
-
-    .mobile-tab-bar .label {
-        display: block;
-        font-size: 0.75rem;
-    }
+/* Ensure floating tab bar displays on all viewports; it repositions via mobile rules above */
+@media (min-width: 769px) {
+    .floating-tab-bar { display: flex; }
 }
 
 /* Ensure buttons adapt well to both light and dark modes */
@@ -1312,4 +1270,3 @@ html {
         -webkit-tap-highlight-color: transparent;
     }
 }
-

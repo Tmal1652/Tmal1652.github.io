@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tyler Malovrh's Professional Portfolio showcasing education, projects, work experience, and recommendations.">
+    <meta name="theme-color" content="#0b0b0b">
     <title>Tyler Malovrh's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://unpkg.com/scrollreveal" defer></script>
     <script src="scripts.js" defer></script>
 </head>
 
@@ -28,29 +30,7 @@
         <a href="#contact" class="tab-link">Contact</a>
     </div>
 
-    <!-- Mobile Floating Tab Bar (will only be visible on mobile via CSS) -->
-    <nav class="mobile-tab-bar">
-        <a href="#about" class="tab-link glassy-hover">
-            <span class="icon">👤</span>
-            <span class="label">About</span>
-        </a>
-        <a href="#projects" class="tab-link glassy-hover">
-            <span class="icon">💻</span>
-            <span class="label">Projects</span>
-        </a>
-        <a href="#experience" class="tab-link glassy-hover">
-            <span class="icon">💼</span>
-            <span class="label">Experience</span>
-        </a>
-        <a href="#education" class="tab-link glassy-hover">
-            <span class="icon">🎓</span>
-            <span class="label">Education</span>
-        </a>
-        <a href="#contact" class="tab-link glassy-hover">
-            <span class="icon">✉️</span>
-            <span class="label">Contact</span>
-        </a>
-    </nav>
+    
 
     <!-- Hero Section -->
     <section class="hero">
@@ -62,7 +42,7 @@
     <section class="intro" id="about">
         <h2>About Me</h2>
         <div class="about-container">
-            <img src="Malovrh Tyler.jpeg" alt="Profile Picture of Tyler Malovrh" class="profile-picture" loading="lazy">
+            <img src="Malovrh Tyler.jpeg" alt="Profile Picture of Tyler Malovrh" class="profile-picture" loading="lazy" decoding="async" fetchpriority="low">
             <p>
                 Welcome to my portfolio! I am Tyler Malovrh, a recent graduate with a Bachelor of Science in Information Technology - Software Development 
                 from the University of Cincinnati. I am passionate about web development, software engineering, and creating accessible digital experiences. 
@@ -78,19 +58,19 @@
             <div class="card">
                 <h3>Portfolio Website</h3>
                 <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-                <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank" class="btn">View on GitHub</a>
+                <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank" rel="noopener" class="btn">View on GitHub</a>
             </div>
             <div class="card">
                 <h3>Protify AI-Powered Calendar App</h3>
                 <p>Protify is an AI-powered calendar app that helps users manage their schedules, offering personalized recommendations for workouts, recipes, and productivity tips while optimizing time based on external factors like weather and traffic.</p>
-                <a href="https://github.com/brendanpayne/protifyapp" target="_blank" class="btn">View on GitHub</a>
-                <a href="ProtifyExpoDemo.mp4" class="btn" target="_blank">View Video</a>
+                <a href="https://github.com/brendanpayne/protifyapp" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+                <a href="ProtifyExpoDemo.mp4" class="btn" target="_blank" rel="noopener">View Video</a>
             </div>
             <div class="card">
                 <h3>CollabConnect (Work in Progress)</h3>
                 <p>CollabConnect is a collaborative platform designed to help teams manage projects, share ideas, and work together seamlessly across devices.</p>
-                <a href="https://github.com/Tmal1652/CollabConnect" target="_blank" class="btn">View on GitHub</a>
-                <a href="https://tmal1652.github.io/CollabConnect/" class="btn" target="_blank">View Website</a>
+                <a href="https://github.com/Tmal1652/CollabConnect" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+                <a href="https://tmal1652.github.io/CollabConnect/" class="btn" target="_blank" rel="noopener">View Website</a>
             </div>
 
             <!-- ClearText AI Project Card -->
@@ -99,8 +79,8 @@
                 <p>
                     ClearText AI is a tool designed for all users to summarize and shorten complex web content. It provides audio narration to enhance understanding and will soon offer interactive definitions for difficult words—this feature is currently in development.
                 </p>
-                <a href="https://github.com/Tmal1652/Tmal1652.github.io-ClearTextAI" target="_blank" class="btn">View on GitHub</a>
-                <a href="https://tmal1652.github.io/Tmal1652.github.io-ClearTextAI/" target="_blank" class="btn">View Website</a> 
+                <a href="https://github.com/Tmal1652/Tmal1652.github.io-ClearTextAI" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+                <a href="https://tmal1652.github.io/Tmal1652.github.io-ClearTextAI/" target="_blank" rel="noopener" class="btn">View Website</a> 
             </div>
         </div>
     </section>
@@ -179,19 +159,19 @@
                 <h3>Janet Dorsey</h3>
                 <p><strong>IT Manager, Universal Metal Products</strong></p>
                 <p>"Tyler was a bright and engaging member of our department, quick to help, and a good team player. He worked efficiently and accurately."</p>
-                <a href="/Letter of Recommendation UMP.pdf" target="_blank" class="btn">Read Full Recommendation</a>
+                <a href="/Letter of Recommendation UMP.pdf" target="_blank" rel="noopener" class="btn">Read Full Recommendation</a>
             </div>
             <div class="card">
                 <h3>Melinda O’Connor</h3>
                 <p><strong>IT & CS Adjunct Faculty, Lakeland Community College</strong></p>
                 <p>"Tyler’s passion for software development shines through his assignments and work with his peers."</p>
-                <a href="/Recommendation Letter Lakeland.pdf" target="_blank" class="btn">Read Full Recommendation</a>
+                <a href="/Recommendation Letter Lakeland.pdf" target="_blank" rel="noopener" class="btn">Read Full Recommendation</a>
             </div>
             <div class="card">
                 <h3>Manuel Salazar</h3>
                 <p><strong>Accessibility QA Analyst, University of Cincinnati</strong></p>
                 <p>"Tyler demonstrated exceptional skills and dedication, contributing significantly to improving the user experience for people with disabilities."</p>
-                <a href="/Tyler Malovrh Recommendation.pdf" target="_blank" class="btn">Read Full Recommendation</a>
+                <a href="/Tyler Malovrh Recommendation.pdf" target="_blank" rel="noopener" class="btn">Read Full Recommendation</a>
             </div>
         </div>
     </section>
@@ -201,7 +181,13 @@
         <h2>Diploma</h2>
         <p>I graduated with a Bachelor of Science in Information Technology - Software Development from the University of Cincinnati in April 2024.</p>
         <p>Here is a link to view my diploma:</p>
-        <a href="/Malovrh Degree.pdf" target="_blank">View My Diploma</a>
+        <a
+            href="/Malovrh Degree.pdf"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+            aria-label="View PDF of my diploma (opens in a new tab)"
+        >View My Diploma</a>
     </section>
 
     <!-- Contact Section -->

@@ -1,82 +1,59 @@
-// Disable browser scroll restoration and scroll to the top on load
+// Keep scroll restoration predictable without forcing scroll position
 window.addEventListener('load', () => {
     if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual'; // Disable automatic scroll restoration
+        history.scrollRestoration = 'manual';
     }
-
-    if (!window.location.hash) {
-        setTimeout(() => {
-            window.scrollTo(0, 0); // Scroll to the top
-        }, 0);
-    } else {
-        history.replaceState(null, '', window.location.pathname); // Remove the hash
-    }
-});
-
-// ScrollReveal Animations
-import ScrollReveal from 'scrollreveal';
-import { gsap } from 'gsap';
+}, { once: true });
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed.');
-
-    // ScrollReveal Animations
-    if (typeof ScrollReveal !== 'undefined') {
-        const revealElements = ['.hero', '.intro', '.projects', '.experience', '.contact'];
-        revealElements.forEach(selector => {
-            ScrollReveal().reveal(selector, {
-                delay: 200,
-                distance: '50px',
-                origin: 'bottom',
-                duration: 1000,
-            });
-        });
-
-        ScrollReveal().reveal('.card', {
-            distance: '30px',
-            duration: 800,
-            easing: 'ease-in-out',
-            origin: 'bottom',
-            interval: 150,
-        });
-    } else {
-        console.error('ScrollReveal is not defined.');
-    }
-
-    // GSAP Animations for Sections
-    gsap.from('section', {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power2.out',
-        onStart: () => console.log('GSAP section animations started.'),
-    });
-
-    // GSAP Animations for Cards
-    gsap.from('.card', {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power2.out',
-        onStart: () => console.log('GSAP card animations started.'),
-    });
-
-    // Smooth Scrolling for Navigation Links
+    // Smooth scrolling for navigation links (desktop + mobile tab bar)
     const tabLinks = document.querySelectorAll<HTMLAnchorElement>('.tab-link');
     tabLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            if (!href || href === '#' || !document.querySelector(href)) return;
+            if (!href || href === '#') return;
+            const target = document.querySelector<HTMLElement>(href);
+            if (!target) return;
 
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                console.log(`Scrolling to ${href}`);
-                target.scrollIntoView({ behavior: 'smooth' });
-                history.pushState(null, '', href); // Optional: visually update URL
-            }
-        });
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Keep the URL hash in sync (optional)
+            if (history.pushState) history.pushState(null, '', href);
+            else location.hash = href;
+        }, { passive: false });
     });
+
+    // Lightweight intersection-based reveal (no external libs)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        const revealTargets = document.querySelectorAll<HTMLElement>('section, .card');
+        const obs = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target as HTMLElement;
+                    // Apply a subtle reveal without heavy paints
+                    el.style.willChange = 'opacity, transform';
+                    // Only set initial styles if not already visible
+                    if (!el.dataset.revealed) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                        el.style.transition = 'opacity 400ms ease, transform 400ms ease';
+                        el.dataset.revealed = 'true';
+                    }
+                    observer.unobserve(el);
+                }
+            });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+
+        revealTargets.forEach(el => {
+            // If CSS already handles initial state, do nothing; otherwise ensure hidden start
+            if (!el.dataset.revealed) {
+                el.style.opacity = el.style.opacity || '0';
+                el.style.transform = el.style.transform || 'translateY(20px)';
+            }
+            obs.observe(el);
+        });
+    }
 });
+
+export {};
