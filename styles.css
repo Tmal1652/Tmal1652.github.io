@@ -7,17 +7,17 @@
 
 /* Default (Light Mode) */
 :root {
-    --background-color: rgba(255, 255, 255, 0.8); /* Slightly brighter for better readability */
-    --text-color: #1a1a1a; /* Dark gray for text */
-    --primary-color: #000000; /* Solid black for primary elements */
-    --secondary-color: rgba(100, 100, 100, 0.7); /* Medium gray for secondary elements */
-    --accent-color: #007bff; /* Modern blue for accents */
-    --button-bg: #007bff; /* Blue button background */
-    --button-text: #ffffff; /* White button text */
-    --link-color: #007bff; /* Blue for links */
-    --link-hover: #0056b3; /* Darker blue for hover */
-    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    --backdrop-blur: blur(10px); /* Glass effect blur */
+    --background-color: rgba(255, 255, 255, 0.8);
+    --text-color: #1a1a1a;
+    --primary-color: #000000;
+    --secondary-color: rgba(100, 100, 100, 0.7);
+    --accent-color: #007bff;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --link-color: #007bff;
+    --link-hover: #0056b3;
+    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --backdrop-blur: blur(10px);
     --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.12));
     --glass-border: 1px solid rgba(255, 255, 255, 0.35);
     --glass-inner: inset 0 1px 0 rgba(255,255,255,0.4);
@@ -25,11 +25,6 @@
     --depth-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     --spring: cubic-bezier(0.2, 0.8, 0.2, 1.2);
     --sheen: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 40%, rgba(255,255,255,0) 80%);
-    /* Glassy underlay palette */
-    --glassy1: rgba(255,255,255,0.28);
-    --glassy2: rgba(230,240,255,0.14);
-    --glassy3: rgba(200,220,255,0.12);
-    --glassy-opacity: 0.16; /* base opacity for glassy underlay */
 }
 
 /* Utility: Glassy Hover Effect */
@@ -70,6 +65,37 @@
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* Safe optimizations and consolidations */
+
+/* Consolidated box-shadow styles */
+:root {
+    --default-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --dark-mode-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+.glass, .hero {
+    box-shadow: var(--default-box-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .glass, .hero {
+        box-shadow: var(--dark-mode-box-shadow);
+    }
+}
+
+/* Removed redundant z-index and pointer-events */
+.glass::before, .hero::before {
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Grouped media queries for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .glass::before, .hero::before, .card::before {
+        animation: none !important;
+    }
 }
 
 /* Respect reduced motion */
@@ -780,7 +806,62 @@ p {
     }
 }
 
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+    /* Optimize layout for mobile */
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 16px; /* Adjust font size for readability */
+    }
 
+    .hero {
+        padding: 40px 20px; /* Adjust padding for smaller screens */
+        text-align: center;
+    }
+
+    .glass {
+        margin: 10px;
+        border-radius: 15px; /* Softer corners for mobile */
+    }
+
+    /* Modern tab bar for mobile */
+    .floating-tab-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: var(--glass-bg);
+        border-top: var(--glass-border);
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .floating-tab-bar a {
+        flex: 1;
+        text-align: center;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 14px;
+        padding: 5px 0;
+        transition: color 0.3s ease;
+    }
+
+    .floating-tab-bar a:hover {
+        color: var(--accent-color);
+    }
+
+    .floating-tab-bar a.active {
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+}
 
 /* Grid layout for projects, experience, and recommendations */
 .projects, .experience, .recommendations {
@@ -1168,5 +1249,67 @@ a {
 a:hover {
     color: var(--link-hover);
     text-decoration: underline;
+}
+
+/* Optimized Scrolling and Hovering Animations for All Browsers */
+
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize hover animations */
+.glassy-hover {
+    will-change: transform, opacity;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.glassy-hover:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+/* Simplify box shadows for better performance */
+.glassy-hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Reduce blur intensity for smoother rendering */
+.glassy-hover {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Debounce scroll events for smoother scrolling */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .glassy-hover {
+        transition: none;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .glass:hover, .glass:focus-within {
+        transform: none; /* Disable scaling and translation on hover for mobile */
+        box-shadow: var(--box-shadow); /* Use default shadow */
+    }
+
+    .hero {
+        padding: 50px 10px; /* Adjust padding for smaller screens */
+        box-shadow: var(--box-shadow); /* Simplify shadow for performance */
+    }
+
+    .hero::before {
+        animation: none; /* Disable background animation for mobile */
+    }
+
+    /* Ensure buttons and links are easily tappable */
+    button, a {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
 }
 
