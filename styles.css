@@ -32,6 +32,14 @@
     --glassy-opacity: 0.16; /* base opacity for glassy underlay */
 }
 
+/* Utility: Glassy Hover Effect */
+.glassy-hover:hover {
+    background: var(--glass-hover-bg);
+    box-shadow: var(--hover-glow);
+    transform: scale(1.05);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -175,22 +183,6 @@
     color: var(--text-color);
 }
 
-.hero .cta-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--accent-color);
-    color: var(--button-text);
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero .cta-btn:hover {
-    background-color: var(--link-hover);
-    transform: scale(1.05);
-}
 
 /* Floating Tab Bar (Top Position) */
 .floating-tab-bar {
@@ -256,14 +248,13 @@
 }
 
 .floating-tab-bar .tab-link:hover {
-  background: linear-gradient(145deg, rgba(255,255,255,0.55), rgba(255,255,255,0.28));
+  background: var(--glass-hover-bg);
+  box-shadow: var(--hover-glow);
+  transform: scale(1.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 999px;
   color: var(--text-color);
-  box-shadow:
-    0 4px 12px rgba(0,0,0,0.15),
-    inset 0 1px 2px rgba(255,255,255,0.6);
-  transform: scale(1.05);
 }
 
 /* Active Tab Styling */
@@ -294,11 +285,12 @@
 }
 
 .btn:hover {
-  background: linear-gradient(145deg, rgba(255,255,255,0.55), rgba(255,255,255,0.28));
+  background: var(--glass-hover-bg);
   border: 1px solid rgba(255,255,255,0.55);
   color: var(--text-color);
-  box-shadow: 0 12px 28px rgba(31,38,135,0.26), inset 0 1px 2px rgba(255,255,255,0.6);
-  transform: translateY(-1px) scale(1.03);
+  box-shadow: var(--hover-glow);
+  transform: scale(1.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .btn:focus-visible{
@@ -439,6 +431,13 @@ a:focus, .btn:focus, .tab-link:focus {
 /* Ensure CTA inside contact uses glassy .btn spacing */
 .contact .btn { margin-top: 10px; }
 
+.contact .btn:hover {
+  background: var(--glass-hover-bg);
+  box-shadow: var(--hover-glow);
+  transform: scale(1.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
 .contact a:hover {
     color: var(--link-hover);
 }
@@ -560,10 +559,10 @@ a:hover {
 
 /* Section Styling */
 section {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--glass-bg);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: var(--glass-border);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     padding: 20px;
@@ -576,11 +575,7 @@ section {
     perspective: 1000px;
 }
 
-/* Glass enhancement for sections */
-section {
-  border: var(--glass-border);
-  background: var(--glass-bg);
-}
+
 
 @keyframes fadeInUp {
     from {
@@ -624,19 +619,6 @@ p {
 }
 
 
-/* Intro section styling */
-.intro {
-    text-align: center;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 6px var(--box-shadow);
-    padding: 40px;
-    border-radius: 10px;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
 
 /* Styling for the profile picture */
 .about-container {
@@ -685,40 +667,35 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-/* Media query for tablets */
+/* Tablet and mobile (max-width: 768px) - consolidated */
 @media (max-width: 768px) {
+    /* About Section */
     .about-container {
-        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        flex-direction: column;
         align-items: center;
+        text-align: center;
     }
-
     .profile-picture {
-        width: 150px; /* Smaller profile picture for tablets and mobile */
-        margin-bottom: 20px; /* Add some space below the image */
+        width: 120px;
+        margin-bottom: 15px;
     }
-
-
+    /* Contact Section */
     .contact {
         padding: 30px 15px;
     }
-
     .contact h2 {
         font-size: 1.8rem;
     }
-
     .contact p {
         font-size: 1rem;
     }
-
     .contact form {
         gap: 10px;
     }
-
     .contact button {
         padding: 12px;
         font-size: 0.9rem;
     }
-
     /* Floating Tab Bar */
     .floating-tab-bar {
         position: fixed;
@@ -734,79 +711,48 @@ p {
         border-radius: 15px 15px 0 0;
         z-index: 1000;
     }
-
+    .floating-tab-bar .tab-link {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        margin: 0 5px;
+        text-align: center;
+        display: inline-block;
+    }
     /* Hero Section */
     .hero {
         padding: 50px 15px;
     }
-
     .hero h1 {
         font-size: 2.5rem;
     }
-
     .hero p {
         font-size: 1.2rem;
     }
-
     /* Card Layout */
     .card-container {
-        grid-template-columns: 1fr; /* Single-column layout */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
-
     .card {
         padding: 15px;
     }
-
-    /* About Section */
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .profile-picture {
-        width: 120px;
-        margin-bottom: 15px;
-    }
-
     /* Section Padding */
     section {
         padding: 20px 15px;
     }
-
-    /* Contact Section */
-    .contact {
-        padding: 30px 15px;
-    }
-
-    .contact h2 {
-        font-size: 1.8rem;
-    }
-
-    .contact p {
-        font-size: 1rem;
-    }
-
-    .contact button {
-        padding: 12px;
-        font-size: 0.9rem;
-    }
-
     /* Footer */
     footer {
         padding: 10px 15px;
         font-size: 0.8rem;
     }
-
     /* General Body and Layout */
     body {
-        font-size: 18px; /* Larger font for readability */
+        font-size: 18px;
         line-height: 1.8;
-        padding: 0 15px; /* Add more padding for better spacing */
-        background-color: #ffffff; /* Clean white background */
+        padding: 0 15px;
+        padding-bottom: 60px;
+        /* background-color: #ffffff;  removed for glass compatibility */
     }
-
     /* Header */
     header {
         position: fixed;
@@ -822,49 +768,21 @@ p {
         align-items: center;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
     header .logo {
         font-size: 1.8rem;
         font-weight: bold;
     }
-
     header .menu-toggle {
         font-size: 1.8rem;
         cursor: pointer;
     }
-
-
-}
-
-/* Mobile-Specific Adjustments */
-@media (max-width: 768px) {
-    /* Floating Tab Bar */
-    .floating-tab-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%; /* Full width */
-        height: auto; /* Ensure it doesn't take unnecessary height */
-        padding: 10px 0; /* Add padding for better spacing */
-        background: var(--background-color); /* Match the page background */
-        backdrop-filter: var(--backdrop-blur); /* Glass-like effect */
-        -webkit-backdrop-filter: var(--backdrop-blur);
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-        border-radius: 15px 15px 0 0; /* Rounded corners at the top */
-        z-index: 1000; /* Ensure it stays above other elements */
+    /* Headings */
+    h1 {
+        font-size: 2.5rem;
     }
-
-    .floating-tab-bar .tab-link {
-        font-size: 0.9rem; /* Adjust font size for mobile */
-        padding: 8px 10px; /* Add padding for better spacing */
-        margin: 0 5px; /* Add spacing between links */
-        text-align: center; /* Center-align the text */
-        display: inline-block; /* Ensure links are inline */
-    }
-
-    /* Prevent Content Overlap */
-    body {
-        padding-bottom: 60px; /* Add padding to prevent content from being hidden behind the tab bar */
+    /* Section Grid Layouts */
+    .projects, .experience, .recommendations {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1002,30 +920,6 @@ p {
     transform: scale(1.2);
 }
 
-/* Education section styling */
-.education-item {
-    background-color: var(--background-color);
-    box-shadow: 0 4px 6px var(--box-shadow);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--box-shadow);
-}
-
-.education-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.education-item ul {
-    list-style: disc;
-    margin-left: 20px;
-}
 
 /* Animations */
 @keyframes fadeIn {
@@ -1127,100 +1021,51 @@ p {
     }
 }
 
-/* Adjustments for mobile devices */
+/* Mobile-specific adjustments (max-width: 480px) - consolidated */
 @media (max-width: 480px) {
     h1 {
-        font-size: 2rem; /* Even smaller heading size for mobile */
+        font-size: 2rem;
     }
-
     section {
-        padding: 0 10px; /* Reduce section padding even more for mobile */
+        padding: 0 10px;
     }
-
     .projects, .experience, .recommendations {
-        grid-template-columns: 1fr; /* Keep single-column layout for mobile */
-        gap: 15px; /* Adjust spacing for a compact layout */
-    }
-
-    .intro p {
-        font-size: 1rem; /* Smaller font size for mobile screens */
-    }
-
-    .contact {
-        padding: 20px 10px;
-    }
-
-    .contact h2 {
-        font-size: 1.5rem;
-    }
-
-    .contact p {
-        font-size: 0.9rem;
-    }
-
-    .contact button {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-
-    .contact {
-        padding: 30px; /* Adjust padding for the contact section on mobile */
-    }
-
-    footer {
-        padding: 10px 0; /* Smaller footer padding for mobile */
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .projects {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
-
-    .floating-tab-bar {
-        bottom: 10px;
-        padding: 8px 15px;
-    }
-
-    /* Floating Tab Bar */
-    .floating-tab-bar {
-        padding: 8px 10px;
-    }
-
-    .floating-tab-bar .tab-link {
-        font-size: 0.8rem;
-        padding: 6px 8px;
-    }
-
-    /* Hero Section */
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
+    .intro p {
         font-size: 1rem;
     }
-
-    /* Contact Section */
+    .contact {
+        padding: 30px 10px;
+    }
     .contact h2 {
         font-size: 1.5rem;
     }
-
     .contact p {
         font-size: 0.9rem;
     }
-
     .contact button {
         padding: 10px;
         font-size: 0.8rem;
     }
-
-    /* Footer */
     footer {
         padding: 8px 10px;
         font-size: 0.7rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .floating-tab-bar {
+        bottom: 10px;
+        padding: 8px 10px;
+    }
+    .floating-tab-bar .tab-link {
+        font-size: 0.8rem;
+        padding: 6px 8px;
     }
 }
 
