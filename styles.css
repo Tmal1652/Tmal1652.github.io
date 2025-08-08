@@ -37,18 +37,6 @@
     position: relative;
     overflow: hidden;
 }
-.glassy-hover:hover {
-    background: var(--glass-hover-bg);
-    box-shadow: var(--hover-glow);
-    transform: scale(1.05);
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* Enhanced Glassy Hover Ripple Effect */
-.glassy-hover {
-    position: relative;
-    overflow: hidden;
-}
 
 .glassy-hover::after {
     content: '';
@@ -519,6 +507,7 @@ a {
 
 a:hover {
     color: var(--link-hover);
+    text-decoration: underline;
     transform: scale(1.1);
 }
 
@@ -674,32 +663,12 @@ p {
     flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
-/* Styling for the headline container */
-.headline-container {
-    margin-top: 20px; /* Add spacing from the text above */
-    text-align: center; /* Center-align the headline */
-}
-
-/* Styling for the headline */
-.headline {
-    font-size: 1.25rem; /* Make it smaller than the main heading */
-    color: var(--primary-color); /* Use a consistent color */
-    font-weight: 600; /* Slightly bold for emphasis */
-    text-transform: uppercase; /* Optional: Make it uppercase for style */
-    letter-spacing: 1px; /* Add spacing between letters */
-    margin: 0; /* Remove default margins */
-    padding: 5px 10px; /* Add some padding for better spacing */
-    border: 2px solid var(--primary-color); /* Add a border for emphasis */
-    display: inline-block; /* Ensure it doesn't stretch across the page */
-    border-radius: 5px; /* Add rounded corners */
-    background-color: var(--background-color); /* Optional: Add a subtle background */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
-}
-
-/* Hover effect for the headline */
-.headline:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+/* Mobile refinement for profile picture */
+@media (max-width: 480px) {
+    .profile-picture {
+        width: 120px; /* Smaller on mobile */
+        margin-bottom: 15px; /* Space below image */
+    }
 }
 
 /* Tablet and mobile (max-width: 768px) - consolidated */
@@ -709,10 +678,6 @@ p {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-    .profile-picture {
-        width: 120px;
-        margin-bottom: 15px;
     }
     /* Contact Section */
     .contact {
@@ -895,82 +860,6 @@ p {
   transform: translateY(-1px) scale(1.03);
 }
 
-/* Styling for the 'View Video' button */
-.view-video-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 10px 20px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.28);
-  color: var(--text-color);
-  border: 1px solid rgba(255,255,255,0.45);
-  backdrop-filter: blur(6px) saturate(120%);
-  -webkit-backdrop-filter: blur(6px) saturate(120%);
-  box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-  font-weight: 500;
-  text-decoration: none;
-  transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
-}
-
-.view-video-btn:hover {
-  background: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.38));
-  border: 1px solid rgba(255,255,255,0.75);
-  color: var(--text-color);
-  box-shadow: 0 12px 28px rgba(31,38,135,0.28), inset 0 1px 2px rgba(255,255,255,0.65);
-  transform: translateY(-1px) scale(1.03);
-}
-
-/* Styling for the 'View Poster' button */
-.view-poster-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 10px 20px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.28);
-  color: var(--text-color);
-  border: 1px solid rgba(255,255,255,0.45);
-  backdrop-filter: blur(6px) saturate(120%);
-  -webkit-backdrop-filter: blur(6px) saturate(120%);
-  box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-  font-weight: 500;
-  text-decoration: none;
-  transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
-}
-
-.view-poster-btn:hover {
-  background: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.38));
-  border: 1px solid rgba(255,255,255,0.75);
-  color: var(--text-color);
-  box-shadow: 0 12px 28px rgba(31,38,135,0.28), inset 0 1px 2px rgba(255,255,255,0.65);
-  transform: translateY(-1px) scale(1.03);
-}
-
-.view-video-btn:focus-visible, .view-poster-btn:focus-visible{
-  outline: 2px solid var(--accent-color);
-  outline-offset: 3px;
-}
-
-/* Tech Stack Section */
-.tech-stack {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.stack-icons img {
-    width: 50px;
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-
-.stack-icons img:hover {
-    transform: scale(1.2);
-}
-
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -980,17 +869,6 @@ p {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
     }
 }
 
@@ -1288,4 +1166,40 @@ p {
     #back-to-top {
         display: none !important;
     }
+}
+
+/* Ensure buttons adapt well to both light and dark modes */
+button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: var(--link-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure links adapt well to both light and dark modes */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
 }
