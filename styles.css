@@ -432,6 +432,7 @@
     perspective: 1000px;
     cursor: pointer;
 }
+.btn .btn-icon { margin-right: 8px; display: inline-block; vertical-align: -2px; }
 
 .btn:hover {
   background: var(--glass-hover-bg);
