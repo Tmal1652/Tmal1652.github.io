@@ -76,8 +76,12 @@
 
 /* Diploma CTA spacing to match other CTAs */
 .diploma .btn {
-    margin-top: 10px;
+    margin: 12px auto 0; /* center horizontally */
+    display: inline-flex;
 }
+
+/* Center diploma section content */
+.diploma { text-align: center; }
 
 /* Glass-like effect for sections */
 /* Optimized glassy flow keyframes */
@@ -86,6 +90,12 @@
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+/* Animate backgrounds only on interaction to save power */
+.glass:hover::before, .glass:focus-within::before,
+.hero:hover::before, .hero:focus-within::before,
+.card:hover::before, .card:focus-within::before,
+.floating-tab-bar:hover::before { animation: glassFlow 20s linear infinite; }
 
 /* Safe optimizations and consolidations */
 
@@ -131,12 +141,11 @@
       0 2px 8px rgba(31, 38, 135, 0.12),
       0 8px 32px rgba(31, 38, 135, 0.18),
       0 1.5px 7px rgba(255,255,255,0.08) inset;
-    backdrop-filter: blur(12px) saturate(110%);
-    -webkit-backdrop-filter: blur(12px) saturate(110%);
+    backdrop-filter: blur(8px) saturate(108%);
+    -webkit-backdrop-filter: blur(8px) saturate(108%);
     position: relative;
     overflow: hidden;
-    transition: box-shadow 0.25s cubic-bezier(.22,.61,.36,1), transform 0.25s cubic-bezier(.22,.61,.36,1);
-    will-change: transform, box-shadow;
+    transition: box-shadow 0.2s cubic-bezier(.22,.61,.36,1), transform 0.2s cubic-bezier(.22,.61,.36,1);
     isolation: isolate;
 }
 /* Subtle glassy underlay for glass */
@@ -149,14 +158,13 @@
     opacity: var(--glassy-opacity);
     background: linear-gradient(120deg, var(--glassy1) 0%, var(--glassy2) 45%, var(--glassy3) 100%);
     background-size: 200% 200%;
-    animation: glassFlow 24s linear infinite;
     will-change: background-position;
   }
 
 /* keep content above the liquid layer */
 .glass > * { position: relative; z-index: 1; }
 .glass:hover, .glass:focus-within {
-    transform: scale(1.025) translateY(-3px) perspective(600px) rotateX(2deg);
+    transform: scale(1.012) translateY(-2px) perspective(600px) rotateX(1deg);
     box-shadow:
       0 6px 24px rgba(31, 38, 135, 0.22),
       0 16px 48px rgba(31, 38, 135, 0.20),
@@ -169,8 +177,8 @@
     text-align: center;
     padding: 100px 20px;
     background: linear-gradient(120deg, rgba(255,255,255,0.19) 0%, rgba(255,255,255,0.11) 100%);
-    backdrop-filter: blur(22px) saturate(120%);
-    -webkit-backdrop-filter: blur(22px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(110%);
+    -webkit-backdrop-filter: blur(10px) saturate(110%);
     color: var(--text-color);
     border-radius: 20px;
     box-shadow:
@@ -178,8 +186,7 @@
       0 14px 48px rgba(31, 38, 135, 0.19),
       0 1.5px 7px rgba(255,255,255,0.08) inset;
     position: relative;
-    transition: box-shadow 0.3s cubic-bezier(.22,.61,.36,1), transform 0.3s cubic-bezier(.22,.61,.36,1);
-    will-change: transform, box-shadow;
+    transition: box-shadow 0.2s cubic-bezier(.22,.61,.36,1), transform 0.2s cubic-bezier(.22,.61,.36,1);
     overflow: hidden;
     isolation: isolate;
 }
@@ -194,7 +201,6 @@
     opacity: var(--glassy-opacity);
     background: linear-gradient(118deg, var(--glassy1) 0%, var(--glassy2) 50%, var(--glassy3) 100%);
     background-size: 200% 200%;
-    animation: glassFlow 24s linear infinite;
     will-change: background-position;
 }
 .hero::after {
@@ -211,7 +217,7 @@
     z-index: 1;
 }
 .hero:hover {
-    transform: scale(1.015) translateY(-2px) perspective(600px) rotateX(1.2deg);
+    transform: scale(1.008) translateY(-1px) perspective(600px) rotateX(0.8deg);
     box-shadow:
       0 10px 40px rgba(31, 38, 135, 0.22),
       0 24px 64px rgba(31, 38, 135, 0.22),
@@ -266,7 +272,7 @@
   opacity: 0.10;
   background: linear-gradient(120deg, var(--glassy1) 0%, var(--glassy2) 45%, var(--glassy3) 100%);
   background-size: 200% 200%;
-  animation: glassFlow 24s linear infinite;
+    /* animation disabled by default for performance; enabled on hover below */
   will-change: background-position;
 }
 
@@ -298,7 +304,7 @@
 .floating-tab-bar .tab-link:hover {
   background: var(--glass-hover-bg);
   box-shadow: var(--hover-glow);
-    transform: scale(1.05);
+    transform: scale(1.02);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 999px;
@@ -378,8 +384,8 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
     text-align: center;
     background: var(--glass-bg);
     border: var(--glass-border);
-    backdrop-filter: blur(10px) saturate(110%);
-    -webkit-backdrop-filter: blur(10px) saturate(110%);
+    backdrop-filter: blur(8px) saturate(108%);
+    -webkit-backdrop-filter: blur(8px) saturate(108%);
     color: var(--text-color);
     padding: 50px 20px;
     border-radius: 20px;
@@ -415,7 +421,7 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
 .contact > * { position: relative; z-index: 1; }
 
 .contact:hover {
-    transform: scale(1.02) translateY(-2px) perspective(600px) rotateX(1.2deg);
+    transform: scale(1.01) translateY(-1px) perspective(600px) rotateX(0.6deg);
     box-shadow:
       0 10px 40px rgba(31, 38, 135, 0.22),
       0 24px 64px rgba(31, 38, 135, 0.22),
@@ -482,12 +488,22 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
 }
 
 .contact a {
-    display: inline-block;
+    display: inline-flex; /* match button feel */
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 20px;
+    border-radius: 999px;
     margin-top: 20px;
-    color: var(--accent-color);
-    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    box-shadow: 0 8px 22px rgba(31,38,135,0.20);
     font-weight: 500;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    transition: background .18s ease, border-color .18s ease, transform .18s var(--spring), box-shadow .18s ease, color 0.3s ease;
 }
 
 /* Ensure CTA inside contact uses glassy .btn spacing */
@@ -501,7 +517,10 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
 }
 
 .contact a:hover {
-    color: var(--link-hover);
+    background: var(--glass-hover-bg);
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: var(--hover-glow);
+    transform: scale(1.03);
 }
 
 /* Footer Styling */
@@ -547,7 +566,6 @@ a {
 a:hover {
     color: var(--link-hover);
     text-decoration: underline;
-    transform: scale(1.1);
 }
 
 
@@ -556,6 +574,8 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    max-width: 1200px; /* Prevent too many narrow columns on ultra-wide screens */
+    margin: 0 auto;     /* Center the grid within the section */
 }
 
 /* Card Styling */
@@ -567,12 +587,11 @@ a:hover {
       0 2px 8px rgba(31, 38, 135, 0.10),
       0 8px 32px rgba(31, 38, 135, 0.15),
       0 1.5px 7px rgba(255,255,255,0.07) inset;
-    backdrop-filter: blur(10px) saturate(110%);
-    -webkit-backdrop-filter: blur(10px) saturate(110%);
+    backdrop-filter: blur(8px) saturate(108%);
+    -webkit-backdrop-filter: blur(8px) saturate(108%);
     padding: 20px;
     position: relative;
-    transition: box-shadow 0.22s cubic-bezier(.22,.61,.36,1), transform 0.22s cubic-bezier(.22,.61,.36,1);
-    will-change: transform, box-shadow;
+    transition: box-shadow 0.18s cubic-bezier(.22,.61,.36,1), transform 0.18s cubic-bezier(.22,.61,.36,1);
     overflow: hidden;
     isolation: isolate;
 }
@@ -586,7 +605,6 @@ a:hover {
     opacity: var(--glassy-opacity);
     background: linear-gradient(124deg, var(--glassy1) 0%, var(--glassy2) 50%, var(--glassy3) 100%);
     background-size: 200% 200%;
-    animation: glassFlow 24s linear infinite;
     will-change: background-position;
 }
 
@@ -613,7 +631,7 @@ a:hover {
     z-index: 2;
 }
 .card:hover, .card:focus-within {
-    transform: scale(1.035) translateY(-4px) perspective(500px) rotateX(1.5deg);
+    transform: scale(1.015) translateY(-2px) perspective(500px) rotateX(0.8deg);
     box-shadow:
       0 6px 24px rgba(31, 38, 135, 0.18),
       0 18px 56px rgba(31, 38, 135, 0.16),
@@ -623,8 +641,8 @@ a:hover {
 /* Section Styling */
 section {
     background: var(--glass-bg);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: var(--glass-border);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
@@ -639,6 +657,15 @@ section {
     /* Paint containment for performance on large sections */
     content-visibility: auto;
     contain-intrinsic-size: 600px 800px;
+}
+
+/* Constrain inner width to avoid overly wide text and squished buttons layouts */
+section > .card-container,
+section > p,
+section > h2 {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -688,39 +715,48 @@ p {
 
 /* Styling for the profile picture */
 .about-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) 1fr;
+    gap: 24px;
+    align-items: start;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Center About text block on larger screens too */
+.intro .about-container {
+    text-align: center;
     align-items: center;
-    justify-content: flex-start; /* Keep the text and image aligned to the left */
-    gap: 20px; /* Space between the profile picture and text */
-    max-width: 800px;
-    margin: 0 auto; /* Center the content */
 }
 
 .profile-picture {
-    width: 200px; /* Slightly larger image */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Make sure the image fills the container */
-    border-radius: 15px; /* Add rounded corners */
-    box-shadow: var(--default-box-shadow); /* Subtle shadow for depth */
-    flex-shrink: 0; /* Prevent the image from shrinking */
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto; /* Preserve natural aspect ratio; no cropping */
+    border-radius: 16px;
+    box-shadow: var(--default-box-shadow);
+}
+
+/* Tighter, more readable copy in About section */
+.intro .about-container p {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* Mobile refinement for profile picture */
 @media (max-width: 480px) {
-    .profile-picture {
-        width: 120px; /* Smaller on mobile */
-        margin-bottom: 15px; /* Space below image */
-    }
+    .about-container { grid-template-columns: 1fr; gap: 14px; }
+    .profile-picture { max-width: 160px; margin: 0 auto; }
+    .intro .about-container { text-align: center; }
 }
 
 /* Tablet and mobile (max-width: 768px) - consolidated */
 @media (max-width: 768px) {
     /* About Section */
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    .about-container { grid-template-columns: 1fr; gap: 16px; }
+    .intro .about-container { text-align: center; }
     /* Use the single desktop tab bar on mobile; reposition it at the bottom */
     
     /* Contact Section */
@@ -886,12 +922,9 @@ p {
     }
 }
 
-/* Grid layout for projects, experience, and recommendations */
-.projects, .experience, .recommendations {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+/* Ensure sections themselves are not grids to avoid squishing content.
+    Card layouts are handled by .card-container above. */
+.projects, .experience, .recommendations { display: block; }
 
 .project, .experience-item, .recommendation {
     background-color: var(--background-color);
@@ -934,6 +967,8 @@ p {
     text-decoration: none;
     transition: background .18s ease, border-color .18s ease, transform .18s var(--spring), box-shadow .18s ease;
     cursor: pointer;
+    white-space: nowrap; /* keep buttons from breaking into multiple lines */
+    margin: 4px 6px 0 0; /* small spacing when multiple buttons exist */
 }
 
 .project a:hover, .recommendation a:hover {
@@ -941,7 +976,7 @@ p {
   border: 1px solid rgba(255,255,255,0.75);
   color: var(--text-color);
     box-shadow: var(--hover-glow);
-    transform: translateY(-1px) scale(1.06);
+    transform: translateY(-1px) scale(1.03);
     text-decoration: underline;
 }
 
@@ -979,7 +1014,7 @@ p {
     bottom: 20px;
     right: 20px;
     background: var(--glassy1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
     border: 1px solid var(--glassy2);
     border-radius: 50%;
     width: 50px;
@@ -995,7 +1030,7 @@ p {
 }
 
 .button-to-top:hover {
-    transform: scale(1.1);
+    transform: scale(1.03);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -1165,7 +1200,7 @@ button {
 
 button:hover {
     background: var(--link-hover);
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -1195,12 +1230,11 @@ html {
 
 /* Optimize hover animations */
 .glassy-hover {
-    will-change: transform, opacity;
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    transition: transform 0.18s ease-out, opacity 0.18s ease-out;
 }
 
 .glassy-hover:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     opacity: 0.95;
 }
 
