@@ -1179,14 +1179,39 @@ p {
         font-size: 0.85rem;
         color: inherit;
         text-decoration: none;
-        padding: 0.5rem 0;
+        padding: 0.75rem 0; /* more height for finger taps */
+        min-height: 48px; /* ensures tap target size */
+        position: relative; /* required for ripple */
+        overflow: hidden;   /* keeps ripple inside */
     }
+
     .mobile-tab-bar .icon {
         display: block;
-        font-size: 1.2rem;
+        font-size: 1.4rem; /* bigger icons */
+        margin-bottom: 2px;
     }
+
     .mobile-tab-bar .label {
         display: block;
         font-size: 0.75rem;
+    }
+    /* Mobile-specific ripple effect */
+    .mobile-tab-bar.glassy-hover::after,
+    .mobile-tab-bar a.glassy-hover::after {
+        background: rgba(0, 140, 255, 0.25); /* stronger color for mobile */
+        animation: ripple-mobile 0.6s ease-out;
+    }
+
+    @keyframes ripple-mobile {
+        from {
+            width: 0;
+            height: 0;
+            opacity: 0.4;
+        }
+        to {
+            width: 350%;
+            height: 350%;
+            opacity: 0;
+        }
     }
 }
