@@ -737,42 +737,7 @@ p {
         padding: 12px;
         font-size: 0.9rem;
     }
-    /* Floating Tab Bar on mobile */
-    .floating-tab-bar {
-        position: fixed;
-        top: auto;
-        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-        left: 16px;
-        right: 16px;
-        margin: 0 auto;
-        width: auto;
-        max-width: 520px;
-        height: auto;
-        padding: 10px 12px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-        background: var(--glass-bg);
-        border: var(--glass-border);
-        backdrop-filter: blur(10px) saturate(120%);
-        -webkit-backdrop-filter: blur(10px) saturate(120%);
-        box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-        border-radius: 20px;
-        z-index: 1200;
-        justify-content: space-between;
-        gap: 8px;
-    }
-    .floating-tab-bar .tab-link {
-        font-size: 0.95rem;
-        padding: 8px 10px;
-        margin: 0 5px;
-        text-align: center;
-        display: inline-flex;
-        flex: 1 1 0;
-        min-width: 0;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        border-radius: 999px;
-    }
+    /* (Floating Tab Bar mobile styles consolidated later in this file) */
     /* Hero Section */
     .hero {
         padding: 50px 15px;
@@ -976,14 +941,8 @@ p {
 
 /* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    section {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Back to Top Button */
