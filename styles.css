@@ -250,7 +250,7 @@
     padding: 10px 0;
     z-index: 1000;
     border-radius: 0 0 20px 20px;
-    transition: all 0.4s ease;
+    transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
     isolation: isolate;
@@ -272,7 +272,6 @@
 
  
 .floating-tab-bar:hover {
-    transform: none;
     box-shadow: 0 12px 36px rgba(31, 38, 135, 0.28);
 }
 
@@ -299,11 +298,20 @@
 .floating-tab-bar .tab-link:hover {
   background: var(--glass-hover-bg);
   box-shadow: var(--hover-glow);
-  transform: scale(1.05);
+    transform: scale(1.05);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   border: 1px solid rgba(255,255,255,0.55);
   border-radius: 999px;
   color: var(--text-color);
+}
+
+/* On touch devices, avoid scaling to prevent layout shifts */
+@media (hover: none) and (pointer: coarse) {
+    .floating-tab-bar .tab-link:hover,
+    .floating-tab-bar .tab-link:active,
+    .floating-tab-bar .tab-link:focus {
+        transform: none !important;
+    }
 }
 
 /* Active Tab Styling */
@@ -733,14 +741,15 @@ p {
     .floating-tab-bar {
         position: fixed;
         top: auto;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 32px);
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        left: 16px;
+        right: 16px;
+        margin: 0 auto;
+        width: auto;
         max-width: 520px;
         height: auto;
         padding: 10px 12px;
-    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
         background: var(--glass-bg);
         border: var(--glass-border);
         backdrop-filter: blur(10px) saturate(120%);
@@ -852,9 +861,10 @@ p {
 @media (max-width: 768px) {
     /* Optimize layout for mobile */
     body {
-        padding: 0;
-        margin: 0;
-        font-size: 16px; /* Adjust font size for readability */
+    padding: 0;
+    margin: 0;
+    font-size: 16px; /* Adjust font size for readability */
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
     }
 
     .hero {
@@ -871,13 +881,15 @@ p {
     .floating-tab-bar {
         position: fixed;
         top: auto;
-        bottom: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 32px);
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        left: 16px;
+        right: 16px;
+        margin: 0 auto;
+        width: auto;
         max-width: 520px;
         height: auto;
         padding: 10px 12px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
         background: var(--glass-bg);
         border: var(--glass-border);
         backdrop-filter: blur(10px) saturate(120%);
