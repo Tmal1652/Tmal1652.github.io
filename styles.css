@@ -279,12 +279,12 @@
     color: var(--text-color); /* Matches the text color */
     font-weight: 500;
     text-decoration: none;
-    padding: 10px 15px;
-    margin: 0 10px; /* Add spacing between links */
+    padding: 10px 14px;
+    margin: 0 8px; /* Tighter spacing */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 36px;
+    min-height: 40px;
     position: relative;
     border: 1px solid transparent;
     background: transparent;
@@ -310,7 +310,10 @@
     .floating-tab-bar .tab-link:hover,
     .floating-tab-bar .tab-link:active,
     .floating-tab-bar .tab-link:focus {
-        transform: none !important;
+    transform: none !important;
+    background: var(--glass-hover-bg);
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 6px 16px rgba(31,38,135,0.18), inset 0 1px 1px rgba(255,255,255,0.45);
     }
 }
 
@@ -365,7 +368,7 @@
   filter: grayscale(10%);
 }
 
-a:focus, .btn:focus, .tab-link:focus {
+a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
 }
@@ -866,17 +869,20 @@ p {
         gap: 8px;
     }
     .floating-tab-bar .tab-link {
-        font-size: 0.95rem;
-        padding: 8px 10px;
-        margin: 0 5px;
+        font-size: clamp(0.85rem, 2.6vw, 0.95rem);
+        padding: 10px 12px;
+        margin: 0 6px;
         text-align: center;
         display: inline-flex;
-        flex: 1 1 0;
+        flex: 1 1 auto;
         min-width: 0;
         align-items: center;
         justify-content: center;
         min-height: 44px;
+        line-height: 1;
+        white-space: nowrap;
         border-radius: 999px;
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
