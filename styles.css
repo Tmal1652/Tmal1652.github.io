@@ -82,6 +82,52 @@
 
 /* Center diploma section content */
 .diploma { text-align: center; }
+.diploma p { margin: 6px 0; }
+.diploma p:first-of-type { font-weight: 600; }
+
+/* Diploma card styling */
+.diploma-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.diploma-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.45);
+}
+.credential-details {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 8px 14px;
+    margin: 10px auto 16px;
+}
+.credential-details dt {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+.credential-details dd {
+    margin: 0;
+}
+.credential-details .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.diploma-card .btn {
+    margin-top: 6px;
+}
+
+@media (max-width: 480px) {
+    .credential-details { grid-template-columns: 1fr; }
+    .diploma-badge { font-size: 0.8rem; }
+}
 
 /* Glass-like effect for sections */
 /* Optimized glassy flow keyframes */
