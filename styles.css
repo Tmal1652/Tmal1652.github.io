@@ -215,6 +215,12 @@
     .glass::before, .hero::before, .card::before { animation: none !important; }
 }
 
+/* Temporary: hide only the “View on GitHub” buttons */
+a.btn[href*="github.com"] {
+    display: none !important;
+    pointer-events: none !important;
+}
+
 .glass {
     background: var(--glass-bg);
     border: var(--glass-border);
