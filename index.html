@@ -21,14 +21,23 @@
     </div>
 
 
-    <!-- Floating Tab Bar -->
-    <div class="floating-tab-bar">
+    <!-- Desktop / Tablet Navigation -->
+    <nav class="floating-tab-bar" aria-label="Primary navigation">
         <a href="#about" class="tab-link">About</a>
         <a href="#projects" class="tab-link">Projects</a>
         <a href="#experience" class="tab-link">Experience</a>
         <a href="#education" class="tab-link">Education</a>
         <a href="#contact" class="tab-link">Contact</a>
-    </div>
+    </nav>
+
+    <!-- Mobile Navigation Dock -->
+    <nav class="mobile-tab-dock" aria-label="Primary navigation">
+        <a href="#about" class="tab-link">About</a>
+        <a href="#projects" class="tab-link">Work</a>
+        <a href="#experience" class="tab-link">Exp</a>
+        <a href="#education" class="tab-link">Edu</a>
+        <a href="#contact" class="tab-link">Contact</a>
+    </nav>
 
     
 
@@ -51,37 +60,162 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
+    <!-- Skills Snapshot -->
+    <section class="skills" id="skills">
+        <h2>Tech Stack & Core Strengths</h2>
         <div class="card-container">
             <div class="card">
-                <h3>Portfolio Website</h3>
-                <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-                <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+                <h3>Tech Stack</h3>
+                <div class="chip-list" aria-label="Technology stack">
+                    <span class="chip">SwiftUI</span>
+                    <span class="chip">iOS</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">TypeScript</span>
+                    <span class="chip">HTML/CSS</span>
+                    <span class="chip">Accessibility Testing</span>
+                    <span class="chip">GitHub</span>
+                    <span class="chip">API Integration</span>
+                    <span class="chip">AI-Assisted Development</span>
+                    <span class="chip">ChatGPT</span>
+                    <span class="chip">Google Gemini</span>
+                    <span class="chip">Codex</span>
+                </div>
             </div>
             <div class="card">
-                <h3>Protify AI-Powered Calendar App</h3>
-                <p>Protify is an AI-powered calendar app that helps users manage their schedules, offering personalized recommendations for workouts, recipes, and productivity tips while optimizing time based on external factors like weather and traffic.</p>
-                <a href="https://github.com/brendanpayne/protifyapp" target="_blank" rel="noopener" class="btn">View on GitHub</a>
-                <a href="ProtifyExpoDemo.mp4" class="btn" target="_blank" rel="noopener">View Video</a>
+                <h3>Core Strengths</h3>
+                <div class="chip-list" aria-label="Core strengths">
+                    <span class="chip">Mobile UX</span>
+                    <span class="chip">Frontend Engineering</span>
+                    <span class="chip">Performance Mindset</span>
+                    <span class="chip">Accessibility-First Thinking</span>
+                    <span class="chip">Cross-Browser QA</span>
+                    <span class="chip">Product Iteration</span>
+                </div>
             </div>
-            <div class="card">
-                <h3>CollabConnect</h3>
-                <p>CollabConnect is a collaborative platform designed to help teams manage projects, share ideas, and work together seamlessly across devices.</p>
-                <a href="https://github.com/Tmal1652/CollabConnect" target="_blank" rel="noopener" class="btn">View on GitHub</a>
-                <a href="https://tmal1652.github.io/CollabConnect/" class="btn" target="_blank" rel="noopener">View Website</a>
-            </div>
+        </div>
+    </section>
 
-            <!-- ClearText AI Project Card -->
-            <div class="card">
-                <h3>ClearText AI</h3>
-                <p>
-                    ClearText AI is a tool designed for all users to summarize and shorten complex web content. It provides audio narration to enhance understanding and will soon offer interactive definitions for difficult words—this feature is currently in development.
-                </p>
-                <a href="https://github.com/Tmal1652/Tmal1652.github.io-ClearTextAI" target="_blank" rel="noopener" class="btn">View on GitHub</a>
-                <a href="https://tmal1652.github.io/Tmal1652.github.io-ClearTextAI/" target="_blank" rel="noopener" class="btn">View Website</a> 
-            </div>
+    <!-- Project Showcase -->
+    <section class="projects" id="projects">
+        <h2>Project Showcase</h2>
+        <div class="card-container project-showcase">
+            <article class="card project-card">
+                <div class="project-top">
+                    <h3>ShowZ</h3>
+                    <span class="project-label">Featured iOS App</span>
+                </div>
+                <p>ShowZ is a native iOS app built with SwiftUI for TV show discovery, featuring TVMaze-first search, personalized For You recommendations, and polished liquid-glass feed/detail UX.</p>
+                <div class="chip-list project-tags" aria-label="ShowZ tags">
+                    <span class="chip">SwiftUI</span>
+                    <span class="chip">iOS</span>
+                    <span class="chip">TVMaze API</span>
+                    <span class="chip">Recommendation Logic</span>
+                </div>
+                <ul class="impact-list">
+                    <li>Shipped v1 discovery foundation with explicit-like personalization.</li>
+                    <li>Implemented deterministic caching and fallback for reliability.</li>
+                </ul>
+                <details class="case-study">
+                    <summary>Case Study</summary>
+                    <p><strong>Problem:</strong> TV discovery apps often feel noisy and inconsistent.</p>
+                    <p><strong>Built:</strong> A fast, TVMaze-first discovery flow with personalized recommendations and clean detail pages.</p>
+                    <p><strong>Outcome:</strong> Stable v1 foundation ready for v2 chat and social discovery work.</p>
+                </details>
+            </article>
+            <article class="card project-card">
+                <div class="project-top">
+                    <h3>Protify AI-Powered Calendar App</h3>
+                    <span class="project-label">Product Demo</span>
+                </div>
+                <p>Protify helps users manage schedules with AI recommendations for workouts, recipes, and productivity while accounting for external signals like weather and traffic.</p>
+                <div class="chip-list project-tags" aria-label="Protify tags">
+                    <span class="chip">AI Features</span>
+                    <span class="chip">Productivity</span>
+                    <span class="chip">Context-Aware UX</span>
+                </div>
+                <ul class="impact-list">
+                    <li>Validated multi-signal planning concepts through a working demo.</li>
+                    <li>Combined calendar, health, and productivity guidance in one flow.</li>
+                </ul>
+                <details class="case-study">
+                    <summary>Case Study</summary>
+                    <p><strong>Problem:</strong> Standard calendars rarely adapt to real-world conditions.</p>
+                    <p><strong>Built:</strong> A concept that merges scheduling with external context and recommendation prompts.</p>
+                    <p><strong>Outcome:</strong> Demonstrated feasible UX direction and product viability.</p>
+                </details>
+                <div class="project-links">
+                    <a href="ProtifyExpoDemo.mp4" class="btn" target="_blank" rel="noopener">View Video</a>
+                </div>
+            </article>
+            <article class="card project-card">
+                <div class="project-top">
+                    <h3>CollabConnect</h3>
+                    <span class="project-label">Web Application</span>
+                </div>
+                <p>CollabConnect is a collaborative platform designed to help teams manage projects, share ideas, and work together seamlessly across devices.</p>
+                <div class="chip-list project-tags" aria-label="CollabConnect tags">
+                    <span class="chip">Web App</span>
+                    <span class="chip">Team Collaboration</span>
+                    <span class="chip">Responsive UI</span>
+                </div>
+                <ul class="impact-list">
+                    <li>Built a collaboration MVP and shipped a live hosted version.</li>
+                    <li>Focused on usability across desktop and mobile workflows.</li>
+                </ul>
+                <details class="case-study">
+                    <summary>Case Study</summary>
+                    <p><strong>Problem:</strong> Teams need simple collaboration tools that work everywhere.</p>
+                    <p><strong>Built:</strong> A cross-device web experience for sharing project updates and ideas.</p>
+                    <p><strong>Outcome:</strong> Delivered a live product proof with end-to-end interaction flow.</p>
+                </details>
+                <div class="project-links">
+                    <a href="https://tmal1652.github.io/CollabConnect/" class="btn" target="_blank" rel="noopener">View Website</a>
+                </div>
+            </article>
+            <article class="card project-card">
+                <div class="project-top">
+                    <h3>ClearText AI</h3>
+                    <span class="project-label">Accessibility Tool</span>
+                </div>
+                <p>ClearText AI helps users summarize and shorten complex web content, with audio narration support and interactive definitions in active development.</p>
+                <div class="chip-list project-tags" aria-label="ClearText AI tags">
+                    <span class="chip">Accessibility</span>
+                    <span class="chip">Summarization</span>
+                    <span class="chip">Audio Support</span>
+                </div>
+                <ul class="impact-list">
+                    <li>Improved readability of dense content through concise summaries.</li>
+                    <li>Added narration support for accessibility-first learning.</li>
+                </ul>
+                <details class="case-study">
+                    <summary>Case Study</summary>
+                    <p><strong>Problem:</strong> Dense content is difficult to parse quickly.</p>
+                    <p><strong>Built:</strong> A readable summarization experience with audio support for comprehension.</p>
+                    <p><strong>Outcome:</strong> Working MVP with a roadmap for interactive vocabulary support.</p>
+                </details>
+                <div class="project-links">
+                    <a href="https://tmal1652.github.io/Tmal1652.github.io-ClearTextAI/" target="_blank" rel="noopener" class="btn">View Website</a>
+                </div>
+            </article>
+            <article class="card project-card">
+                <div class="project-top">
+                    <h3>Portfolio Website</h3>
+                    <span class="project-label">Developer Portfolio</span>
+                </div>
+                <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
+                <div class="chip-list project-tags" aria-label="Portfolio tags">
+                    <span class="chip">Frontend</span>
+                    <span class="chip">Responsive Design</span>
+                    <span class="chip">Cross-Browser</span>
+                </div>
+                <ul class="impact-list">
+                    <li>Improved cross-browser behavior and mobile responsiveness.</li>
+                    <li>Maintained a cohesive modern glass-style visual system.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -234,7 +368,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Tyler Malovrh. All Rights Reserved.</p>
+        <p>&copy; 2026 Tyler Malovrh. All Rights Reserved.</p>
     </footer>
 </body>
 

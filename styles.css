@@ -4,74 +4,42 @@
 
 /* Modern minimalist design with effects */
 
-/* Default (Light Mode) */
+/* Unified theme (dark-forward for all system modes) */
 :root {
-    --background-color: rgba(255, 255, 255, 0.8);
-    --text-color: #1a1a1a;
-    --primary-color: #000000;
-    --secondary-color: rgba(100, 100, 100, 0.7);
-    --accent-color: #007bff;
-    --button-bg: #007bff;
+    color-scheme: dark;
+    --background-color: #070c14;
+    --text-color: #ecf2fb;
+    --primary-color: #f4f8ff;
+    --secondary-color: #9fb0c7;
+    --accent-color: #8fb2df;
+    --button-bg: #8fb2df;
     --button-text: #ffffff;
-    --link-color: #007bff;
-    --link-hover: #0056b3;
-    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    --backdrop-blur: blur(10px);
-    --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.12));
-    --glass-border: 1px solid rgba(255, 255, 255, 0.35);
-    --glass-inner: inset 0 1px 0 rgba(255,255,255,0.4);
-    --glass-outer: 0 8px 24px rgba(31, 38, 135, 0.25);
-    --depth-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    --link-color: #a9c7eb;
+    --link-hover: #c5daf3;
+    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    --backdrop-blur: blur(15px);
+    --glass-bg: linear-gradient(135deg, rgba(19,30,45,0.72), rgba(12,20,33,0.58));
+    --glass-border: 1px solid rgba(166,188,216,0.22);
+    --surface-solid: rgba(15, 25, 39, 0.68);
+    --metal-midnight: #020712;
+    --metal-titanium: #97aac5;
+    --metal-silver: #c5d2e1;
+    --metal-rim: linear-gradient(115deg, rgba(197,210,225,0.52), rgba(80,96,119,0.24) 48%, rgba(197,210,225,0.50));
+    --metal-sheen-soft: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(197,210,225,0.26) 44%, rgba(255,255,255,0) 82%);
+    --glass-inner: inset 0 1px 0 rgba(255,255,255,0.06);
+    --glass-outer: 0 12px 40px rgba(0, 0, 0, 0.55);
+    --depth-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
     --spring: cubic-bezier(0.2, 0.8, 0.2, 1.2);
     --sheen: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 40%, rgba(255,255,255,0) 80%);
     /* Glassy gradient variables used throughout */
-    --glassy1: rgba(255,255,255,0.66);
-    --glassy2: rgba(255,255,255,0.35);
-    --glassy3: rgba(255,255,255,0.18);
-    --glassy-opacity: 0.16;
-    /* Hover helpers for glassy elements */
-    --glass-hover-bg: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.38));
-    --hover-ring-color: rgba(0,123,255,0.45);
-    --hover-glow: 0 12px 28px rgba(31,38,135,0.28), inset 0 1px 2px rgba(255,255,255,0.65), 0 0 0 2px var(--hover-ring-color);
-}
-
-/* Utility: Glassy Hover Effect */
-/* Remove ripple circle and animation from .glassy-hover */
-.glassy-hover::after {
-    content: none !important;
-    display: none !important;
-}
-
-/* Remove all existing ripple-related CSS (like keyframes ripple) */
-
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: rgba(18, 18, 18, 0.95); /* Slightly darker for better readability */
-        --text-color: #e0e0e0; /* Light gray for text */
-        --primary-color: #e0e0e0; /* White for headings and primary elements */
-        --secondary-color: rgba(200, 200, 200, 0.8); /* Lighter gray for secondary elements */
-        --accent-color: #3399ff; /* Bright blue for accents */
-        --button-bg: #3399ff; /* Bright blue button background */
-        --button-text: #ffffff; /* White button text */
-        --link-color: #3399ff; /* Bright blue for links */
-        --link-hover: #1a73e8; /* Slightly darker blue for hover */
-    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); /* Stronger shadow for dark mode */
-    --backdrop-blur: blur(15px); /* Stronger blur for dark mode */
-    --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    --glass-border: 1px solid rgba(255,255,255,0.12);
-        --glass-inner: inset 0 1px 0 rgba(255,255,255,0.06);
-        --glass-outer: 0 12px 40px rgba(0, 0, 0, 0.55);
-        --depth-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
     --glassy1: rgba(255,255,255,0.14);
     --glassy2: rgba(255,255,255,0.08);
     --glassy3: rgba(255,255,255,0.04);
     --glassy-opacity: 0.12;
+    /* Hover helpers for glassy elements */
     --glass-hover-bg: linear-gradient(145deg, rgba(255,255,255,0.22), rgba(255,255,255,0.12));
     --hover-ring-color: rgba(51,153,255,0.55);
     --hover-glow: 0 12px 28px rgba(0,0,0,0.45), inset 0 1px 1px rgba(255,255,255,0.06), 0 0 0 2px var(--hover-ring-color);
-    }
 }
 
 /* Diploma CTA spacing to match other CTAs */
@@ -101,7 +69,7 @@
     font-size: 0.85rem;
     color: var(--text-color);
     background: rgba(255,255,255,0.28);
-    border: 1px solid rgba(255,255,255,0.45);
+    border: 1px solid rgba(169, 187, 209, 0.44);
 }
 .credential-details {
     text-align: left;
@@ -183,19 +151,11 @@
 
 /* Consolidated box-shadow styles */
 :root {
-    --default-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --default-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
     --dark-mode-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
 }
 
-.glass, .hero {
-    box-shadow: var(--default-box-shadow);
-}
-
-@media (prefers-color-scheme: dark) {
-    .glass, .hero {
-        box-shadow: var(--dark-mode-box-shadow);
-    }
-}
+.glass, .hero { box-shadow: var(--default-box-shadow); }
 
 /* Removed redundant z-index and pointer-events */
 .glass::before, .hero::before {
@@ -203,22 +163,8 @@
     pointer-events: none;
 }
 
-/* Grouped media queries for reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .glass::before, .hero::before, .card::before {
-        animation: none !important;
-    }
-}
-
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
     .glass::before, .hero::before, .card::before { animation: none !important; }
-}
-
-/* Temporary: hide only the “View on GitHub” buttons */
-a.btn[href*="github.com"] {
-    display: none !important;
-    pointer-events: none !important;
 }
 
 .glass {
@@ -330,21 +276,23 @@ a.btn[href*="github.com"] {
 /* Floating Tab Bar (Top Position) */
 .floating-tab-bar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(920px, calc(100% - 20px));
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255,255,255,0.28);
-    border: 1px solid rgba(255,255,255,0.45);
-    backdrop-filter: blur(6px) saturate(120%);
-    -webkit-backdrop-filter: blur(6px) saturate(120%);
-    box-shadow: 0 10px 24px rgba(31,38,135,0.20);
-    padding: 10px 0;
+    gap: 6px;
+    background: linear-gradient(135deg, rgba(24, 35, 50, 0.78), rgba(13, 22, 35, 0.64));
+    border: 1px solid rgba(173, 192, 216, 0.44);
+    backdrop-filter: blur(10px) saturate(125%);
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+    box-shadow: 0 12px 30px rgba(6, 12, 20, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    padding: 8px 12px;
     z-index: 1000;
-    border-radius: 0 0 20px 20px;
-    transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    border-radius: 999px;
+    transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
     isolation: isolate;
@@ -357,28 +305,52 @@ a.btn[href*="github.com"] {
   inset: 0;
   z-index: -1; /* keep it behind links */
   pointer-events: none;
-  opacity: 0.10;
+  opacity: 0.08;
   background: linear-gradient(120deg, var(--glassy1) 0%, var(--glassy2) 45%, var(--glassy3) 100%);
   background-size: 200% 200%;
     /* animation disabled by default for performance; enabled on hover below */
   will-change: background-position;
 }
 
+.floating-tab-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(173, 192, 216, 0.36);
+    background: none;
+    pointer-events: none;
+    opacity: 0.52;
+}
+
+@supports ((-webkit-mask-composite: xor) or (mask-composite: exclude)) {
+    .floating-tab-bar::after {
+        border: 1px solid transparent;
+        background: var(--metal-rim) border-box;
+        -webkit-mask:
+            linear-gradient(#000 0 0) padding-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+}
+
  
 .floating-tab-bar:hover {
-    box-shadow: 0 12px 36px rgba(31, 38, 135, 0.28);
+    box-shadow: 0 14px 34px rgba(8, 15, 24, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .floating-tab-bar .tab-link {
-    color: var(--text-color); /* Matches the text color */
-    font-weight: 500;
+    color: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 0.01em;
     text-decoration: none;
-    padding: 10px 14px;
-    margin: 0 8px; /* Tighter spacing */
+    padding: 9px 16px;
+    margin: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
+    min-height: 42px;
     position: relative;
     border: 1px solid transparent;
     background: transparent;
@@ -386,17 +358,17 @@ a.btn[href*="github.com"] {
     transform: translateZ(0);
     backface-visibility: hidden;
     border-radius: 999px; /* Rounded pill corners */
-    transition: background .2s ease, border-color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .18s var(--spring), box-shadow .22s ease;
 }
 
 .floating-tab-bar .tab-link:hover {
-  background: var(--glass-hover-bg);
-  box-shadow: var(--hover-glow);
-    transform: scale(1.02);
+  background: linear-gradient(145deg, rgba(174, 196, 220, 0.24), rgba(111, 136, 169, 0.14));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 6px 16px rgba(8, 15, 24, 0.35);
+  transform: translateY(-1px);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid rgba(187, 203, 224, 0.58);
   border-radius: 999px;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 /* On touch devices, avoid scaling to prevent layout shifts */
@@ -413,10 +385,96 @@ a.btn[href*="github.com"] {
 
 /* Active Tab Styling */
 .floating-tab-bar .tab-link.active {
-    background-color: var(--accent-color); /* Highlight active tab */
-    color: var(--button-text); /* Ensure text remains visible */
-    font-weight: bold; /* Make the active tab stand out */
-    transform: scale(1.1); /* Slightly enlarge the active tab */
+    background: linear-gradient(140deg, rgba(163, 191, 224, 0.38), rgba(106, 132, 167, 0.28));
+    color: var(--primary-color);
+    font-weight: 700;
+    transform: none;
+    border-color: rgba(190, 208, 229, 0.72);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 18px rgba(6, 12, 22, 0.36);
+}
+
+/* Mobile-only bottom navigation dock (hidden by default) */
+.mobile-tab-dock {
+    display: none;
+}
+
+/* Desktop nav: less "mobile tab bar", more clean site navigation */
+@media (min-width: 769px) {
+    .floating-tab-bar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: auto;
+        transform: none;
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+        border-left: 0;
+        border-right: 0;
+        gap: clamp(12px, 2vw, 24px);
+        padding: 10px 18px;
+        background: linear-gradient(180deg, rgba(10, 16, 26, 0.84), rgba(10, 16, 26, 0.68));
+        backdrop-filter: blur(14px) saturate(135%);
+        -webkit-backdrop-filter: blur(14px) saturate(135%);
+        box-shadow: 0 12px 26px rgba(6, 10, 16, 0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .floating-tab-bar .tab-link {
+        min-height: 38px;
+        padding: 8px 2px;
+        border-radius: 0;
+        border: 0;
+        color: rgba(216, 227, 241, 0.84);
+    }
+
+    .floating-tab-bar .tab-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 2px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(160, 188, 220, 0.55), rgba(217, 229, 242, 0.92), rgba(160, 188, 220, 0.55));
+        opacity: 0;
+        transform: scaleX(0.2);
+        transform-origin: center;
+        transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .floating-tab-bar .tab-link:hover {
+        background: transparent;
+        box-shadow: none;
+        border: 0;
+        transform: none;
+        color: var(--primary-color);
+    }
+
+    .floating-tab-bar .tab-link:hover::after {
+        opacity: 0.45;
+        transform: scaleX(0.84);
+    }
+
+    .floating-tab-bar .tab-link.active {
+        background: transparent;
+        box-shadow: none;
+        border: 0;
+        transform: none;
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    .floating-tab-bar .tab-link.active::after {
+        opacity: 0.95;
+        transform: scaleX(1);
+    }
+
+    .floating-tab-bar::before {
+        opacity: 0.04;
+    }
+
+    .floating-tab-bar::after {
+        opacity: 0.22;
+    }
 }
 
 .btn {
@@ -429,7 +487,7 @@ a.btn[href*="github.com"] {
     text-decoration: none;
     backdrop-filter: blur(6px) saturate(120%);
     -webkit-backdrop-filter: blur(6px) saturate(120%);
-    border: 1px solid rgba(255,255,255,0.45);
+    border: 1px solid rgba(169, 187, 209, 0.44);
     box-shadow: 0 8px 22px rgba(31,38,135,0.20);
     transition: background .18s ease, border-color .18s ease, transform .18s var(--spring), box-shadow .18s ease, outline-color .18s ease;
     position: relative;
@@ -438,16 +496,43 @@ a.btn[href*="github.com"] {
     perspective: 1000px;
     cursor: pointer;
 }
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--metal-sheen-soft);
+    background-size: 210% 100%;
+    background-position: 180% 50%;
+    opacity: 0;
+    transition: opacity .22s ease, background-position .55s ease;
+    pointer-events: none;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(197,210,225,0.42);
+    pointer-events: none;
+}
 .btn .btn-icon { margin-right: 8px; display: inline-block; vertical-align: -2px; }
 
 .btn:hover {
   background: var(--glass-hover-bg);
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid rgba(187, 203, 224, 0.65);
   color: var(--text-color);
   box-shadow: var(--hover-glow);
     transform: scale(1.07);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     text-decoration: underline;
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+    opacity: 1;
+    background-position: -20% 50%;
 }
 
 .btn:focus-visible{
@@ -531,51 +616,6 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
     line-height: 1.6;
 }
 
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 10px;
-    font-size: 1rem;
-    color: var(--text-color);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.contact input:focus, .contact textarea:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
-    outline: none;
-}
-
-.contact button {
-    background-color: var(--accent-color);
-    color: var(--button-text);
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.contact button:hover {
-    background-color: var(--link-hover);
-    transform: scale(1.05);
-}
-
 .contact a {
     display: inline-flex; /* match button feel */
     align-items: center;
@@ -612,15 +652,29 @@ a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
     transform: scale(1.03);
 }
 
+/* Touch-first behavior: avoid sticky hover transforms on phones/tablets */
+@media (hover: none) and (pointer: coarse) {
+    .hero:hover,
+    .card:hover,
+    .contact:hover,
+    section:hover,
+    .btn:hover,
+    .contact a:hover,
+    .contact .btn:hover {
+        transform: none !important;
+    }
+}
+
 /* Footer Styling */
 footer {
     display: flex;
     justify-content: flex-start; /* Align content to the left */
     align-items: center;
-    background: var(--background-color); /* Match the page background */
+    background: linear-gradient(120deg, rgba(15, 23, 38, 0.14), rgba(128, 150, 175, 0.16));
     color: var(--text-color); /* Ensure text is visible */
     padding: 10px 20px; /* Add spacing */
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    box-shadow: 0 -6px 18px rgba(10, 18, 30, 0.12);
+    border-top: 1px solid rgba(172, 189, 210, 0.30);
     font-size: 0.9rem; /* Slightly smaller font size */
     z-index: 1000; /* Ensure it stays above other elements */
 }
@@ -641,6 +695,8 @@ body {
 
 html {
     scroll-behavior: smooth; /* Enable smooth scrolling */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 
@@ -667,6 +723,193 @@ a:hover {
     margin: 0 auto;     /* Center the grid within the section */
 }
 
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background: var(--surface-solid);
+    border: 1px solid rgba(167, 185, 207, 0.52);
+    box-shadow: 0 4px 12px rgba(31, 38, 135, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.chip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.22), rgba(255,255,255,0.05) 60%, rgba(255,255,255,0));
+    pointer-events: none;
+    opacity: 0.78;
+}
+
+.impact-list {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.impact-list li {
+    margin-bottom: 4px;
+}
+
+.project-showcase {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 4px 2px 12px;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 2px;
+    overscroll-behavior-x: contain;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+}
+
+.project-showcase::-webkit-scrollbar {
+    height: 6px;
+}
+
+.project-showcase::-webkit-scrollbar-track {
+    background: rgba(159, 176, 199, 0.08);
+    border-radius: 999px;
+}
+
+.project-showcase::-webkit-scrollbar-thumb {
+    background: linear-gradient(125deg, rgba(197, 210, 225, 0.55), rgba(143, 164, 188, 0.35));
+    border: 1px solid rgba(197, 210, 225, 0.22);
+    border-radius: 999px;
+}
+
+.project-showcase {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(173, 192, 216, 0.55) rgba(159, 176, 199, 0.08);
+}
+
+.project-showcase .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 0 0 clamp(320px, 38vw, 430px);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    min-height: 100%;
+    min-width: 0;
+}
+
+.project-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.project-top h3 {
+    margin: 0;
+}
+
+.project-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    color: var(--primary-color);
+    background: linear-gradient(145deg, rgba(214,225,238,0.48), rgba(133,152,176,0.24));
+    border: 1px solid rgba(173, 192, 216, 0.56);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-label::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--metal-sheen-soft);
+    background-size: 200% 100%;
+    background-position: 80% 50%;
+    opacity: 0.58;
+    pointer-events: none;
+}
+
+.project-tags {
+    margin-bottom: 2px;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+.case-study {
+    border: 1px solid rgba(173, 192, 216, 0.40);
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: linear-gradient(160deg, rgba(228,236,245,0.24), rgba(146,165,188,0.12));
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(173, 192, 216, 0.34);
+    background: none;
+    pointer-events: none;
+    opacity: 0.34;
+}
+
+@supports ((-webkit-mask-composite: xor) or (mask-composite: exclude)) {
+    .case-study::before {
+        border: 1px solid transparent;
+        background: var(--metal-rim) border-box;
+        -webkit-mask:
+            linear-gradient(#000 0 0) padding-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+}
+
+.case-study summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.case-study[open] summary {
+    margin-bottom: 10px;
+}
+
+.case-study p {
+    margin-bottom: 10px;
+}
+
+.case-study p:last-child {
+    margin-bottom: 0;
+}
+
 /* Card Styling */
 .card {
     background: var(--glass-bg);
@@ -683,6 +926,7 @@ a:hover {
     transition: box-shadow 0.18s cubic-bezier(.22,.61,.36,1), transform 0.18s cubic-bezier(.22,.61,.36,1);
     overflow: hidden;
     isolation: isolate;
+    min-width: 0;
 }
 /* Glassy underlay for cards */
 .card::before {
@@ -746,6 +990,7 @@ section {
     /* Paint containment for performance on large sections */
     content-visibility: auto;
     contain-intrinsic-size: 600px 800px;
+    scroll-margin-top: 84px;
 }
 
 /* Constrain inner width to avoid overly wide text and squished buttons layouts */
@@ -796,8 +1041,40 @@ h2, h3 {
     margin-bottom: 15px;
 }
 
+h2 {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.26);
+    color: var(--primary-color);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    h2 {
+        background: linear-gradient(100deg, var(--metal-midnight) 8%, var(--metal-titanium) 45%, var(--metal-silver) 58%, var(--metal-midnight) 92%);
+        background-size: 220% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+h2 {
+    animation: headingSheen 9s ease-in-out infinite;
+}
+
+@keyframes headingSheen {
+    0%, 12% { background-position: 0% 50%; }
+    45% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 p {
     margin-bottom: 20px;
+}
+
+p, li {
+    color: var(--text-color);
 }
 
 
@@ -834,240 +1111,83 @@ p {
     font-size: 1.05rem;
 }
 
-/* Mobile refinement for profile picture */
-@media (max-width: 480px) {
-    .about-container { grid-template-columns: 1fr; gap: 14px; }
-    .profile-picture { max-width: 160px; margin: 0 auto; }
-    .intro .about-container { text-align: center; }
+/* 2026 polish pass: consistent liquid look + reliable responsive behavior */
+body {
+    position: relative;
+    isolation: isolate;
+    background-image:
+        radial-gradient(circle at 12% 12%, rgba(139, 162, 190, 0.24), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(224, 233, 243, 0.28), transparent 30%),
+        radial-gradient(circle at 50% 82%, rgba(89, 112, 140, 0.16), transparent 38%);
+    background-attachment: fixed;
 }
 
-/* Tablet and mobile (max-width: 768px) - consolidated */
-@media (max-width: 768px) {
-    /* About Section */
-    .about-container { grid-template-columns: 1fr; gap: 16px; }
-    .intro .about-container { text-align: center; }
-    /* Use the single desktop tab bar on mobile; reposition it at the bottom */
-    
-    /* Contact Section */
-    .contact {
-        padding: 30px 15px;
-    }
-    .contact h2 {
-        font-size: 1.8rem;
-    }
-    .contact p {
-        font-size: 1rem;
-    }
-    .contact form {
-        gap: 10px;
-    }
-    .contact button {
-        padding: 12px;
-        font-size: 0.9rem;
-    }
-    /* (Floating Tab Bar mobile styles consolidated later in this file) */
-    /* Hero Section */
-    .hero {
-        padding: 50px 15px;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hero p {
-        font-size: 1.2rem;
-    }
-    /* Card Layout */
-    .card-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .card {
-        padding: 15px;
-    }
-    /* Section Padding */
-    section {
-        padding: 20px 15px;
-    }
-    /* Footer */
-    footer {
-        padding: 10px 15px;
-        font-size: 0.8rem;
-    }
-    /* General Body and Layout */
-    body {
-        font-size: 18px;
-        line-height: 1.8;
-        padding: 0 15px;
-        padding-bottom: 60px;
-        /* background-color: #ffffff;  removed for glass compatibility */
-    }
-    /* Header */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-color);
-        color: var(--button-text);
-        padding: 10px 20px;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    header .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-    header .menu-toggle {
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
-    /* Headings */
-    h1 {
-        font-size: 2.5rem;
-    }
-    /* Section Grid Layouts */
-    .projects, .experience, .recommendations {
-        grid-template-columns: 1fr;
-    }
-
-    /* Full-width buttons for mobile */
-    button,
-    a.btn,
-    a.button,
-    a.btn-primary,
-    a.glassy-hover.button {
-        display: block;
-        width: 100%;
-        max-width: 90%;
-        margin: 0.5rem auto;
-        text-align: center;
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
-        border-radius: 12px;
-    }
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 34vmin;
+    height: 34vmin;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.2;
+    filter: blur(3px);
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.05) 70%);
+    animation: bubbleDrift 18s ease-in-out infinite alternate;
 }
 
-/* Mobile-specific optimizations */
-@media (max-width: 768px) {
-    /* Optimize layout for mobile */
-    body {
-    padding: 0;
-    margin: 0;
-    font-size: 16px; /* Adjust font size for readability */
-    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
-    }
+body::before {
+    top: 7vh;
+    left: -10vmin;
+}
 
-    .hero {
-        padding: 40px 20px; /* Adjust padding for smaller screens */
-        text-align: center;
-    }
+body::after {
+    right: -12vmin;
+    bottom: 8vh;
+    animation-duration: 22s;
+    animation-delay: -4s;
+}
 
-    .glass {
-        margin: 10px;
-        border-radius: 15px; /* Softer corners for mobile */
-    }
+@keyframes bubbleDrift {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(2vmin, -2vmin, 0) scale(1.08); }
+}
 
-    /* Reposition desktop tab bar to bottom on mobile */
-    .floating-tab-bar {
-        position: fixed;
-        top: auto;
-        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-        left: 16px;
-        right: 16px;
-        margin: 0 auto;
-        width: auto;
-        max-width: 520px;
-        height: auto;
-        padding: 10px 12px;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-        background: var(--glass-bg);
-        border: var(--glass-border);
-        backdrop-filter: blur(10px) saturate(120%);
-        -webkit-backdrop-filter: blur(10px) saturate(120%);
-        box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-        border-radius: 20px;
-        z-index: 1200;
-        justify-content: space-between;
-        gap: 8px;
+.hero,
+.card,
+.contact,
+section,
+.floating-tab-bar {
+    border-color: rgba(255, 255, 255, 0.42);
+    box-shadow:
+        0 8px 26px rgba(31, 38, 135, 0.17),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.hero::after,
+.card::after,
+.contact::after {
+    background:
+        radial-gradient(120% 120% at 8% 8%, rgba(255, 255, 255, 0.2), transparent 45%),
+        radial-gradient(120% 120% at 88% 12%, rgba(255, 255, 255, 0.13), transparent 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none !important;
     }
-    .floating-tab-bar .tab-link {
-        font-size: clamp(0.85rem, 2.6vw, 0.95rem);
-        padding: 10px 12px;
-        margin: 0 6px;
-        text-align: center;
-        display: inline-flex;
-        flex: 1 1 auto;
-        min-width: 0;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        line-height: 1;
-        white-space: nowrap;
-        border-radius: 999px;
-        -webkit-tap-highlight-color: transparent;
+    h2 {
+        animation: none !important;
+        background: none;
+        color: var(--primary-color);
     }
 }
 
 /* Ensure sections themselves are not grids to avoid squishing content.
     Card layouts are handled by .card-container above. */
 .projects, .experience, .recommendations { display: block; }
-
-.project, .experience-item, .recommendation {
-    background-color: var(--background-color);
-    box-shadow: 0 4px 6px var(--box-shadow);
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease-in-out forwards;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.project h3, .experience-item h3, .recommendation h3 {
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.project a, .recommendation a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 10px 20px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.28);
-    color: var(--text-color);
-    border: 1px solid rgba(255,255,255,0.45);
-    backdrop-filter: blur(6px) saturate(120%);
-    -webkit-backdrop-filter: blur(6px) saturate(120%);
-    box-shadow: 0 8px 22px rgba(31,38,135,0.20);
-    font-weight: 500;
-    text-decoration: none;
-    transition: background .18s ease, border-color .18s ease, transform .18s var(--spring), box-shadow .18s ease;
-    cursor: pointer;
-    white-space: nowrap; /* keep buttons from breaking into multiple lines */
-    margin: 4px 6px 0 0; /* small spacing when multiple buttons exist */
-}
-
-.project a:hover, .recommendation a:hover {
-  background: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.38));
-  border: 1px solid rgba(255,255,255,0.75);
-  color: var(--text-color);
-    box-shadow: var(--hover-glow);
-    transform: translateY(-1px) scale(1.03);
-    text-decoration: underline;
-}
 
 /* Animations */
 @keyframes fadeIn {
@@ -1084,9 +1204,6 @@ p {
     color: var(--button-text);
     border: none;
     border-radius: 50%;
-        /* Paint containment for perf; provides initial size to avoid layout jumps */
-        content-visibility: auto;
-        contain-intrinsic-size: 600px 800px;
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
@@ -1096,33 +1213,15 @@ p {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
 }
-/* Link transitions consolidated below */
-.button-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--glassy1);
-    backdrop-filter: blur(6px);
-    border: 1px solid var(--glassy2);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+
+#back-to-top.show {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: var(--button-text);
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1;
+    pointer-events: auto;
 }
-
-.button-to-top:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Loading Screen */
 #loading-screen {
     position: fixed;
@@ -1155,218 +1254,590 @@ p {
     }
 }
 
-/* Responsive styles */
-
-/* Adjustments for tablets */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem; /* Reduce heading size for tablets */
-    }
-
-    section {
-        padding: 0 15px; /* Reduce section padding for tablets */
-    }
-
-    .projects, .experience, .recommendations {
-        grid-template-columns: 1fr; /* Use a single-column layout on tablets */
+/* Fallback for browsers that do not support backdrop-filter */
+@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+    section,
+    .card,
+    .hero,
+    .contact,
+    .floating-tab-bar,
+    .btn,
+    .contact a,
+    .copy-id-btn {
+        background: rgba(11, 18, 29, 0.94);
     }
 }
+/* Final lock-in (EOF): mobile/tablet layout and nav behavior */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+}
 
-/* Mobile-specific adjustments (max-width: 480px) - consolidated */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
+@media (min-width: 769px) and (max-width: 1100px) {
+    body {
+        padding-top: 0;
     }
-    section {
-        padding: 0 10px;
+
+    .hero {
+        margin: 18px 16px 0;
+        padding: 82px 24px 70px;
     }
-    .projects, .experience, .recommendations {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .intro p {
-        font-size: 1rem;
-    }
-    .contact {
-        padding: 30px 10px;
-    }
-    .contact h2 {
-        font-size: 1.5rem;
-    }
-    .contact p {
-        font-size: 0.9rem;
-    }
-    .contact button {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-    footer {
-        padding: 8px 10px;
-        font-size: 0.7rem;
-    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: clamp(3rem, 6vw, 3.85rem);
     }
+
     .hero p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    section {
+        margin: 28px 16px;
+        padding: 22px;
+        scroll-margin-top: 106px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .intro .about-container {
+        grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
+        gap: 20px;
+        text-align: left;
+    }
+
+    .intro .about-container p {
+        text-align: left;
+    }
+
+    .profile-picture {
+        max-width: 190px;
+        margin: 0 auto;
+    }
+
+    .project-showcase {
+        gap: 14px;
+        scroll-snap-type: x proximity;
+    }
+
+    .project-showcase .project-card {
+        flex-basis: min(72vw, 520px);
+    }
+
     .floating-tab-bar {
-        bottom: 10px;
-        padding: 8px 10px;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: auto;
+        width: 100%;
+        transform: none;
+        border-radius: 0 0 14px 14px;
+        border-left: 0;
+        border-right: 0;
+        gap: 10px;
+        padding: 8px 14px;
     }
+
     .floating-tab-bar .tab-link {
-        font-size: 0.8rem;
-        padding: 6px 8px;
+        font-size: 0.95rem;
     }
 }
 
-/* Hide Back to Top Button on Mobile */
 @media (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 16px;
+        padding: 0;
+        padding-bottom: 104px;
+        padding-bottom: calc(104px + env(safe-area-inset-bottom));
+        padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+        background-attachment: scroll;
+    }
+
+    body::before,
+    body::after {
+        opacity: 0.08;
+        filter: blur(8px);
+    }
+
+    .hero {
+        margin: 10px 12px 0;
+        padding: 34px 16px 30px;
+        text-align: center;
+        border-radius: 16px;
+    }
+
+    .hero h1,
+    h1 {
+        font-size: clamp(2.1rem, 7vw, 2.5rem);
+        line-height: 1.06;
+        margin-bottom: 12px;
+    }
+
+    .hero p {
+        font-size: 1.02rem;
+        line-height: 1.5;
+        margin: 0 auto 8px;
+        max-width: 34ch;
+    }
+
+    /* Mobile readability: avoid dark metallic heading gradients on small screens */
+    h2 {
+        background: none !important;
+        -webkit-background-clip: initial;
+        background-clip: initial;
+        color: var(--primary-color) !important;
+        text-shadow: none;
+        animation: none;
+        font-size: 1.9rem;
+        line-height: 1.15;
+        margin-bottom: 12px;
+    }
+
+    section {
+        margin: 16px 12px;
+        padding: 16px 14px;
+        border-radius: 16px;
+        scroll-margin-top: 18px;
+    }
+
+    .card {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .chip-list {
+        gap: 8px;
+    }
+
+    .chip {
+        font-size: 0.84rem;
+        padding: 5px 10px;
+    }
+
+    .project-showcase {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        overflow: visible;
+        padding: 0;
+        scroll-snap-type: none;
+        scroll-padding-inline: 0;
+        scrollbar-width: auto;
+    }
+
+    .project-showcase::-webkit-scrollbar {
+        display: initial;
+    }
+
+    .project-showcase .project-card {
+        flex: initial;
+        width: auto;
+        max-width: none;
+        min-height: auto;
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+
+    .floating-tab-bar {
+        display: none !important;
+    }
+
+    .mobile-tab-dock {
+        position: fixed;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: center;
+        gap: 6px;
+        bottom: 10px;
+        bottom: calc(10px + env(safe-area-inset-bottom));
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+        left: 10px;
+        right: 10px;
+        z-index: 1100;
+        padding: 8px;
+        padding-bottom: 8px;
+        padding-bottom: calc(8px + env(safe-area-inset-bottom));
+        padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(14, 21, 33, 0.94), rgba(10, 16, 26, 0.88));
+        border: 1px solid rgba(170, 190, 214, 0.22);
+        box-shadow:
+            0 12px 28px rgba(4, 8, 14, 0.42),
+            inset 0 1px 0 rgba(255,255,255,0.08);
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
+    }
+
+    .mobile-tab-dock .tab-link {
+        min-width: 0;
+        min-height: 42px;
+        margin: 0;
+        padding: 8px 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.78rem;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0;
+        color: rgba(216, 227, 241, 0.86);
+        border-radius: 12px;
+        border: 1px solid transparent;
+        background: transparent;
+        white-space: nowrap;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-tab-dock .tab-link.active {
+        color: var(--primary-color);
+        background: linear-gradient(145deg, rgba(163, 191, 224, 0.26), rgba(106, 132, 167, 0.20));
+        border-color: rgba(190, 208, 229, 0.30);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
+    }
+
+    .mobile-tab-dock .tab-link:active {
+        transform: scale(0.98);
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .intro .about-container {
+        text-align: left;
+        align-items: start;
+        justify-items: center;
+    }
+
+    .intro .about-container p {
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.65;
+        width: 100%;
+    }
+
+    .profile-picture {
+        justify-self: center;
+        max-width: 170px;
+    }
+
+    .contact {
+        padding: 30px 15px;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    button,
+    a.btn {
+        display: block;
+        width: 100%;
+        max-width: 90%;
+        margin: 0.5rem auto;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+    }
+
+    .card .btn {
+        width: 100%;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .project-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-label {
+        font-size: 0.74rem;
+        white-space: normal;
+        line-height: 1.15;
+        max-width: 100%;
+    }
+
+    .project-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .project-links .btn {
+        max-width: none;
+        margin: 0;
+    }
+
+    .impact-list {
+        padding-left: 16px;
+        font-size: 0.92rem;
+        margin-bottom: 8px;
+    }
+
+    .project-top {
+        gap: 8px;
+    }
+
+    .project-top h3 {
+        font-size: 1.18rem;
+        line-height: 1.25;
+    }
+
+    .case-study {
+        padding: 10px;
+    }
+
+    .case-study summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
     #back-to-top {
         display: none !important;
     }
 }
 
-/* === Light mode hover visibility boost (keeps dark mode as-is) === */
-@media (prefers-color-scheme: light) {
-  /* Buttons */
-  .btn:hover {
-    background: linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.50));
-    border-color: rgba(255,255,255,0.90);
-    box-shadow:
-      0 14px 32px rgba(31,38,135,0.28),
-      inset 0 1px 2px rgba(255,255,255,0.75),
-      0 0 0 1px rgba(0,0,0,0.12); /* subtle dark ring for contrast */
-  }
-
-  /* Project/Recommendation links */
-  .project a:hover, .recommendation a:hover {
-    background: linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.50));
-    border-color: rgba(255,255,255,0.90);
-    box-shadow:
-      0 14px 32px rgba(31,38,135,0.28),
-      inset 0 1px 2px rgba(255,255,255,0.75),
-      0 0 0 1px rgba(0,0,0,0.12);
-  }
-
-  /* Video/Poster CTA links */
-  .view-video-btn:hover, .view-poster-btn:hover {
-    background: linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.50));
-    border-color: rgba(255,255,255,0.90);
-    box-shadow:
-      0 14px 32px rgba(31,38,135,0.28),
-      inset 0 1px 2px rgba(255,255,255,0.75),
-      0 0 0 1px rgba(0,0,0,0.12);
-  }
-
-  /* Top bar tabs */
-  .floating-tab-bar .tab-link:hover {
-    background: linear-gradient(145deg, rgba(255,255,255,0.70), rgba(255,255,255,0.40));
-    border-color: rgba(255,255,255,0.85);
-    box-shadow:
-      0 6px 16px rgba(0,0,0,0.18),
-      inset 0 1px 2px rgba(255,255,255,0.65),
-      0 0 0 1px rgba(0,0,0,0.10);
-  }
-}
-/* Ensure floating tab bar displays on all viewports; it repositions via mobile rules above */
-@media (min-width: 769px) {
-    .floating-tab-bar { display: flex; }
-}
-
-/* Ensure buttons adapt well to both light and dark modes */
-button {
-    background: var(--button-bg);
-    color: var(--button-text);
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: var(--box-shadow);
-    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background: var(--link-hover);
-    transform: scale(1.03);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure links adapt well to both light and dark modes */
-a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
-}
-
-/* Optimized Scrolling and Hovering Animations for All Browsers */
-
-/* Enable smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Optimize hover animations */
-.glassy-hover {
-    transition: transform 0.18s ease-out, opacity 0.18s ease-out;
-}
-
-.glassy-hover:hover {
-    transform: scale(1.02);
-    opacity: 0.95;
-}
-
-/* Simplify box shadows for better performance */
-.glassy-hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Reduce blur intensity for smoother rendering */
-.glassy-hover {
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-/* Debounce scroll events for smoother scrolling */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
+@media (max-width: 480px) {
+    .about-container {
+        gap: 14px;
     }
-    .glassy-hover {
-        transition: none;
+
+    .profile-picture {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+
+    h1,
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section {
+        margin: 14px 10px;
+        padding: 14px 12px;
+        border-radius: 14px;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .contact {
+        padding: 30px 10px;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+
+    .mobile-tab-dock {
+        left: 8px;
+        right: 8px;
+        padding: 6px;
+        gap: 4px;
+        border-radius: 16px;
+    }
+
+    .mobile-tab-dock .tab-link {
+        font-size: 0.7rem;
+        padding: 7px 4px;
+        min-height: 38px;
+    }
+
+    .project-showcase .project-card {
+        width: auto;
+        flex-basis: auto;
+        max-width: none;
+    }
+
+    .chip {
+        font-size: 0.8rem;
+        padding: 5px 9px;
+    }
+
+    body::before,
+    body::after {
+        opacity: 0.04;
     }
 }
 
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-    .glass:hover, .glass:focus-within {
-        transform: none; /* Disable scaling and translation on hover for mobile */
-        box-shadow: var(--box-shadow); /* Use default shadow */
+@media (max-width: 380px) {
+    body {
+        padding-bottom: 96px;
+        padding-bottom: calc(96px + env(safe-area-inset-bottom));
+        padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
     }
 
     .hero {
-        padding: 50px 10px; /* Adjust padding for smaller screens */
-        box-shadow: var(--box-shadow); /* Simplify shadow for performance */
+        margin: 8px 8px 0;
+        padding: 26px 12px 24px;
     }
 
-    .hero::before {
-        animation: none; /* Disable background animation for mobile */
+    .hero h1,
+    h1 {
+        font-size: 1.8rem;
     }
 
-    /* Ensure buttons and links are easily tappable */
-    button, a {
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
+    .hero p {
+        font-size: 0.92rem;
+        max-width: 30ch;
+    }
+
+    h2 {
+        font-size: 1.65rem;
+    }
+
+    section {
+        margin: 12px 8px;
+        padding: 12px 10px;
+        border-radius: 12px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .about-container {
+        gap: 12px;
+    }
+
+    .profile-picture {
+        max-width: 138px;
+    }
+
+    .intro .about-container p {
+        font-size: 0.94rem;
+        line-height: 1.58;
+    }
+
+    .chip-list {
+        gap: 6px;
+    }
+
+    .chip {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .project-top h3 {
+        font-size: 1.05rem;
+    }
+
+    .project-label {
+        font-size: 0.66rem;
+        padding: 5px 8px;
+    }
+
+    .impact-list {
+        font-size: 0.88rem;
+        padding-left: 14px;
+    }
+
+    .mobile-tab-dock {
+        left: 6px;
+        right: 6px;
+        bottom: 8px;
+        bottom: calc(8px + env(safe-area-inset-bottom));
+        bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+        padding: 5px;
+        gap: 3px;
+        border-radius: 14px;
+    }
+
+    .mobile-tab-dock .tab-link {
+        min-height: 36px;
+        padding: 7px 2px;
+        font-size: 0.64rem;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 1101px) {
+    body {
+        padding-top: 0;
+    }
+
+    section {
+        margin: 36px auto;
+        padding: 24px;
+        scroll-margin-top: 112px;
+    }
+
+    .hero {
+        margin-top: 10px;
+        padding: 110px 28px 90px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.6rem, 5vw, 4.8rem);
+    }
+
+    .hero p {
+        max-width: 880px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .intro .about-container {
+        grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+        align-items: center;
+        text-align: left;
+    }
+
+    .intro .about-container p {
+        text-align: left;
+    }
+
+    .project-showcase {
+        gap: 18px;
+        padding-inline: 6px;
+        scroll-snap-type: x proximity;
+    }
+
+    .project-showcase .project-card {
+        flex-basis: clamp(350px, 30vw, 430px);
     }
 }
