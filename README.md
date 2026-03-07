@@ -2,6 +2,8 @@
 
 A responsive developer portfolio website showcasing my projects, experience, education, and accessibility-focused work.
 
+**Current Version:** `v2026.1`
+
 ## Live Site
 
 [View Portfolio](https://tmal1652.github.io/)
@@ -26,6 +28,13 @@ The site is designed to adapt across desktop, tablet, and mobile devices while m
 - Accessibility-minded structure and interaction patterns
 - Modern glass/liquid visual system with metallic styling accents
 - Smooth section navigation with active state tracking
+
+## Latest Updates (v2026.1)
+
+- Refined mobile layout behavior for small screens (including iPhone SE sizing)
+- Improved project-card and button containment to prevent horizontal overflow
+- Updated navigation behavior for cleaner desktop vs mobile experiences
+- Polished visual consistency across light/dark system modes using a unified dark-forward theme
 
 ## Featured Work Included
 
