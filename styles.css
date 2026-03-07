@@ -1608,6 +1608,7 @@ svg {
     .project-top {
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
     }
 
     .project-label {
@@ -1642,6 +1643,8 @@ svg {
     }
 
     .project-top h3 {
+        flex: initial;
+        width: auto;
         font-size: 1.18rem;
         line-height: 1.25;
     }

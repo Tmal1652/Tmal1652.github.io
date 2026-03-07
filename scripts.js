@@ -40,6 +40,12 @@ window.addEventListener('load', () => {
     }
 });
 
+// Failsafe: never leave the loading overlay visible indefinitely.
+setTimeout(() => {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) loadingScreen.style.display = 'none';
+}, 2500);
+
 // Some browsers restore scroll after load; re-assert top on first page show.
 window.addEventListener('pageshow', (event) => {
     if (!shouldResetInitialScroll) return;
