@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /showz-showcase.html
+Disallow: /assets/showz/

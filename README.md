@@ -8,6 +8,7 @@ A responsive developer portfolio website showcasing my projects, experience, edu
 
 [View Portfolio](https://tmal1652.github.io/)
 
+
 ## About
 
 This repository contains my personal portfolio site, built to present my software development work in a clean, modern, and recruiter-friendly format.
@@ -38,11 +39,12 @@ The site is designed to adapt across desktop, tablet, and mobile devices while m
 
 ## Featured Work Included
 
-- ShowZ (native iOS TV show discovery app, SwiftUI)
+- ShowZ (native iOS TV discovery + local-first themed chat, v2.8 Alpha)
 - Protify (AI-powered calendar/productivity concept)
 - CollabConnect (collaborative web app)
 - ClearText AI (accessibility-focused summarization tool)
 - Portfolio Website (this project)
+
 
 ## AI-Assisted Workflow
 
