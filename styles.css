@@ -824,6 +824,18 @@ a:hover {
     display: block;
 }
 
+.projects-entry-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    column-gap: 18px;
+    row-gap: 12px;
+}
+
+.projects-entry-copy-block h2 {
+    margin: 0;
+}
+
 .projects-entry-copy {
     margin: 8px 0 0;
     max-width: 74ch;
@@ -831,7 +843,7 @@ a:hover {
 }
 
 .projects-entry-actions {
-    margin-top: 14px;
+    margin-top: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1564,6 +1576,11 @@ svg {
         min-height: auto;
         scroll-snap-align: none;
         scroll-snap-stop: normal;
+    }
+
+    .projects-entry-header {
+        grid-template-columns: 1fr;
+        align-items: stretch;
     }
 
     .projects-entry-actions .btn {
