@@ -28,13 +28,20 @@ const resetScrollToTop = () => {
     window.scrollTo(0, 0);
 };
 
-// Ensure deep links like #projects land on the correct section after layout settles.
-const alignToHashTarget = () => {
-    const { hash } = window.location;
-    if (!hash) return;
+const loadingScreen = document.getElementById('loading-screen');
+const hideLoadingScreen = () => {
+    if (loadingScreen) loadingScreen.style.display = 'none';
+};
 
-    let target = null;
+const loadingScreenFailsafeTimer = window.setTimeout(hideLoadingScreen, 2500);
+let hashLayoutOverrides = [];
+
+const getHashTarget = () => {
+    const { hash } = window.location;
+    if (!hash) return null;
+
     const rawId = hash.slice(1);
+    let target = null;
     try {
         target =
             document.getElementById(decodeURIComponent(rawId)) ||
@@ -42,15 +49,62 @@ const alignToHashTarget = () => {
     } catch (e) {
         target = document.getElementById(rawId);
     }
+    return target;
+};
 
-    if (target) {
-        target.scrollIntoView({ behavior: 'auto', block: 'start' });
+const prepareHashLayout = () => {
+    if (!window.location.hash || hashLayoutOverrides.length) return;
+    // Prevent content-visibility estimates from shifting deep-link anchor positions.
+    document.querySelectorAll('section').forEach((section) => {
+        hashLayoutOverrides.push({
+            section,
+            contentVisibility: section.style.contentVisibility,
+            containIntrinsicSize: section.style.containIntrinsicSize
+        });
+        section.style.contentVisibility = 'visible';
+        section.style.containIntrinsicSize = 'auto';
+    });
+};
+
+const restoreHashLayout = () => {
+    if (!hashLayoutOverrides.length) return;
+
+    hashLayoutOverrides.forEach(({ section, contentVisibility, containIntrinsicSize }) => {
+        section.style.contentVisibility = contentVisibility;
+        section.style.containIntrinsicSize = containIntrinsicSize;
+    });
+    hashLayoutOverrides = [];
+};
+
+// Ensure deep links like #projects land on the correct section after layout settles.
+const alignToHashTarget = () => {
+    const target = getHashTarget();
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: 'auto', block: 'start' });
+};
+
+const runHashAlignmentPasses = () => {
+    if (!window.location.hash) return;
+    prepareHashLayout();
+    [0, 80, 220, 420, 800].forEach((delay) => {
+        window.setTimeout(alignToHashTarget, delay);
+    });
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+            alignToHashTarget();
+            window.setTimeout(alignToHashTarget, 120);
+            window.setTimeout(restoreHashLayout, 360);
+        });
+    } else {
+        window.setTimeout(restoreHashLayout, 1200);
     }
 };
 
 window.addEventListener('load', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) loadingScreen.style.display = 'none';
+    hideLoadingScreen();
+    window.clearTimeout(loadingScreenFailsafeTimer);
 
     // Start at the top on direct visits/reloads unless a hash target is intentional.
     if (shouldResetInitialScroll) {
@@ -58,17 +112,9 @@ window.addEventListener('load', () => {
         window.requestAnimationFrame(resetScrollToTop);
         setTimeout(resetScrollToTop, 0);
     } else if (window.location.hash) {
-        alignToHashTarget();
-        window.requestAnimationFrame(alignToHashTarget);
-        setTimeout(alignToHashTarget, 120);
+        runHashAlignmentPasses();
     }
 });
-
-// Failsafe: never leave the loading overlay visible indefinitely.
-setTimeout(() => {
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) loadingScreen.style.display = 'none';
-}, 2500);
 
 // Some browsers restore scroll after load; re-assert top on first page show.
 window.addEventListener('pageshow', (event) => {
@@ -101,6 +147,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
         }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     // Smooth scroll to top on click
     backToTopButton.addEventListener('click', (e) => {
@@ -137,7 +184,14 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
     const setActiveLink = (activeHref) => {
         hrefToLinks.forEach((links, href) => {
             const isActive = href === activeHref;
-            links.forEach((link) => link.classList.toggle('active', isActive));
+            links.forEach((link) => {
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
         });
     };
 
@@ -152,6 +206,15 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
         }
     };
 
+    const moveFocusToSection = (target) => {
+        if (!target) return;
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        target.addEventListener('blur', () => {
+            target.removeAttribute('tabindex');
+        }, { once: true });
+    };
+
     hrefToLinks.forEach((links, href) => {
         const target = hrefToTarget.get(href);
         if (!target) return;
@@ -160,6 +223,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
             e.preventDefault();
             scrollToSection(target);
             setActiveLink(href);
+            moveFocusToSection(target);
             if (history.pushState) {
                 // Keep URL clean (Apple/Tesla-style nav) so refresh opens at page top.
                 try {

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Showcase Hub for Tyler Malovrh: central access to ShowZ, product demos, live apps, and technical project context.">
+    <meta name="theme-color" content="#09101b">
+    <title>Project Showcase Hub | Tyler Malovrh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projects-hub.css">
+</head>
+<body class="projects-hub-page">
+    <a class="projects-hub-skip" href="#projects-hub-main">Skip to project hubs</a>
+    <div class="projects-hub-bg" aria-hidden="true"></div>
+
+    <header class="projects-hub-topbar" aria-label="Project hub navigation">
+        <div class="projects-hub-topbar-inner">
+            <a href="#overview" class="projects-hub-brand" aria-label="Project Showcase Hub home">
+                <span class="projects-hub-brand-title">Project Showcase Hub</span>
+                <span class="projects-hub-brand-subtitle">Tyler Malovrh</span>
+            </a>
+            <nav class="projects-hub-nav" aria-label="Project hub sections">
+                <a href="#overview">Overview</a>
+                <a href="#all-projects">All Projects</a>
+            </nav>
+            <aside class="projects-hub-snapshot" aria-label="Project hub snapshot">
+                <p class="projects-hub-snapshot-title">Hub Snapshot</p>
+                <ul class="projects-hub-snapshot-list">
+                    <li><span>Featured</span><strong>ShowZ Project Showcase Hub</strong></li>
+                    <li><span>Projects Live</span><strong>5 Active Portfolio Projects</strong></li>
+                    <li><span>Review Path</span><strong>Overview + Featured - All Projects</strong></li>
+                </ul>
+            </aside>
+            <a href="index.html#projects" class="projects-hub-btn">Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main class="projects-hub-shell" id="projects-hub-main">
+        <section class="projects-hub-panel" id="overview" aria-labelledby="projects-hub-title">
+            <h1 id="projects-hub-title">Overview</h1>
+            <p class="projects-hub-copy">
+                This hub is a dedicated space for projects in my portfolio. Go to All Projects to view work I have done across websites,
+                apps, and project showcase hubs.
+            </p>
+            <div class="projects-hub-meta" aria-label="Project hub overview">
+                <article class="projects-hub-meta-card">
+                    <h2>Apps + Web Work</h2>
+                    <p>Project work across iOS apps, web apps, and portfolio experiences.</p>
+                </article>
+                <article class="projects-hub-meta-card">
+                    <h2>Hub-first</h2>
+                    <p>Each project can have a dedicated experience with screenshots, timeline context, and outcomes.</p>
+                </article>
+                <article class="projects-hub-meta-card">
+                    <h2>Featured Focus Hub</h2>
+                    <p>Projects that are featured or need extra focus are displayed in the Featured Project Hub section.</p>
+                </article>
+            </div>
+            <div class="projects-hub-section-divider" aria-hidden="true"></div>
+            <h2 class="projects-hub-subheading">Featured Project Hub</h2>
+            <article class="projects-hub-feature-card" id="showz">
+                <div class="projects-hub-feature-frame">
+                    <img src="assets/showz/screens/showz-v3-foryou-liked.png" alt="ShowZ featured preview screenshot" loading="lazy" decoding="async">
+                </div>
+                <div class="projects-hub-feature-copy">
+                    <div class="projects-hub-feature-head">
+                        <h3>ShowZ Project Showcase Hub</h3>
+                        <span class="projects-hub-pill">Featured iOS App</span>
+                    </div>
+                    <p>
+                        Deep-dive experience for ShowZ, including release progression, screenshot version history, demo status,
+                        and technical architecture notes.
+                    </p>
+                    <div class="projects-hub-tag-list" aria-label="ShowZ tags">
+                        <span class="projects-hub-tag">SwiftUI</span>
+                        <span class="projects-hub-tag">TVMaze API</span>
+                        <span class="projects-hub-tag">Local-first Chat</span>
+                    </div>
+                    <div class="projects-hub-actions">
+                        <a href="showz-showcase.html" class="projects-hub-btn projects-hub-btn-featured">Open ShowZ Hub</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="projects-hub-panel" id="all-projects" aria-labelledby="all-projects-title">
+            <h2 id="all-projects-title">All Projects</h2>
+            <p class="projects-hub-helper">Browse every active project from one place!</p>
+            <div class="projects-hub-grid">
+                <article class="projects-hub-card projects-hub-card-wide" id="showz-all">
+                    <div class="projects-hub-card-head">
+                        <h3><span class="projects-hub-inline-badge">New</span>ShowZ</h3>
+                        <div class="projects-hub-pill-group" aria-label="ShowZ tags">
+                            <span class="projects-hub-pill">Featured iOS App</span>
+                        </div>
+                    </div>
+                    <p>Native SwiftUI iOS app for TV show discovery with personalized recommendations and immersive chat.</p>
+                    <div class="projects-hub-actions">
+                        <a href="showz-showcase.html" class="projects-hub-btn projects-hub-btn-featured">View Hub</a>
+                    </div>
+                </article>
+
+                <article class="projects-hub-card" id="protify">
+                    <div class="projects-hub-card-head">
+                        <h3>Protify AI-Powered Calendar App</h3>
+                        <span class="projects-hub-pill">Product Demo</span>
+                    </div>
+                    <p>Context-aware scheduling demo with AI recommendations and multi-signal planning concepts.</p>
+                    <div class="projects-hub-actions">
+                        <a href="ProtifyExpoDemo.mp4" class="projects-hub-btn" target="_blank" rel="noopener">View Video</a>
+                        <a href="Protify_Poster.pdf" class="projects-hub-btn projects-hub-btn-muted" target="_blank" rel="noopener">View Poster</a>
+                    </div>
+                </article>
+
+                <article class="projects-hub-card" id="collabconnect">
+                    <div class="projects-hub-card-head">
+                        <h3>CollabConnect</h3>
+                        <span class="projects-hub-pill">Web App</span>
+                    </div>
+                    <p>Collaboration MVP focused on usability across desktop and mobile workflows.</p>
+                    <div class="projects-hub-actions">
+                        <a href="https://tmal1652.github.io/CollabConnect/" class="projects-hub-btn" target="_blank" rel="noopener">View Website</a>
+                    </div>
+                </article>
+
+                <article class="projects-hub-card" id="cleartext">
+                    <div class="projects-hub-card-head">
+                        <h3>ClearText AI</h3>
+                        <span class="projects-hub-pill">Accessibility Tool</span>
+                    </div>
+                    <p>Summarization + narration concept for accessibility-first reading and comprehension support.</p>
+                    <div class="projects-hub-actions">
+                        <a href="https://tmal1652.github.io/Tmal1652.github.io-ClearTextAI/" class="projects-hub-btn" target="_blank" rel="noopener">View Website</a>
+                    </div>
+                </article>
+
+                <article class="projects-hub-card" id="portfolio-project">
+                    <div class="projects-hub-card-head">
+                        <h3>Portfolio Website</h3>
+                        <span class="projects-hub-pill">Developer Portfolio</span>
+                    </div>
+                    <p>Responsive portfolio focused on cross-browser polish, fluid layout behavior, and modern glass styling.</p>
+                    <div class="projects-hub-actions">
+                        <a href="https://github.com/Tmal1652/Tmal1652.github.io" class="projects-hub-btn" target="_blank" rel="noopener">View on GitHub</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="projects-hub-footer">
+        <p>&copy; 2026 Tyler Malovrh. Project Showcase Hub.</p>
+    </footer>
+
+    <script>
+        (() => {
+            const sectionIds = ['overview', 'all-projects'];
+            const panels = sectionIds
+                .map((id) => document.getElementById(id))
+                .filter(Boolean);
+            const navLinks = Array.from(document.querySelectorAll('.projects-hub-nav a[href^="#"]'));
+            const resolveSectionFromHash = (hash) => {
+                const normalized = (hash || '').replace('#', '').toLowerCase();
+                if (sectionIds.includes(normalized)) return normalized;
+                return 'overview';
+            };
+
+            const setActiveSection = (id) => {
+                const target = sectionIds.includes(id) ? id : 'overview';
+
+                panels.forEach((panel) => {
+                    const isActive = panel.id === target;
+                    panel.hidden = !isActive;
+                    panel.classList.toggle('is-active', isActive);
+                    panel.setAttribute('aria-hidden', String(!isActive));
+                });
+
+                navLinks.forEach((link) => {
+                    const linkId = link.getAttribute('href').slice(1);
+                    const isActive = linkId === target;
+                    link.classList.toggle('is-active', isActive);
+                    if (isActive) {
+                        link.setAttribute('aria-current', 'location');
+                    } else {
+                        link.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            const syncFromHash = () => {
+                setActiveSection(resolveSectionFromHash(window.location.hash));
+            };
+
+            navLinks.forEach((link) => {
+                link.addEventListener('click', () => {
+                    const href = link.getAttribute('href') || '';
+                    if (!href.startsWith('#')) return;
+                    setActiveSection(resolveSectionFromHash(href));
+                });
+            });
+
+            window.addEventListener('hashchange', syncFromHash);
+            syncFromHash();
+        })();
+    </script>
+</body>
+</html>

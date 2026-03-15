@@ -12,19 +12,21 @@
     <link rel="stylesheet" href="showz-showcase.css">
 </head>
 <body class="showz-showcase-page">
+    <a class="showz-skip-link" href="#main-content">Skip to project content</a>
+    <p id="showz-section-status" class="showz-sr-only" role="status" aria-live="polite"></p>
     <div class="showz-bg" aria-hidden="true"></div>
 
     <header class="showz-topbar" aria-label="ShowZ navigation">
         <div class="showz-topbar-inner">
-            <a href="#project-description" class="showz-brand" aria-label="ShowZ hub home">
+            <a href="#project-description" class="showz-brand" aria-label="ShowZ project showcase hub home">
                 <span class="showz-brand-title">ShowZ</span>
                 <span class="showz-brand-subtitle">Project Showcase Hub</span>
             </a>
             <nav class="showz-nav" aria-label="Section navigation">
-                <a href="#project-description">Project Description</a>
-                <a href="#versions">Screenshots Version History</a>
-                <a href="#trailer">Demo</a>
-                <a href="#build">Technical</a>
+                <a href="#project-description" data-section="project-description" aria-controls="project-description">Project Description</a>
+                <a href="#versions" data-section="versions" aria-controls="versions">Screenshots Version History</a>
+                <a href="#trailer" data-section="trailer" aria-controls="trailer">Demo</a>
+                <a href="#build" data-section="build" aria-controls="build">Technical</a>
             </nav>
             <aside class="showz-hub-snapshot" aria-label="ShowZ hub snapshot">
                 <p class="showz-hub-snapshot-title">Hub Snapshot</p>
@@ -34,16 +36,17 @@
                     <li><span>Review Path</span><strong>Description -> Screenshots -> Demo -> Technical</strong></li>
                 </ul>
             </aside>
-            <a href="index.html#projects" class="btn showz-back-btn">Back to Projects</a>
+            <a href="projects-hub.html" class="btn showz-back-btn">Back to Hub</a>
         </div>
     </header>
 
-    <main class="showz-shell">
-        <section class="showz-panel showz-featured" id="project-description" aria-labelledby="showz-title">
-            <div class="showz-featured-copy">
+    <main class="showz-shell" id="main-content">
+        <h1 class="showz-sr-only">ShowZ Project Showcase Hub</h1>
+        <section class="showz-panel" id="project-description" aria-labelledby="project-description-title">
+            <div>
                 <div class="showz-intro-grid">
                     <div class="showz-intro-copy">
-                        <h1 id="showz-title">ShowZ</h1>
+                        <h2 id="project-description-title">Project Description</h2>
                         <p class="showz-tagline">ShowZ is a native SwiftUI iOS app for TV discovery and discussion. This page highlights product progression from V1 foundations to the current v2.8 Alpha build.</p>
                         <article class="showz-intro-focus" aria-label="Showcase coverage">
                             <p class="showz-intro-focus-title">What this showcase covers</p>
@@ -250,7 +253,7 @@
             <h2 id="trailer-title">Demo Walkthrough</h2>
             <p class="showz-helper">This section hosts the product demo video for reviewers. The player activates automatically when the media file is present.</p>
             <div class="showz-trailer" data-state="pending">
-                <video class="showz-trailer-video" controls preload="metadata" aria-label="ShowZ demo trailer">
+                <video class="showz-trailer-video" controls preload="none" aria-label="ShowZ demo trailer">
                     <source src="assets/showz/video/showz-demo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -309,13 +312,82 @@
 
     <script>
         (() => {
+            const sectionIds = ['project-description', 'versions', 'trailer', 'build'];
+            const panels = sectionIds
+                .map((id) => document.getElementById(id))
+                .filter(Boolean);
+            const navLinks = Array.from(document.querySelectorAll('.showz-nav a[href^="#"]'));
+            const sectionStatus = document.getElementById('showz-section-status');
+            const trailer = document.querySelector('.showz-trailer');
+            const video = trailer?.querySelector('.showz-trailer-video');
+            let trailerRequested = false;
+
+            const readVersionFromHash = (hash) => hash.match(/versions-(v[123])/i)?.[1]?.toLowerCase() || null;
+
+            const resolveSectionFromHash = (hash) => {
+                const normalized = (hash || '').replace('#', '').toLowerCase();
+                if (normalized.startsWith('versions-v')) return 'versions';
+                if (sectionIds.includes(normalized)) return normalized;
+                return 'project-description';
+            };
+
+            const markTrailerReady = () => trailer?.setAttribute('data-state', 'ready');
+            const markTrailerPending = () => trailer?.setAttribute('data-state', 'pending');
+
+            if (trailer && video) {
+                video.addEventListener('loadeddata', markTrailerReady);
+                video.addEventListener('canplay', markTrailerReady);
+                video.addEventListener('error', markTrailerPending);
+                markTrailerPending();
+            }
+
+            const ensureTrailerLoaded = () => {
+                if (!trailer || !video || trailerRequested) return;
+                trailerRequested = true;
+                markTrailerPending();
+                video.load();
+            };
+
+            const setActiveSection = (sectionId) => {
+                const target = sectionIds.includes(sectionId) ? sectionId : 'project-description';
+
+                panels.forEach((panel) => {
+                    const isActive = panel.id === target;
+                    panel.hidden = !isActive;
+                    panel.classList.toggle('is-active', isActive);
+                    panel.setAttribute('aria-hidden', String(!isActive));
+                });
+
+                navLinks.forEach((link) => {
+                    const linkTarget = link.dataset.section || link.getAttribute('href')?.replace('#', '');
+                    const isActive = linkTarget === target;
+                    link.classList.toggle('is-active', isActive);
+                    if (isActive) {
+                        link.setAttribute('aria-current', 'location');
+                    } else {
+                        link.removeAttribute('aria-current');
+                    }
+                });
+
+                if (sectionStatus) {
+                    const activeLabel = navLinks.find((link) => (link.dataset.section || link.getAttribute('href')?.replace('#', '')) === target)?.textContent?.trim();
+                    if (activeLabel) sectionStatus.textContent = `Showing ${activeLabel}`;
+                }
+
+                if (target === 'trailer') {
+                    ensureTrailerLoaded();
+                }
+            };
+
             const picker = document.querySelector('.showz-version-picker');
+            let setVersion = null;
+
             if (picker) {
                 const buttons = Array.from(picker.querySelectorAll('.showz-version-btn'));
                 const notes = Array.from(document.querySelectorAll('.showz-season-note[data-version]'));
                 const lanes = Array.from(document.querySelectorAll('.showz-shot-lane[data-version]'));
 
-                const setVersion = (version, updateHash = false) => {
+                setVersion = (version, updateHash = false) => {
                     buttons.forEach((button) => {
                         const isActive = button.dataset.version === version;
                         button.classList.toggle('active', isActive);
@@ -331,6 +403,7 @@
                     });
 
                     if (updateHash) {
+                        setActiveSection('versions');
                         history.replaceState(null, '', `#versions-${version}`);
                     }
                 };
@@ -341,24 +414,28 @@
                     setVersion(button.dataset.version, true);
                 });
 
-                const fromHash = window.location.hash.match(/versions-(v[123])/i)?.[1]?.toLowerCase();
-                const initial = fromHash || buttons.find((button) => button.classList.contains('active'))?.dataset.version || 'v3';
+                const initial = buttons.find((button) => button.classList.contains('active'))?.dataset.version || 'v3';
                 setVersion(initial);
             }
 
-            const trailer = document.querySelector('.showz-trailer');
-            const video = trailer?.querySelector('.showz-trailer-video');
-            if (trailer && video) {
-                const markReady = () => trailer.setAttribute('data-state', 'ready');
-                const markPending = () => trailer.setAttribute('data-state', 'pending');
+            const syncFromHash = () => {
+                setActiveSection(resolveSectionFromHash(window.location.hash));
+                const hashVersion = readVersionFromHash(window.location.hash);
+                if (setVersion && hashVersion) {
+                    setVersion(hashVersion);
+                }
+            };
 
-                video.addEventListener('loadeddata', markReady);
-                video.addEventListener('canplay', markReady);
-                video.addEventListener('error', markPending);
+            navLinks.forEach((link) => {
+                link.addEventListener('click', () => {
+                    const href = link.getAttribute('href') || '';
+                    if (!href.startsWith('#')) return;
+                    setActiveSection(link.dataset.section || resolveSectionFromHash(href));
+                });
+            });
 
-                markPending();
-                video.load();
-            }
+            window.addEventListener('hashchange', syncFromHash);
+            syncFromHash();
         })();
     </script>
 </body>

@@ -20,9 +20,10 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="spinner"></div>
+    <div id="loading-screen" aria-hidden="true">
+        <div class="spinner" aria-hidden="true"></div>
     </div>
 
 
@@ -37,15 +38,15 @@
 
     <!-- Mobile Navigation Dock -->
     <nav class="mobile-tab-dock" aria-label="Primary navigation">
-        <a href="#about" class="tab-link">About</a>
-        <a href="#projects" class="tab-link">Work</a>
-        <a href="#experience" class="tab-link">Exp</a>
-        <a href="#education" class="tab-link">Edu</a>
-        <a href="#contact" class="tab-link">Contact</a>
+        <a href="#about" class="tab-link" aria-label="About">About</a>
+        <a href="#projects" class="tab-link" aria-label="Projects">Work</a>
+        <a href="#experience" class="tab-link" aria-label="Experience">Exp</a>
+        <a href="#education" class="tab-link" aria-label="Education">Edu</a>
+        <a href="#contact" class="tab-link" aria-label="Contact">Contact</a>
     </nav>
 
     
-
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <h1>Tyler Malovrh</h1>
@@ -101,128 +102,29 @@
     </section>
 
     <!-- Project Showcase -->
-    <section class="projects" id="projects">
-        <h2>Project Showcase</h2>
-        <div class="card-container project-showcase">
-            <article class="card project-card">
-                <div class="project-top">
-                    <h3>ShowZ</h3>
-                    <span class="project-label">Featured iOS App</span>
-                </div>
-                <p>ShowZ is a native iOS app built with SwiftUI for TV discovery + local-first room chat, currently in v2.8 Alpha with immersive per-show theming and TVMaze-first search.</p>
-                <div class="chip-list project-tags" aria-label="ShowZ tags">
-                    <span class="chip">SwiftUI</span>
-                    <span class="chip">iOS</span>
-                    <span class="chip">TVMaze API</span>
-                    <span class="chip">Local-First Chat</span>
-                </div>
-                <ul class="impact-list">
-                    <li>Shipped a stable discovery foundation with explicit-like personalization.</li>
-                    <li>Introduced room-based local chat and immersive per-show theme architecture in v2.8 Alpha.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>Case Study</summary>
-                    <p><strong>Problem:</strong> TV discovery apps often feel noisy and inconsistent.</p>
-                    <p><strong>Built:</strong> A TVMaze-first discovery flow plus immersive local-first room chat for General, Season, and Episode conversations.</p>
-                    <p><strong>Outcome:</strong> v2.8 Alpha focuses on chat stabilization, readability, and performance hardening before beta.</p>
-                </details>
-                <div class="project-links">
-                    <a href="showz-showcase.html" class="btn">View Project Showcase Hub</a>
-                </div>
+    <section class="projects projects-entry" id="projects">
+        <h2>Project Showcase Hub</h2>
+        <p class="projects-entry-copy">
+            Projects now live in a dedicated hub. Open the Project Showcase Hub to discover and browse each project.
+        </p>
+        <div class="projects-entry-actions">
+            <a href="projects-hub.html" class="btn">Open Project Hub</a>
+        </div>
+        <div class="card-container projects-entry-grid">
+            <article class="card projects-entry-card">
+                <h3>Dedicated Space for Projects</h3>
+                <p>Locate every project in one organized hub so viewers can quickly find the right work and dive deeper.</p>
+                <a href="projects-hub.html#overview" class="projects-entry-link">Explore the Hub</a>
             </article>
-            <article class="card project-card">
-                <div class="project-top">
-                    <h3>Protify AI-Powered Calendar App</h3>
-                    <span class="project-label">Product Demo</span>
-                </div>
-                <p>Protify helps users manage schedules with AI recommendations for workouts, recipes, and productivity while accounting for external signals like weather and traffic.</p>
-                <div class="chip-list project-tags" aria-label="Protify tags">
-                    <span class="chip">AI Features</span>
-                    <span class="chip">Productivity</span>
-                    <span class="chip">Context-Aware UX</span>
-                </div>
-                <ul class="impact-list">
-                    <li>Validated multi-signal planning concepts through a working demo.</li>
-                    <li>Combined calendar, health, and productivity guidance in one flow.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>Case Study</summary>
-                    <p><strong>Problem:</strong> Standard calendars rarely adapt to real-world conditions.</p>
-                    <p><strong>Built:</strong> A concept that merges scheduling with external context and recommendation prompts.</p>
-                    <p><strong>Outcome:</strong> Demonstrated feasible UX direction and product viability.</p>
-                </details>
-                <div class="project-links">
-                    <a href="ProtifyExpoDemo.mp4" class="btn" target="_blank" rel="noopener">View Video</a>
-                </div>
+            <article class="card projects-entry-card">
+                <h3>Projects</h3>
+                <p>View websites, demos, and app showcases in one space with clean entry points for each project.</p>
+                <a href="projects-hub.html#all-projects" class="projects-entry-link">Browse All Projects</a>
             </article>
-            <article class="card project-card">
-                <div class="project-top">
-                    <h3>CollabConnect</h3>
-                    <span class="project-label">Web Application</span>
-                </div>
-                <p>CollabConnect is a collaborative platform designed to help teams manage projects, share ideas, and work together seamlessly across devices.</p>
-                <div class="chip-list project-tags" aria-label="CollabConnect tags">
-                    <span class="chip">Web App</span>
-                    <span class="chip">Team Collaboration</span>
-                    <span class="chip">Responsive UI</span>
-                </div>
-                <ul class="impact-list">
-                    <li>Built a collaboration MVP and shipped a live hosted version.</li>
-                    <li>Focused on usability across desktop and mobile workflows.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>Case Study</summary>
-                    <p><strong>Problem:</strong> Teams need simple collaboration tools that work everywhere.</p>
-                    <p><strong>Built:</strong> A cross-device web experience for sharing project updates and ideas.</p>
-                    <p><strong>Outcome:</strong> Delivered a live product proof with end-to-end interaction flow.</p>
-                </details>
-                <div class="project-links">
-                    <a href="https://tmal1652.github.io/CollabConnect/" class="btn" target="_blank" rel="noopener">View Website</a>
-                </div>
-            </article>
-            <article class="card project-card">
-                <div class="project-top">
-                    <h3>ClearText AI</h3>
-                    <span class="project-label">Accessibility Tool</span>
-                </div>
-                <p>ClearText AI helps users summarize and shorten complex web content, with audio narration support and interactive definitions.</p>
-                <div class="chip-list project-tags" aria-label="ClearText AI tags">
-                    <span class="chip">Accessibility</span>
-                    <span class="chip">Summarization</span>
-                    <span class="chip">Audio Support</span>
-                </div>
-                <ul class="impact-list">
-                    <li>Improved readability of dense content through concise summaries.</li>
-                    <li>Added narration support for accessibility-first learning.</li>
-                </ul>
-                <details class="case-study">
-                    <summary>Case Study</summary>
-                    <p><strong>Problem:</strong> Dense content is difficult to parse quickly.</p>
-                    <p><strong>Built:</strong> A readable summarization experience with audio support for comprehension.</p>
-                    <p><strong>Outcome:</strong> Working MVP with a roadmap for interactive vocabulary support.</p>
-                </details>
-                <div class="project-links">
-                    <a href="https://tmal1652.github.io/Tmal1652.github.io-ClearTextAI/" target="_blank" rel="noopener" class="btn">View Website</a>
-                </div>
-            </article>
-            <article class="card project-card">
-                <div class="project-top">
-                    <h3>Portfolio Website</h3>
-                    <span class="project-label">Developer Portfolio</span>
-                </div>
-                <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-                <div class="chip-list project-tags" aria-label="Portfolio tags">
-                    <span class="chip">Frontend</span>
-                    <span class="chip">Responsive Design</span>
-                    <span class="chip">Cross-Browser</span>
-                </div>
-                <ul class="impact-list">
-                    <li>Improved cross-browser behavior and mobile responsiveness.</li>
-                    <li>Maintained a cohesive modern glass-style visual system.</li>
-                </ul>
-                <div class="project-links">
-                    <a href="https://github.com/Tmal1652/Tmal1652.github.io" target="_blank" rel="noopener" class="btn">View on GitHub</a>
-                </div>
+            <article class="card projects-entry-card">
+                <h3>Project Navigation</h3>
+                <p>Move through featured work, live demos, and detailed showcase hubs with a consistent browsing flow.</p>
+                <a href="projects-hub.html#overview" class="projects-entry-link">Start with Overview</a>
             </article>
         </div>
     </section>
@@ -370,6 +272,7 @@
             <span>Email Me</span>
         </a>
     </section>
+    </main>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" type="button" title="Back to Top" aria-label="Back to top">↑</button>

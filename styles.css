@@ -17,6 +17,7 @@
     --link-color: #a9c7eb;
     --link-hover: #c5daf3;
     --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    --default-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
     --backdrop-blur: blur(15px);
     --glass-bg: linear-gradient(135deg, rgba(19,30,45,0.72), rgba(12,20,33,0.58));
     --glass-border: 1px solid rgba(166,188,216,0.22);
@@ -47,6 +48,40 @@
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.skip-link {
+    position: absolute;
+    top: -56px;
+    left: 12px;
+    z-index: 2000;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(190, 208, 229, 0.72);
+    background: rgba(9, 15, 24, 0.96);
+    color: #f4f8ff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: top 0.16s ease;
+}
+
+.skip-link:focus-visible {
+    top: 12px;
 }
 
 /* Diploma CTA spacing to match other CTAs */
@@ -156,12 +191,6 @@
 
 /* Safe optimizations and consolidations */
 
-/* Consolidated box-shadow styles */
-:root {
-    --default-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
-    --dark-mode-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
-}
-
 .glass, .hero { box-shadow: var(--default-box-shadow); }
 
 /* Removed redundant z-index and pointer-events */
@@ -171,7 +200,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .glass::before, .hero::before, .card::before { animation: none !important; }
+    .glass::before, .hero::before, .card::before, .spinner { animation: none !important; }
 }
 
 .glass {
@@ -357,7 +386,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 42px;
+    min-height: 44px;
     position: relative;
     border: 1px solid transparent;
     background: transparent;
@@ -426,7 +455,7 @@
     }
 
     .floating-tab-bar .tab-link {
-        min-height: 38px;
+        min-height: 44px;
         padding: 8px 2px;
         border-radius: 0;
         border: 0;
@@ -502,6 +531,10 @@
     transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn::before {
@@ -558,6 +591,21 @@
 a:focus-visible, .btn:focus-visible, .tab-link:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 3px;
+}
+
+section:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+@media (forced-colors: active) {
+    a:focus-visible,
+    .btn:focus-visible,
+    .tab-link:focus-visible,
+    .copy-id-btn:focus-visible,
+    section:focus-visible {
+        outline: 2px solid Highlight;
+    }
 }
 
 /* Contact Section Styling */
@@ -770,6 +818,54 @@ a:hover {
 
 .impact-list li {
     margin-bottom: 4px;
+}
+
+.projects-entry {
+    display: block;
+}
+
+.projects-entry-copy {
+    margin: 8px 0 0;
+    max-width: 74ch;
+    color: rgba(216, 228, 244, 0.92);
+}
+
+.projects-entry-actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.projects-entry-grid {
+    margin-top: 14px;
+}
+
+.projects-entry-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.projects-entry-card h3 {
+    margin: 0;
+}
+
+.projects-entry-card p {
+    margin: 0;
+    color: rgba(219, 231, 245, 0.92);
+}
+
+.projects-entry-link {
+    margin-top: auto;
+    font-weight: 700;
+    color: var(--link-color);
+}
+
+.projects-entry-link:hover {
+    color: var(--link-hover);
 }
 
 .project-showcase {
@@ -1470,6 +1566,10 @@ svg {
         scroll-snap-stop: normal;
     }
 
+    .projects-entry-actions .btn {
+        width: 100%;
+    }
+
     .floating-tab-bar {
         display: none !important;
     }
@@ -1504,7 +1604,7 @@ svg {
 
     .mobile-tab-dock .tab-link {
         min-width: 0;
-        min-height: 42px;
+        min-height: 44px;
         margin: 0;
         padding: 8px 6px;
         display: inline-flex;
