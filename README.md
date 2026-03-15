@@ -8,6 +8,11 @@ A responsive developer portfolio website showcasing my projects, experience, edu
 
 [View Portfolio](https://tmal1652.github.io/)
 
+### ShowZ Showcase
+
+- Showcase URL: `https://tmal1652.github.io/showz-showcase.html`
+- Status: `v2.8.0-alpha` (active development, chat stabilization before beta)
+
 
 ## About
 
@@ -44,6 +49,11 @@ The site is designed to adapt across desktop, tablet, and mobile devices while m
 - CollabConnect (collaborative web app)
 - ClearText AI (accessibility-focused summarization tool)
 - Portfolio Website (this project)
+
+## ShowZ Media Contract
+
+- Screenshot path pattern: `assets/showz/screens/showz-v1-*.png`, `assets/showz/screens/showz-v2-*.png`, and `assets/showz/screens/showz-v3-*.png`
+- Demo video path: `assets/showz/video/showz-demo.mp4`
 
 
 ## AI-Assisted Workflow

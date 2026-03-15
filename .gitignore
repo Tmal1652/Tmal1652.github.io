@@ -1,7 +1,1 @@
 .DS_Store
-
-# Temporary hide: ShowZ showcase stays local until launch.
-showz-showcase.html
-assets/showz/screens/showz-v1-*.png
-assets/showz/screens/showz-v2-*.png
-assets/showz/video/showz-demo.mp4

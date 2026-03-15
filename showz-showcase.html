@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShowZ streaming-style showcase: TV discovery lanes, immersive chat, and version-by-version product evolution.">
+    <meta name="theme-color" content="#050b18">
+    <title>ShowZ Project Showcase Hub | Tyler Malovrh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="showz-showcase.css">
+</head>
+<body class="showz-showcase-page">
+    <div class="showz-bg" aria-hidden="true"></div>
+
+    <header class="showz-topbar" aria-label="ShowZ navigation">
+        <div class="showz-topbar-inner">
+            <a href="#project-description" class="showz-brand" aria-label="ShowZ hub home">
+                <span class="showz-brand-title">ShowZ</span>
+                <span class="showz-brand-subtitle">Project Showcase Hub</span>
+            </a>
+            <nav class="showz-nav" aria-label="Section navigation">
+                <a href="#project-description">Project Description</a>
+                <a href="#versions">Screenshots Version History</a>
+                <a href="#trailer">Demo</a>
+                <a href="#build">Technical</a>
+            </nav>
+            <aside class="showz-hub-snapshot" aria-label="ShowZ hub snapshot">
+                <p class="showz-hub-snapshot-title">Hub Snapshot</p>
+                <ul class="showz-hub-snapshot-list">
+                    <li><span>Current Build</span><strong>v2.8 Alpha</strong></li>
+                    <li><span>Main Focus</span><strong>Discovery + Chat Polish</strong></li>
+                    <li><span>Review Path</span><strong>Description -> Screenshots -> Demo -> Technical</strong></li>
+                </ul>
+            </aside>
+            <a href="index.html#projects" class="btn showz-back-btn">Back to Projects</a>
+        </div>
+    </header>
+
+    <main class="showz-shell">
+        <section class="showz-panel showz-featured" id="project-description" aria-labelledby="showz-title">
+            <div class="showz-featured-copy">
+                <div class="showz-intro-grid">
+                    <div class="showz-intro-copy">
+                        <h1 id="showz-title">ShowZ</h1>
+                        <p class="showz-tagline">ShowZ is a native SwiftUI iOS app for TV discovery and discussion. This page highlights product progression from V1 foundations to the current v2.8 Alpha build.</p>
+                        <article class="showz-intro-focus" aria-label="Showcase coverage">
+                            <p class="showz-intro-focus-title">What this showcase covers</p>
+                            <ul class="showz-intro-focus-list">
+                                <li>Version-by-version product evolution from V1 to V3.</li>
+                                <li>Discovery UX, recommendation behavior, and chat experience changes.</li>
+                                <li>Technical decisions around reliability, caching, and local-first architecture.</li>
+                            </ul>
+                        </article>
+                    </div>
+                    <aside class="showz-intro-card" aria-label="Project at a glance">
+                        <p class="showz-intro-eyebrow">At a Glance</p>
+                        <ul class="showz-intro-list">
+                            <li><span>Current Stage</span><strong>v2.8 Alpha</strong></li>
+                            <li><span>Core Pillars</span><strong>Discovery, Personalization, Room Chat</strong></li>
+                            <li><span>Primary Data</span><strong>TVMaze API + deterministic cache fallback</strong></li>
+                            <li><span>Focus</span><strong>Readability, stability, and beta prep</strong></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="showz-overview-grid">
+                    <article class="showz-info-card showz-info-current" aria-label="Current version">
+                        <h3>Current Version</h3>
+                        <p><strong>v2.8 Alpha</strong> is in active development with local-first chat stabilization, readability polish, and performance tuning before beta.</p>
+                    </article>
+                    <article class="showz-info-card" aria-label="Project highlights">
+                        <h3>Highlights</h3>
+                        <ul>
+                            <li>TVMaze-first discovery with fast search and personalization from explicit likes.</li>
+                            <li>Distinct For You, Trending, and Popular rails for structured browsing.</li>
+                            <li>Remote-first show detail enrichment for seasons, episodes, and summaries.</li>
+                            <li>Immersive room-based chat with deterministic local persistence.</li>
+                        </ul>
+                    </article>
+                    <article class="showz-info-card" aria-label="Latest updates">
+                        <h3>Latest Updates</h3>
+                        <ul>
+                            <li>Introduced local-first chat timelines with General, Season, and Episode rooms.</li>
+                            <li>Added persisted reactions, spoiler-state handling, and optional Spoiler Guard.</li>
+                            <li>Expanded themed chat visuals with resolver/fallback guardrails.</li>
+                            <li>Continued reliability and performance fixes across search, detail, and chat flows.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="showz-panel" id="versions" aria-labelledby="versions-title">
+            <h2 id="versions-title">Screenshots Version History</h2>
+            <p class="showz-helper">Select a version, then scroll horizontally through screenshots from that release.</p>
+
+            <div class="showz-version-picker" aria-label="Version selector">
+                <button type="button" class="showz-version-btn" data-version="v1" aria-pressed="false">Version 1 - Foundation</button>
+                <button type="button" class="showz-version-btn" data-version="v2" aria-pressed="false">Version 2 - Overhaul</button>
+                <button type="button" class="showz-version-btn active" data-version="v3" aria-pressed="true">Version 3 - Refinement</button>
+            </div>
+
+            <article class="showz-season-note" data-version="v1" hidden>
+                <p class="showz-season-kicker">Version 1</p>
+                <h3>Core Discovery Launch</h3>
+                <p>Introduced For You, Trending, Popular, show detail, and foundational search navigation.</p>
+            </article>
+            <article class="showz-season-note" data-version="v2" hidden>
+                <p class="showz-season-kicker">Version 2</p>
+                <h3>Personalization + Chat Overhaul</h3>
+                <p>Improved recommendation logic, refined search, added Ask AI, and launched the new chat system.</p>
+            </article>
+            <article class="showz-season-note" data-version="v3">
+                <p class="showz-season-kicker">Version 3</p>
+                <h3>Recommendation and Chat Polish</h3>
+                <p>Grouped liked shows into a dedicated state, improved recommendations, and polished chat visuals.</p>
+            </article>
+
+            <div class="showz-shot-lane" data-version="v1" hidden>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v1-foryou.png" alt="ShowZ V1 For You screen">
+                    </div>
+                    <h3>V1 - For You</h3>
+                    <p>Added For You personalization for TV shows.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v1-trending.png" alt="ShowZ V1 Trending screen">
+                    </div>
+                    <h3>V1 - Trending</h3>
+                    <p>Added Trending to surface the most trending TV shows.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v1-popular.png" alt="ShowZ V1 Popular screen">
+                    </div>
+                    <h3>V1 - Popular</h3>
+                    <p>Added Popular to surface the most popular TV shows.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v1-show-detail.png" alt="ShowZ V1 show detail screen">
+                    </div>
+                    <h3>V1 - Show Detail</h3>
+                    <p>Added expanded show details with deeper television show context.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v1-search.png" alt="ShowZ V1 search screen">
+                    </div>
+                    <h3>V1 - Search</h3>
+                    <p>Added search navigation to find and browse different TV shows.</p>
+                </article>
+            </div>
+
+            <div class="showz-shot-lane" data-version="v2" hidden>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-foryou.png" alt="ShowZ V2 For You screen">
+                    </div>
+                    <h3>V2 - For You</h3>
+                    <p>Tied liked shows into personalization so likes directly shape the feed.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-trending.png" alt="ShowZ V2 Trending screen">
+                    </div>
+                    <h3>V2 - Trending</h3>
+                    <p>Minor enhancements to improve trending accuracy.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-popular.png" alt="ShowZ V2 Popular screen">
+                    </div>
+                    <h3>V2 - Popular</h3>
+                    <p>Minor enhancements to improve popular-lane accuracy.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-show-detail.png" alt="ShowZ V2 show detail screen">
+                    </div>
+                    <h3>V2 - Show Detail</h3>
+                    <p>Show detail fixes and improvements.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-search.png" alt="ShowZ V2 search screen">
+                    </div>
+                    <h3>V2 - Search</h3>
+                    <p>Search fixes and additions.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-search-keyboard.png" alt="ShowZ V2 search keyboard screen">
+                    </div>
+                    <h3>V2 - Keyboard Fit</h3>
+                    <p>Visual design adjusted to better fit the iOS keyboard.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-ask-ai.png" alt="ShowZ V2 Ask AI screen">
+                    </div>
+                    <h3>V2 - Ask AI</h3>
+                    <p>Added different AI options to ask more about TV shows.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-chat.png" alt="ShowZ V2 chat screen">
+                    </div>
+                    <h3>V2 - Chat</h3>
+                    <p>Chat overhaul created a dedicated space and design for user conversations.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v2-chat-options.png" alt="ShowZ V2 chat options screen">
+                    </div>
+                    <h3>V2 - Chat Options</h3>
+                    <p>Added clickable chat options users can select.</p>
+                </article>
+            </div>
+
+            <div class="showz-shot-lane" data-version="v3">
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-foryou-liked.png" alt="ShowZ V3 liked shows in For You">
+                    </div>
+                    <h3>V3 - For You (Liked)</h3>
+                    <p>This section keeps all TV shows you liked in one place.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-foryou-recommended.png" alt="ShowZ V3 recommended For You screen">
+                    </div>
+                    <h3>V3 - For You (Recommended)</h3>
+                    <p>Recommended TV shows are based on liked titles; this beta feature is still being tuned for accuracy.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-chat.png" alt="ShowZ V3 chat screen">
+                    </div>
+                    <h3>V3 - Chat</h3>
+                    <p>Design tweaks were made to the chat experience for better clarity.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="showz-panel" id="trailer" aria-labelledby="trailer-title">
+            <h2 id="trailer-title">Demo Walkthrough</h2>
+            <p class="showz-helper">This section hosts the product demo video for reviewers. The player activates automatically when the media file is present.</p>
+            <div class="showz-trailer" data-state="pending">
+                <video class="showz-trailer-video" controls preload="metadata" aria-label="ShowZ demo trailer">
+                    <source src="assets/showz/video/showz-demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="showz-trailer-placeholder" role="status">
+                    <p class="showz-trailer-title">Demo Video Coming Soon</p>
+                    <p class="showz-trailer-copy">A guided walkthrough of discovery lanes, show detail flow, and room-based chat will be published here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="showz-panel" id="build" aria-labelledby="build-title">
+            <h2 id="build-title">Technical Project Notes</h2>
+            <p class="showz-helper">Implementation details for evaluating architecture decisions, data strategy, and local run setup.</p>
+            <div class="showz-build-grid">
+                <article class="showz-build-card">
+                    <h3>Architecture</h3>
+                    <ul>
+                        <li>SwiftUI + async/await + URLSession.</li>
+                        <li>TVMaze-first feed/search routing.</li>
+                        <li>Detail loader/enrichment boundaries before render.</li>
+                    </ul>
+                </article>
+                <article class="showz-build-card">
+                    <h3>Data Strategy</h3>
+                    <ul>
+                        <li>Primary source: TVMaze API.</li>
+                        <li>Fallback chain: memory -> 24h disk -> local catalog.</li>
+                        <li>Personalization from explicit likes only.</li>
+                    </ul>
+                </article>
+                <article class="showz-build-card">
+                    <h3>Run Locally</h3>
+                    <ol>
+                        <li>Open `ShowZ.xcodeproj`.</li>
+                        <li>Select `ShowZ` scheme.</li>
+                        <li>Choose compatible iPhone runtime.</li>
+                        <li>Build and run (target: iOS 26.2).</li>
+                    </ol>
+                </article>
+                <article class="showz-build-card">
+                    <h3>Roadmap</h3>
+                    <ul>
+                        <li>Stabilize chat behavior and history performance.</li>
+                        <li>Expand immersive theme coverage consistency.</li>
+                        <li>Finalize spoiler UX and evaluate backend sync post-beta.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="showz-footer">
+        <p>&copy; 2026 Tyler Malovrh. ShowZ Project Showcase Hub.</p>
+    </footer>
+
+    <script>
+        (() => {
+            const picker = document.querySelector('.showz-version-picker');
+            if (picker) {
+                const buttons = Array.from(picker.querySelectorAll('.showz-version-btn'));
+                const notes = Array.from(document.querySelectorAll('.showz-season-note[data-version]'));
+                const lanes = Array.from(document.querySelectorAll('.showz-shot-lane[data-version]'));
+
+                const setVersion = (version, updateHash = false) => {
+                    buttons.forEach((button) => {
+                        const isActive = button.dataset.version === version;
+                        button.classList.toggle('active', isActive);
+                        button.setAttribute('aria-pressed', String(isActive));
+                    });
+
+                    notes.forEach((note) => {
+                        note.hidden = note.dataset.version !== version;
+                    });
+
+                    lanes.forEach((lane) => {
+                        lane.hidden = lane.dataset.version !== version;
+                    });
+
+                    if (updateHash) {
+                        history.replaceState(null, '', `#versions-${version}`);
+                    }
+                };
+
+                picker.addEventListener('click', (event) => {
+                    const button = event.target.closest('.showz-version-btn');
+                    if (!button) return;
+                    setVersion(button.dataset.version, true);
+                });
+
+                const fromHash = window.location.hash.match(/versions-(v[123])/i)?.[1]?.toLowerCase();
+                const initial = fromHash || buttons.find((button) => button.classList.contains('active'))?.dataset.version || 'v3';
+                setVersion(initial);
+            }
+
+            const trailer = document.querySelector('.showz-trailer');
+            const video = trailer?.querySelector('.showz-trailer-video');
+            if (trailer && video) {
+                const markReady = () => trailer.setAttribute('data-state', 'ready');
+                const markPending = () => trailer.setAttribute('data-state', 'pending');
+
+                video.addEventListener('loadeddata', markReady);
+                video.addEventListener('canplay', markReady);
+                video.addEventListener('error', markPending);
+
+                markPending();
+                video.load();
+            }
+        })();
+    </script>
+</body>
+</html>

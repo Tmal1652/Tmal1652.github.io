@@ -28,6 +28,26 @@ const resetScrollToTop = () => {
     window.scrollTo(0, 0);
 };
 
+// Ensure deep links like #projects land on the correct section after layout settles.
+const alignToHashTarget = () => {
+    const { hash } = window.location;
+    if (!hash) return;
+
+    let target = null;
+    const rawId = hash.slice(1);
+    try {
+        target =
+            document.getElementById(decodeURIComponent(rawId)) ||
+            document.querySelector(hash);
+    } catch (e) {
+        target = document.getElementById(rawId);
+    }
+
+    if (target) {
+        target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+};
+
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) loadingScreen.style.display = 'none';
@@ -37,6 +57,10 @@ window.addEventListener('load', () => {
         resetScrollToTop();
         window.requestAnimationFrame(resetScrollToTop);
         setTimeout(resetScrollToTop, 0);
+    } else if (window.location.hash) {
+        alignToHashTarget();
+        window.requestAnimationFrame(alignToHashTarget);
+        setTimeout(alignToHashTarget, 120);
     }
 });
 
@@ -90,20 +114,30 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 // Smooth in-page navigation with active tab state sync
 (function navScrollAndActiveState() {
     const tabLinks = Array.from(document.querySelectorAll('.tab-link'));
-    const pairs = tabLinks
-        .map((link) => {
-            const href = link.getAttribute('href');
-            if (!href || !href.startsWith('#')) return null;
-            const target = document.querySelector(href);
-            return target ? { link, href, target } : null;
-        })
-        .filter(Boolean);
+    if (!tabLinks.length) return;
 
+    const hrefToLinks = new Map();
+    const hrefToTarget = new Map();
+
+    tabLinks.forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+
+        const target = hrefToTarget.get(href) || document.querySelector(href);
+        if (!target) return;
+
+        hrefToTarget.set(href, target);
+        if (!hrefToLinks.has(href)) hrefToLinks.set(href, []);
+        hrefToLinks.get(href).push(link);
+    });
+
+    const pairs = Array.from(hrefToTarget.entries()).map(([href, target]) => ({ href, target }));
     if (!pairs.length) return;
 
     const setActiveLink = (activeHref) => {
-        pairs.forEach(({ link, href }) => {
-            link.classList.toggle('active', href === activeHref);
+        hrefToLinks.forEach((links, href) => {
+            const isActive = href === activeHref;
+            links.forEach((link) => link.classList.toggle('active', isActive));
         });
     };
 
@@ -118,16 +152,23 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
         }
     };
 
-    pairs.forEach(({ link, href, target }) => {
-        link.addEventListener('click', (e) => {
+    hrefToLinks.forEach((links, href) => {
+        const target = hrefToTarget.get(href);
+        if (!target) return;
+
+        links.forEach((link) => link.addEventListener('click', (e) => {
             e.preventDefault();
             scrollToSection(target);
             setActiveLink(href);
             if (history.pushState) {
                 // Keep URL clean (Apple/Tesla-style nav) so refresh opens at page top.
-                history.replaceState(null, '', window.location.pathname + window.location.search);
+                try {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                } catch (err) {
+                    // Ignore browsers that restrict history writes in some contexts.
+                }
             }
-        });
+        }));
     });
 
     let ticking = false;
