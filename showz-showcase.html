@@ -43,18 +43,14 @@
     <main class="showz-shell" id="main-content">
         <h1 class="showz-sr-only">ShowZ Project Showcase Hub</h1>
         <section class="showz-panel" id="project-description" aria-labelledby="project-description-title">
-            <div>
+            <div class="showz-description-wrap">
                 <div class="showz-intro-grid">
                     <div class="showz-intro-copy">
                         <h2 id="project-description-title">Project Description</h2>
-                        <p class="showz-tagline">ShowZ is a native SwiftUI iOS app for TV discovery and discussion. This page highlights product progression from V1 foundations to the current v2.8 Alpha build.</p>
-                        <article class="showz-intro-focus" aria-label="Showcase coverage">
-                            <p class="showz-intro-focus-title">What this showcase covers</p>
-                            <ul class="showz-intro-focus-list">
-                                <li>Version-by-version product evolution from V1 to V3.</li>
-                                <li>Discovery UX, recommendation behavior, and chat experience changes.</li>
-                                <li>Technical decisions around reliability, caching, and local-first architecture.</li>
-                            </ul>
+                        <p class="showz-tagline">ShowZ is a native SwiftUI iOS app for TV discovery and discussion, built to combine fast browsing with meaningful show conversation.</p>
+                        <article class="showz-description-story" aria-label="Why ShowZ exists">
+                            <h3>Why ShowZ</h3>
+                            <p>Most show apps either browse well or discuss well. ShowZ is designed to do both by combining discovery rails, rich show detail, and room-based chat in one flow.</p>
                         </article>
                     </div>
                     <aside class="showz-intro-card" aria-label="Project at a glance">
@@ -67,27 +63,33 @@
                         </ul>
                     </aside>
                 </div>
+                <div class="showz-description-divider" aria-hidden="true"></div>
                 <div class="showz-overview-grid">
-                    <article class="showz-info-card showz-info-current" aria-label="Current version">
-                        <h3>Current Version</h3>
-                        <p><strong>v2.8 Alpha</strong> is in active development with local-first chat stabilization, readability polish, and performance tuning before beta.</p>
-                    </article>
-                    <article class="showz-info-card" aria-label="Project highlights">
-                        <h3>Highlights</h3>
+                    <article class="showz-info-card" aria-label="Core capabilities">
+                        <h3>Core Capabilities</h3>
                         <ul>
-                            <li>TVMaze-first discovery with fast search and personalization from explicit likes.</li>
-                            <li>Distinct For You, Trending, and Popular rails for structured browsing.</li>
-                            <li>Remote-first show detail enrichment for seasons, episodes, and summaries.</li>
-                            <li>Immersive room-based chat with deterministic local persistence.</li>
+                            <li>For You feed powered by explicit likes and on-device personalization.</li>
+                            <li>Distinct For You, Trending, and Popular rails for structured discovery.</li>
+                            <li>TVMaze-first search and detail enrichment for seasons, episodes, and summaries.</li>
+                            <li>Immersive room-based chat with General, Season, and Episode contexts.</li>
                         </ul>
                     </article>
-                    <article class="showz-info-card" aria-label="Latest updates">
-                        <h3>Latest Updates</h3>
+                    <article class="showz-info-card" aria-label="v2.8 alpha focus">
+                        <h3>v2.8 Alpha Focus</h3>
                         <ul>
-                            <li>Introduced local-first chat timelines with General, Season, and Episode rooms.</li>
-                            <li>Added persisted reactions, spoiler-state handling, and optional Spoiler Guard.</li>
-                            <li>Expanded themed chat visuals with resolver/fallback guardrails.</li>
-                            <li>Continued reliability and performance fixes across search, detail, and chat flows.</li>
+                            <li>Stabilizing local-first chat timelines across per-show room contexts.</li>
+                            <li>Improving readability and performance under heavier chat histories.</li>
+                            <li>Tuning immersive per-show theming consistency and fallback guardrails.</li>
+                            <li>Polishing search-to-detail-to-chat transitions and spoiler controls.</li>
+                        </ul>
+                    </article>
+                    <article class="showz-info-card" aria-label="reliability and data strategy">
+                        <h3>Reliability + Data Strategy</h3>
+                        <ul>
+                            <li>Primary source: TVMaze API.</li>
+                            <li>Fallback chain: in-memory cache, 24h disk cache, then local catalog.</li>
+                            <li>Query-driven debounced search (300ms, minimum 2 characters).</li>
+                            <li>Deterministic on-device personalization with no backend dependency in alpha.</li>
                         </ul>
                     </article>
                 </div>
