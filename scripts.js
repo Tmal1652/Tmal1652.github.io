@@ -52,8 +52,34 @@ const getHashTarget = () => {
     return target;
 };
 
-const prepareHashLayout = () => {
-    if (!window.location.hash || hashLayoutOverrides.length) return;
+const getVisibleTopNavOffset = () => {
+    const bars = Array.from(document.querySelectorAll('.floating-tab-bar, .mobile-tab-dock'));
+    const topBar = bars.find((bar) => {
+        const rect = bar.getBoundingClientRect();
+        const style = window.getComputedStyle(bar);
+        const isVisible = style.display !== 'none' && style.visibility !== 'hidden' && rect.height > 0;
+        if (!isVisible) return false;
+        // Only apply offset for bars pinned near the top edge.
+        return rect.top <= 24;
+    });
+
+    if (!topBar) return 16;
+    return Math.ceil(topBar.getBoundingClientRect().height + 12);
+};
+
+const scrollToAnchorTarget = (target, behavior = 'auto') => {
+    if (!target) return;
+    const top = window.pageYOffset + target.getBoundingClientRect().top - getVisibleTopNavOffset();
+    const nextTop = Math.max(0, top);
+    try {
+        window.scrollTo({ top: nextTop, behavior });
+    } catch (err) {
+        window.scrollTo(0, nextTop);
+    }
+};
+
+const prepareSectionLayoutForAnchors = () => {
+    if (hashLayoutOverrides.length) return;
     // Prevent content-visibility estimates from shifting deep-link anchor positions.
     document.querySelectorAll('section').forEach((section) => {
         hashLayoutOverrides.push({
@@ -66,7 +92,7 @@ const prepareHashLayout = () => {
     });
 };
 
-const restoreHashLayout = () => {
+const restoreSectionLayoutForAnchors = () => {
     if (!hashLayoutOverrides.length) return;
 
     hashLayoutOverrides.forEach(({ section, contentVisibility, containIntrinsicSize }) => {
@@ -76,12 +102,21 @@ const restoreHashLayout = () => {
     hashLayoutOverrides = [];
 };
 
+const prepareHashLayout = () => {
+    if (!window.location.hash) return;
+    prepareSectionLayoutForAnchors();
+};
+
+const restoreHashLayout = () => {
+    restoreSectionLayoutForAnchors();
+};
+
 // Ensure deep links like #projects land on the correct section after layout settles.
 const alignToHashTarget = () => {
     const target = getHashTarget();
     if (!target) return;
 
-    target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    scrollToAnchorTarget(target, 'auto');
 };
 
 const runHashAlignmentPasses = () => {
@@ -196,14 +231,22 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
     };
 
     const scrollToSection = (target) => {
-        try {
-            target.scrollIntoView({
-                behavior: prefersReducedMotion ? 'auto' : 'smooth',
-                block: 'start'
-            });
-        } catch (err) {
-            target.scrollIntoView(true);
+        if (!target) return;
+        prepareSectionLayoutForAnchors();
+        scrollToAnchorTarget(target, prefersReducedMotion ? 'auto' : 'smooth');
+
+        if (prefersReducedMotion) {
+            restoreSectionLayoutForAnchors();
+            return;
         }
+
+        // Re-align as layout settles so section links don't drift to neighboring blocks.
+        [140, 360, 680].forEach((delay) => {
+            window.setTimeout(() => {
+                scrollToAnchorTarget(target, 'auto');
+            }, delay);
+        });
+        window.setTimeout(restoreSectionLayoutForAnchors, 920);
     };
 
     const moveFocusToSection = (target) => {
@@ -223,7 +266,9 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
             e.preventDefault();
             scrollToSection(target);
             setActiveLink(href);
-            moveFocusToSection(target);
+            window.setTimeout(() => {
+                moveFocusToSection(target);
+            }, prefersReducedMotion ? 0 : 480);
             if (history.pushState) {
                 // Keep URL clean (Apple/Tesla-style nav) so refresh opens at page top.
                 try {
@@ -240,13 +285,29 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
         if (ticking) return;
         ticking = true;
         window.requestAnimationFrame(() => {
-            const marker = window.innerHeight * 0.35;
-            let best = pairs[0];
+            // Keep active state aligned to the section nearest the top reading edge.
+            const marker = getVisibleTopNavOffset() + 26;
+            let best = null;
 
-            pairs.forEach((pair) => {
+            // Prefer the section that currently spans the marker line.
+            for (const pair of pairs) {
                 const rect = pair.target.getBoundingClientRect();
-                if (rect.top <= marker) best = pair;
-            });
+                if (rect.top <= marker && rect.bottom >= marker) {
+                    best = pair;
+                    break;
+                }
+            }
+
+            // Fallback to nearest section top if marker is between sections.
+            if (!best) {
+                best = pairs.reduce((closest, pair) => {
+                    const distance = Math.abs(pair.target.getBoundingClientRect().top - marker);
+                    if (!closest || distance < closest.distance) {
+                        return { pair, distance };
+                    }
+                    return closest;
+                }, null)?.pair || pairs[0];
+            }
 
             setActiveLink(best.href);
             ticking = false;
