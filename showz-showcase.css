@@ -2,16 +2,38 @@
 
 .showz-showcase-page {
     --showz-bg: #151b25;
+    --showz-bg-top: #1c2330;
+    --showz-bg-bottom: #141b26;
     --showz-surface: rgba(56, 66, 81, 0.82);
     --showz-surface-soft: rgba(44, 52, 64, 0.76);
     --showz-border: rgba(191, 200, 212, 0.22);
     --showz-border-strong: rgba(214, 222, 233, 0.36);
-    --showz-text: #eff3f9;
-    --showz-muted: rgba(207, 215, 225, 0.86);
+    --showz-text: #eef3f9;
+    --showz-text-body: #e9f2fc;
+    --showz-muted: #d2e0ee;
+    --showz-chip-bg: rgba(35, 57, 82, 0.76);
+    --showz-chip-border: rgba(166, 208, 238, 0.56);
+    --showz-chip-text: #e9f5ff;
+    --showz-cta-border: rgba(190, 220, 255, 0.86);
+    --showz-cta-start: #2a68c7;
+    --showz-cta-end: #1f4ea5;
+    --showz-focus-ring: #bdefff;
     --showz-accent-blue: rgba(110, 147, 199, 0.28);
     --showz-accent-cyan: rgba(96, 171, 190, 0.2);
     --showz-accent-indigo: rgba(126, 134, 206, 0.2);
     --showz-accent-teal: rgba(89, 162, 154, 0.2);
+    --showz-glow-left: rgba(189, 198, 210, 0.2);
+    --showz-glow-right: rgba(132, 146, 167, 0.16);
+    --showz-grid-line: rgba(178, 190, 206, 0.02);
+    --showz-chrome-glow-a: rgba(224, 230, 238, 0.11);
+    --showz-chrome-glow-b: rgba(95, 146, 184, 0.14);
+    --showz-chrome-grad-start: rgba(52, 62, 76, 0.86);
+    --showz-chrome-grad-end: rgba(37, 46, 58, 0.82);
+    --showz-panel-glow: rgba(222, 228, 237, 0.1);
+    --showz-btn-glow: rgba(231, 237, 244, 0.18);
+    --showz-btn-grad-start: rgba(129, 148, 174, 0.44);
+    --showz-btn-grad-end: rgba(96, 120, 150, 0.34);
+    --showz-link-gradient: linear-gradient(90deg, rgba(173, 197, 229, 0.82), rgba(213, 236, 246, 0.92), rgba(150, 200, 192, 0.8));
     --showz-radius-lg: 22px;
     --showz-radius-md: 16px;
     --showz-radius-sm: 12px;
@@ -27,6 +49,72 @@
     line-height: 1.5;
     padding: 14px 12px 28px;
     padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+}
+
+.showz-showcase-page[data-hue="aurora"] {
+    --showz-bg: #0f1724;
+    --showz-bg-top: #102938;
+    --showz-bg-bottom: #131b2b;
+    --showz-border: rgba(154, 217, 235, 0.26);
+    --showz-border-strong: rgba(188, 240, 247, 0.42);
+    --showz-accent-blue: rgba(71, 203, 255, 0.3);
+    --showz-accent-cyan: rgba(83, 232, 192, 0.24);
+    --showz-accent-indigo: rgba(130, 156, 255, 0.24);
+    --showz-accent-teal: rgba(110, 237, 208, 0.23);
+    --showz-glow-left: rgba(76, 224, 255, 0.24);
+    --showz-glow-right: rgba(124, 245, 214, 0.2);
+    --showz-grid-line: rgba(145, 210, 223, 0.03);
+    --showz-chrome-glow-a: rgba(103, 227, 255, 0.16);
+    --showz-chrome-glow-b: rgba(102, 238, 205, 0.14);
+    --showz-chrome-grad-start: rgba(35, 65, 85, 0.88);
+    --showz-chrome-grad-end: rgba(25, 43, 63, 0.84);
+    --showz-panel-glow: rgba(112, 223, 241, 0.14);
+    --showz-btn-glow: rgba(167, 240, 255, 0.22);
+    --showz-btn-grad-start: rgba(67, 146, 189, 0.5);
+    --showz-btn-grad-end: rgba(52, 109, 156, 0.42);
+    --showz-text-body: #e8f5ff;
+    --showz-muted: #d6e9f5;
+    --showz-chip-bg: rgba(22, 63, 93, 0.76);
+    --showz-chip-border: rgba(148, 221, 240, 0.62);
+    --showz-chip-text: #ebfbff;
+    --showz-cta-border: rgba(202, 235, 255, 0.88);
+    --showz-cta-start: #2a68c7;
+    --showz-cta-end: #1f4ea5;
+    --showz-focus-ring: #b7f2ff;
+    --showz-link-gradient: linear-gradient(90deg, rgba(120, 226, 255, 0.92), rgba(171, 247, 226, 0.95), rgba(136, 183, 255, 0.9));
+}
+
+.showz-showcase-page[data-hue="sunset"] {
+    --showz-bg: #1c1320;
+    --showz-bg-top: #2a1830;
+    --showz-bg-bottom: #181425;
+    --showz-border: rgba(236, 183, 177, 0.24);
+    --showz-border-strong: rgba(255, 216, 197, 0.42);
+    --showz-accent-blue: rgba(255, 152, 117, 0.28);
+    --showz-accent-cyan: rgba(255, 123, 173, 0.22);
+    --showz-accent-indigo: rgba(205, 139, 255, 0.24);
+    --showz-accent-teal: rgba(255, 162, 146, 0.24);
+    --showz-glow-left: rgba(255, 171, 126, 0.24);
+    --showz-glow-right: rgba(255, 124, 173, 0.2);
+    --showz-grid-line: rgba(230, 184, 194, 0.03);
+    --showz-chrome-glow-a: rgba(255, 185, 143, 0.17);
+    --showz-chrome-glow-b: rgba(242, 120, 163, 0.16);
+    --showz-chrome-grad-start: rgba(84, 54, 78, 0.88);
+    --showz-chrome-grad-end: rgba(56, 42, 74, 0.84);
+    --showz-panel-glow: rgba(255, 187, 164, 0.15);
+    --showz-btn-glow: rgba(255, 205, 176, 0.24);
+    --showz-btn-grad-start: rgba(182, 116, 121, 0.54);
+    --showz-btn-grad-end: rgba(137, 90, 154, 0.42);
+    --showz-text-body: #f8ecef;
+    --showz-muted: #f1dce1;
+    --showz-chip-bg: rgba(84, 58, 92, 0.72);
+    --showz-chip-border: rgba(255, 204, 188, 0.56);
+    --showz-chip-text: #fff1eb;
+    --showz-cta-border: rgba(255, 214, 188, 0.88);
+    --showz-cta-start: #b44778;
+    --showz-cta-end: #953a69;
+    --showz-focus-ring: #ffd0be;
+    --showz-link-gradient: linear-gradient(90deg, rgba(255, 190, 132, 0.96), rgba(255, 155, 190, 0.94), rgba(226, 168, 255, 0.9));
 }
 
 .showz-sr-only {
@@ -89,9 +177,9 @@
     z-index: -2;
     pointer-events: none;
     background:
-        radial-gradient(980px 520px at 10% -10%, rgba(189, 198, 210, 0.2), transparent 64%),
-        radial-gradient(860px 460px at 96% 10%, rgba(132, 146, 167, 0.16), transparent 66%),
-        linear-gradient(180deg, #1c2330 0%, #141b26 100%);
+        radial-gradient(980px 520px at 10% -10%, var(--showz-glow-left), transparent 64%),
+        radial-gradient(860px 460px at 96% 10%, var(--showz-glow-right), transparent 66%),
+        linear-gradient(180deg, var(--showz-bg-top) 0%, var(--showz-bg-bottom) 100%);
 }
 
 .showz-bg::before {
@@ -99,8 +187,8 @@
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(178, 190, 206, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(178, 190, 206, 0.02) 1px, transparent 1px);
+        linear-gradient(var(--showz-grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--showz-grid-line) 1px, transparent 1px);
     background-size: 36px 36px;
     -webkit-mask-image: radial-gradient(circle at 50% 25%, black 0%, black 58%, transparent 94%);
     mask-image: radial-gradient(circle at 50% 25%, black 0%, black 58%, transparent 94%);
@@ -118,7 +206,7 @@
     border-radius: var(--showz-radius-lg);
     padding: 18px;
     background:
-        radial-gradient(140% 120% at 12% 0%, rgba(222, 228, 237, 0.1), transparent 46%),
+        radial-gradient(140% 120% at 12% 0%, var(--showz-panel-glow), transparent 46%),
         radial-gradient(90% 88% at 100% 100%, var(--showz-accent-cyan), transparent 64%),
         linear-gradient(148deg, var(--showz-surface-soft), var(--showz-surface));
     box-shadow: var(--showz-shadow);
@@ -144,9 +232,9 @@
     border-radius: var(--showz-radius-md);
     padding: 10px 12px;
     background:
-        radial-gradient(160% 120% at 12% 0%, rgba(224, 230, 238, 0.11), transparent 48%),
-        radial-gradient(96% 90% at 100% 92%, rgba(95, 146, 184, 0.14), transparent 62%),
-        linear-gradient(132deg, rgba(52, 62, 76, 0.86), rgba(37, 46, 58, 0.82));
+        radial-gradient(160% 120% at 12% 0%, var(--showz-chrome-glow-a), transparent 48%),
+        radial-gradient(96% 90% at 100% 92%, var(--showz-chrome-glow-b), transparent 62%),
+        linear-gradient(132deg, var(--showz-chrome-grad-start), var(--showz-chrome-grad-end));
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
 }
@@ -174,7 +262,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: rgba(211, 220, 231, 0.84);
+    color: var(--showz-muted);
     line-height: 1.2;
     display: none;
 }
@@ -193,7 +281,7 @@
     align-items: center;
     min-height: 44px;
     padding: 0 6px;
-    color: rgba(236, 242, 248, 0.9);
+    color: var(--showz-text-body);
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
@@ -207,7 +295,7 @@
     bottom: 0;
     height: 2px;
     border-radius: 99px;
-    background: linear-gradient(90deg, rgba(173, 197, 229, 0.82), rgba(213, 236, 246, 0.92), rgba(150, 200, 192, 0.8));
+    background: var(--showz-link-gradient);
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.16s ease, opacity 0.16s ease;
@@ -258,11 +346,11 @@
     min-height: 44px;
     padding: 9px 14px;
     border-radius: 999px;
-    border: 1px solid var(--showz-border-strong);
+    border: 1px solid var(--showz-cta-border);
     background:
-        radial-gradient(150% 130% at 12% 0%, rgba(231, 237, 244, 0.18), transparent 47%),
-        linear-gradient(142deg, rgba(129, 148, 174, 0.44), rgba(96, 120, 150, 0.34));
-    color: #f5f8fc;
+        radial-gradient(150% 130% at 12% 0%, var(--showz-btn-glow), transparent 47%),
+        linear-gradient(142deg, var(--showz-cta-start), var(--showz-cta-end));
+    color: #f8fcff;
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 700;
@@ -274,7 +362,7 @@
 .showz-showcase-page .btn:hover {
     transform: translateY(-1px);
     text-decoration: none;
-    border-color: rgba(233, 239, 247, 0.62);
+    border-color: var(--showz-focus-ring);
     box-shadow: 0 6px 14px rgba(7, 13, 21, 0.16);
 }
 
@@ -295,7 +383,7 @@
 .showz-tagline {
     margin: 0;
     max-width: 68ch;
-    color: rgba(230, 236, 244, 0.9);
+    color: var(--showz-text-body);
     line-height: 1.58;
     font-size: clamp(1rem, 1.55vw, 1.08rem);
     overflow-wrap: anywhere;
@@ -336,7 +424,7 @@
 
 .showz-description-story p {
     margin: 0;
-    color: rgba(227, 234, 244, 0.9);
+    color: var(--showz-text-body);
     font-size: 0.92rem;
     line-height: 1.55;
     overflow-wrap: anywhere;
@@ -386,7 +474,7 @@
     font-size: 0.69rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: rgba(205, 215, 228, 0.82);
+    color: var(--showz-muted);
     line-height: 1.2;
 }
 
@@ -428,7 +516,7 @@
 
 .showz-info-card p {
     margin: 0;
-    color: rgba(226, 234, 244, 0.9);
+    color: var(--showz-text-body);
     font-size: 0.91rem;
     line-height: 1.5;
     overflow-wrap: anywhere;
@@ -447,7 +535,7 @@
 }
 
 .showz-info-card li {
-    color: rgba(225, 233, 243, 0.9);
+    color: var(--showz-text-body);
     line-height: 1.5;
     font-size: 0.9rem;
     overflow-wrap: anywhere;
@@ -503,7 +591,7 @@
 
 .showz-season-note p {
     margin: 0;
-    color: rgba(214, 228, 244, 0.93);
+    color: var(--showz-text-body);
     font-size: 0.92rem;
     line-height: 1.52;
 }
@@ -518,12 +606,12 @@
 
 .showz-version-btn {
     appearance: none;
-    border: 1px solid rgba(196, 206, 220, 0.3);
+    border: 1px solid var(--showz-chip-border);
     border-radius: 999px;
     background:
-        radial-gradient(120% 110% at 0% 0%, rgba(109, 150, 203, 0.2), transparent 70%),
-        rgba(62, 73, 88, 0.66);
-    color: rgba(233, 239, 247, 0.92);
+        radial-gradient(120% 110% at 0% 0%, rgba(255, 255, 255, 0.08), transparent 70%),
+        var(--showz-chip-bg);
+    color: var(--showz-chip-text);
     padding: 8px 13px;
     min-height: 44px;
     font-size: 0.8rem;
@@ -536,10 +624,10 @@
 
 .showz-version-btn.active,
 .showz-version-btn[aria-pressed="true"] {
-    border-color: rgba(229, 236, 245, 0.68);
+    border-color: var(--showz-border-strong);
     background:
-        radial-gradient(140% 120% at 0% 0%, rgba(132, 177, 222, 0.34), transparent 72%),
-        rgba(148, 161, 180, 0.48);
+        radial-gradient(140% 120% at 0% 0%, rgba(255, 255, 255, 0.2), transparent 72%),
+        rgba(112, 145, 186, 0.72);
     color: #f8fafd;
 }
 
@@ -636,7 +724,7 @@
 
 .showz-poster-card p {
     margin: 0;
-    color: rgba(225, 233, 243, 0.9);
+    color: var(--showz-text-body);
     font-size: 0.87rem;
     line-height: 1.5;
 }
@@ -684,7 +772,7 @@
 .showz-trailer-copy {
     margin: 8px auto 0;
     max-width: 58ch;
-    color: rgba(220, 229, 240, 0.88);
+    color: var(--showz-text-body);
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -713,7 +801,7 @@
 }
 
 .showz-build-card li {
-    color: rgba(224, 232, 242, 0.9);
+    color: var(--showz-text-body);
     line-height: 1.5;
     font-size: 0.9rem;
 }
@@ -724,7 +812,7 @@
     padding: 10px 0 2px;
     border-top: 1px solid rgba(191, 200, 212, 0.2);
     text-align: center;
-    color: rgba(209, 217, 229, 0.82);
+    color: var(--showz-muted);
     font-size: 0.84rem;
 }
 
@@ -1009,7 +1097,7 @@
 
 .showz-showcase-page a:focus-visible,
 .showz-showcase-page button:focus-visible {
-    outline: 2px solid rgba(205, 230, 245, 0.96);
+    outline: 3px solid var(--showz-focus-ring);
     outline-offset: 3px;
 }
 

@@ -2,15 +2,34 @@
 
 .projects-hub-page {
     --hub-bg: #151b25;
+    --hub-bg-top: #1c2330;
+    --hub-bg-bottom: #141b26;
     --hub-surface: rgba(56, 66, 81, 0.82);
     --hub-surface-soft: rgba(44, 52, 64, 0.76);
     --hub-border: rgba(191, 200, 212, 0.22);
     --hub-border-strong: rgba(214, 222, 233, 0.36);
     --hub-text: #eef3f9;
-    --hub-muted: rgba(207, 215, 225, 0.86);
+    --hub-text-body: #e9f2fc;
+    --hub-muted: #d2e0ee;
+    --hub-chip-bg: rgba(35, 57, 82, 0.76);
+    --hub-chip-border: rgba(166, 208, 238, 0.56);
+    --hub-chip-text: #e9f5ff;
+    --hub-focus-ring: #bdefff;
     --hub-accent-blue: rgba(110, 147, 199, 0.28);
     --hub-accent-cyan: rgba(96, 171, 190, 0.2);
     --hub-accent-indigo: rgba(126, 134, 206, 0.2);
+    --hub-glow-left: rgba(189, 198, 210, 0.2);
+    --hub-glow-right: rgba(132, 146, 167, 0.16);
+    --hub-grid-line: rgba(178, 190, 206, 0.02);
+    --hub-chrome-glow-a: rgba(224, 230, 238, 0.11);
+    --hub-chrome-glow-b: rgba(95, 146, 184, 0.14);
+    --hub-chrome-grad-start: rgba(52, 62, 76, 0.86);
+    --hub-chrome-grad-end: rgba(37, 46, 58, 0.82);
+    --hub-panel-glow: rgba(222, 228, 237, 0.1);
+    --hub-btn-glow: rgba(235, 241, 248, 0.2);
+    --hub-btn-grad-start: rgba(133, 154, 184, 0.42);
+    --hub-btn-grad-end: rgba(95, 119, 150, 0.34);
+    --hub-link-gradient: linear-gradient(90deg, rgba(167, 199, 233, 0.8), rgba(209, 235, 247, 0.92), rgba(145, 196, 186, 0.8));
     --hub-radius-lg: 22px;
     --hub-radius-md: 16px;
     --hub-shadow: 0 8px 20px rgba(8, 14, 24, 0.16);
@@ -25,6 +44,64 @@
     line-height: 1.55;
     padding: 14px 12px 30px;
     padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+}
+
+.projects-hub-page[data-hue="aurora"] {
+    --hub-bg: #0f1724;
+    --hub-bg-top: #102938;
+    --hub-bg-bottom: #131b2b;
+    --hub-border: rgba(154, 217, 235, 0.26);
+    --hub-border-strong: rgba(188, 240, 247, 0.42);
+    --hub-accent-blue: rgba(71, 203, 255, 0.3);
+    --hub-accent-cyan: rgba(83, 232, 192, 0.24);
+    --hub-accent-indigo: rgba(130, 156, 255, 0.24);
+    --hub-glow-left: rgba(76, 224, 255, 0.24);
+    --hub-glow-right: rgba(124, 245, 214, 0.2);
+    --hub-grid-line: rgba(145, 210, 223, 0.03);
+    --hub-chrome-glow-a: rgba(103, 227, 255, 0.16);
+    --hub-chrome-glow-b: rgba(102, 238, 205, 0.14);
+    --hub-chrome-grad-start: rgba(35, 65, 85, 0.88);
+    --hub-chrome-grad-end: rgba(25, 43, 63, 0.84);
+    --hub-panel-glow: rgba(112, 223, 241, 0.14);
+    --hub-btn-glow: rgba(167, 240, 255, 0.22);
+    --hub-btn-grad-start: rgba(67, 146, 189, 0.5);
+    --hub-btn-grad-end: rgba(52, 109, 156, 0.42);
+    --hub-text-body: #e8f5ff;
+    --hub-muted: #d6e9f5;
+    --hub-chip-bg: rgba(22, 63, 93, 0.76);
+    --hub-chip-border: rgba(148, 221, 240, 0.62);
+    --hub-chip-text: #ebfbff;
+    --hub-focus-ring: #b7f2ff;
+    --hub-link-gradient: linear-gradient(90deg, rgba(120, 226, 255, 0.92), rgba(171, 247, 226, 0.95), rgba(136, 183, 255, 0.9));
+}
+
+.projects-hub-page[data-hue="sunset"] {
+    --hub-bg: #1c1320;
+    --hub-bg-top: #2a1830;
+    --hub-bg-bottom: #181425;
+    --hub-border: rgba(236, 183, 177, 0.24);
+    --hub-border-strong: rgba(255, 216, 197, 0.42);
+    --hub-accent-blue: rgba(255, 152, 117, 0.28);
+    --hub-accent-cyan: rgba(255, 123, 173, 0.22);
+    --hub-accent-indigo: rgba(205, 139, 255, 0.24);
+    --hub-glow-left: rgba(255, 171, 126, 0.24);
+    --hub-glow-right: rgba(255, 124, 173, 0.2);
+    --hub-grid-line: rgba(230, 184, 194, 0.03);
+    --hub-chrome-glow-a: rgba(255, 185, 143, 0.17);
+    --hub-chrome-glow-b: rgba(242, 120, 163, 0.16);
+    --hub-chrome-grad-start: rgba(84, 54, 78, 0.88);
+    --hub-chrome-grad-end: rgba(56, 42, 74, 0.84);
+    --hub-panel-glow: rgba(255, 187, 164, 0.15);
+    --hub-btn-glow: rgba(255, 205, 176, 0.24);
+    --hub-btn-grad-start: rgba(182, 116, 121, 0.54);
+    --hub-btn-grad-end: rgba(137, 90, 154, 0.42);
+    --hub-text-body: #f8ecef;
+    --hub-muted: #f1dce1;
+    --hub-chip-bg: rgba(84, 58, 92, 0.72);
+    --hub-chip-border: rgba(255, 204, 188, 0.56);
+    --hub-chip-text: #fff1eb;
+    --hub-focus-ring: #ffd0be;
+    --hub-link-gradient: linear-gradient(90deg, rgba(255, 190, 132, 0.96), rgba(255, 155, 190, 0.94), rgba(226, 168, 255, 0.9));
 }
 
 .projects-hub-page *,
@@ -74,9 +151,9 @@
     z-index: -2;
     pointer-events: none;
     background:
-        radial-gradient(980px 520px at 10% -10%, rgba(189, 198, 210, 0.2), transparent 64%),
-        radial-gradient(860px 460px at 96% 10%, rgba(132, 146, 167, 0.16), transparent 66%),
-        linear-gradient(180deg, #1c2330 0%, #141b26 100%);
+        radial-gradient(980px 520px at 10% -10%, var(--hub-glow-left), transparent 64%),
+        radial-gradient(860px 460px at 96% 10%, var(--hub-glow-right), transparent 66%),
+        linear-gradient(180deg, var(--hub-bg-top) 0%, var(--hub-bg-bottom) 100%);
 }
 
 .projects-hub-bg::before {
@@ -84,8 +161,8 @@
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(178, 190, 206, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(178, 190, 206, 0.02) 1px, transparent 1px);
+        linear-gradient(var(--hub-grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--hub-grid-line) 1px, transparent 1px);
     background-size: 36px 36px;
     -webkit-mask-image: radial-gradient(circle at 50% 25%, black 0%, black 58%, transparent 94%);
     mask-image: radial-gradient(circle at 50% 25%, black 0%, black 58%, transparent 94%);
@@ -108,9 +185,9 @@
     border-radius: var(--hub-radius-md);
     padding: 10px 12px;
     background:
-        radial-gradient(160% 120% at 12% 0%, rgba(224, 230, 238, 0.11), transparent 48%),
-        radial-gradient(96% 90% at 100% 92%, rgba(95, 146, 184, 0.14), transparent 62%),
-        linear-gradient(132deg, rgba(52, 62, 76, 0.86), rgba(37, 46, 58, 0.82));
+        radial-gradient(160% 120% at 12% 0%, var(--hub-chrome-glow-a), transparent 48%),
+        radial-gradient(96% 90% at 100% 92%, var(--hub-chrome-glow-b), transparent 62%),
+        linear-gradient(132deg, var(--hub-chrome-grad-start), var(--hub-chrome-grad-end));
     box-shadow: var(--hub-shadow);
     backdrop-filter: blur(8px) saturate(112%);
     -webkit-backdrop-filter: blur(8px) saturate(112%);
@@ -166,7 +243,7 @@
     bottom: 9px;
     height: 2px;
     border-radius: 999px;
-    background: linear-gradient(90deg, rgba(167, 199, 233, 0.8), rgba(209, 235, 247, 0.92), rgba(145, 196, 186, 0.8));
+    background: var(--hub-link-gradient);
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.16s ease, opacity 0.16s ease;
@@ -203,7 +280,7 @@
     border-radius: var(--hub-radius-lg);
     padding: 18px;
     background:
-        radial-gradient(140% 120% at 12% 0%, rgba(222, 228, 237, 0.1), transparent 46%),
+        radial-gradient(140% 120% at 12% 0%, var(--hub-panel-glow), transparent 46%),
         radial-gradient(90% 88% at 100% 100%, var(--hub-accent-cyan), transparent 64%),
         linear-gradient(150deg, var(--hub-surface-soft), var(--hub-surface));
     box-shadow: var(--hub-shadow);
@@ -248,7 +325,7 @@
 .projects-hub-copy {
     margin: 12px 0 0;
     max-width: 74ch;
-    color: rgba(228, 236, 246, 0.94);
+    color: var(--hub-text-body);
     font-size: 1rem;
 }
 
@@ -268,7 +345,7 @@
 
 .projects-hub-helper {
     margin: 10px 0 0;
-    color: rgba(220, 231, 244, 0.9);
+    color: var(--hub-text-body);
     font-size: 0.96rem;
 }
 
@@ -303,46 +380,81 @@
 
 .projects-hub-meta-card p {
     margin: 0;
-    color: rgba(217, 228, 241, 0.92);
+    color: var(--hub-text-body);
     font-size: 0.93rem;
 }
 
 .projects-hub-feature-card {
-    margin-top: 12px;
+    margin-top: 0;
     display: grid;
-    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
-    gap: 14px;
-    align-items: start;
-}
-
-.projects-hub-feature-frame {
-    border-radius: var(--hub-radius-md);
-    border: 1px solid rgba(188, 201, 218, 0.3);
-    background: rgba(28, 37, 51, 0.84);
-    overflow: hidden;
-    max-height: 430px;
-}
-
-.projects-hub-feature-frame img {
-    width: 100%;
-    height: 430px;
-    max-height: none;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-
-.projects-hub-feature-copy {
+    grid-template-columns: minmax(176px, 38%) minmax(0, 1fr);
+    gap: 16px;
+    align-items: stretch;
     border-radius: var(--hub-radius-md);
     border: 1px solid rgba(188, 201, 218, 0.26);
     background:
         radial-gradient(130% 100% at 100% 0%, var(--hub-accent-indigo), transparent 68%),
         rgba(49, 58, 72, 0.62);
     padding: 14px;
+}
+
+.projects-hub-feature-list {
+    margin-top: 12px;
     display: grid;
-    gap: 10px;
-    align-content: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.projects-hub-feature-frame {
+    border-radius: 14px;
+    border: 1px solid rgba(188, 201, 218, 0.24);
+    background:
+        radial-gradient(130% 100% at 50% 0%, rgba(124, 170, 226, 0.18), transparent 66%),
+        rgba(26, 36, 52, 0.75);
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    align-self: start;
+    aspect-ratio: 10 / 16;
     min-height: 0;
+    padding: 10px;
+}
+
+.projects-hub-feature-frame img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(8, 14, 24, 0.38));
+}
+
+.projects-hub-feature-copy {
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    padding: 2px 2px 2px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 100%;
+}
+
+.projects-hub-feature-copy .projects-hub-feature-head {
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.projects-hub-feature-copy .projects-hub-feature-head h3 {
+    font-size: clamp(1.16rem, 1.5vw, 1.3rem);
+    line-height: 1.24;
+}
+
+.projects-hub-feature-copy .projects-hub-pill {
+    justify-self: flex-start;
 }
 
 .projects-hub-feature-head,
@@ -356,7 +468,7 @@
 .projects-hub-feature-head h3,
 .projects-hub-card-head h3 {
     margin: 0;
-    font-size: 1.18rem;
+    font-size: 1.12rem;
     min-width: 0;
 }
 
@@ -391,7 +503,7 @@
 .projects-hub-feature-copy p,
 .projects-hub-card p {
     margin: 0;
-    color: rgba(222, 232, 244, 0.92);
+    color: var(--hub-text-body);
 }
 
 .projects-hub-pill {
@@ -403,12 +515,10 @@
     min-height: 0;
     padding: 6px 12px;
     border-radius: 999px;
-    border: 1px solid rgba(167, 185, 207, 0.52);
-    background:
-        radial-gradient(140% 110% at 0% 0%, rgba(126, 168, 224, 0.26), transparent 64%),
-        rgba(44, 58, 77, 0.72);
-    box-shadow: 0 4px 12px rgba(31, 38, 135, 0.12);
-    color: #f2f8ff;
+    border: 1px solid var(--hub-chip-border);
+    background: var(--hub-chip-bg);
+    box-shadow: 0 2px 8px rgba(9, 18, 31, 0.18);
+    color: var(--hub-chip-text);
     font-size: 0.84rem;
     font-weight: 700;
     line-height: 1.2;
@@ -424,6 +534,21 @@
     align-items: center;
 }
 
+.projects-hub-feature-copy .projects-hub-tag-list {
+    margin-top: 0;
+    width: 100%;
+}
+
+.projects-hub-feature-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(184, 204, 226, 0.24);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 .projects-hub-tag {
     display: inline-flex;
     align-items: center;
@@ -433,15 +558,14 @@
     min-height: 0;
     padding: 6px 12px;
     border-radius: 999px;
-    border: 1px solid rgba(167, 185, 207, 0.52);
-    background:
-        radial-gradient(130% 100% at 0% 0%, rgba(116, 160, 219, 0.22), transparent 66%),
-        rgba(36, 50, 68, 0.74);
-    box-shadow: 0 4px 12px rgba(31, 38, 135, 0.12);
-    color: #eff6ff;
-    font-size: 0.9rem;
-    font-weight: 600;
+    border: 1px solid var(--hub-chip-border);
+    background: var(--hub-chip-bg);
+    box-shadow: 0 2px 8px rgba(9, 18, 31, 0.18);
+    color: var(--hub-chip-text);
+    font-size: 0.89rem;
+    font-weight: 650;
     line-height: 1.2;
+    white-space: nowrap;
     position: relative;
     overflow: hidden;
 }
@@ -453,7 +577,7 @@
     inset: 0;
     background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05) 60%, rgba(255, 255, 255, 0));
     pointer-events: none;
-    opacity: 0.72;
+    opacity: 0.24;
 }
 
 .projects-hub-grid {
@@ -479,8 +603,19 @@
 }
 
 .projects-hub-feature-copy .projects-hub-actions {
-    margin-top: 10px;
-    align-self: start;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    width: auto;
+    align-self: flex-start;
+    justify-content: flex-start;
+}
+
+.projects-hub-feature-copy .projects-hub-actions .projects-hub-btn-featured {
+    min-height: 48px;
+    min-width: 0;
+    max-width: 100%;
+    width: fit-content;
 }
 
 .projects-hub-btn {
@@ -492,8 +627,8 @@
     border-radius: 999px;
     border: 1px solid var(--hub-border-strong);
     background:
-        radial-gradient(150% 130% at 12% 0%, rgba(235, 241, 248, 0.2), transparent 48%),
-        linear-gradient(142deg, rgba(133, 154, 184, 0.42), rgba(95, 119, 150, 0.34));
+        radial-gradient(150% 130% at 12% 0%, var(--hub-btn-glow), transparent 48%),
+        linear-gradient(142deg, var(--hub-btn-grad-start), var(--hub-btn-grad-end));
     color: #f7fbff;
     text-decoration: none;
     font-size: 0.9rem;
@@ -509,20 +644,19 @@
 }
 
 .projects-hub-btn-featured {
-    padding: 8px 14px;
-    font-size: 0.88rem;
-    border-color: rgba(167, 185, 207, 0.52);
+    padding: 10px 18px;
+    font-size: 0.92rem;
+    font-weight: 760;
+    border-color: var(--hub-border-strong);
     background:
-        radial-gradient(130% 100% at 0% 0%, rgba(116, 160, 219, 0.24), transparent 66%),
-        rgba(36, 50, 68, 0.76);
-    box-shadow: 0 4px 12px rgba(31, 38, 135, 0.12);
+        radial-gradient(150% 130% at 12% 0%, var(--hub-btn-glow), transparent 48%),
+        linear-gradient(142deg, var(--hub-btn-grad-start), var(--hub-btn-grad-end));
+    box-shadow: 0 6px 16px rgba(6, 12, 22, 0.2);
 }
 
 .projects-hub-btn-featured:hover {
-    border-color: rgba(205, 222, 241, 0.64);
-    background:
-        radial-gradient(130% 100% at 0% 0%, rgba(126, 172, 235, 0.28), transparent 66%),
-        rgba(44, 60, 82, 0.8);
+    border-color: rgba(225, 235, 246, 0.7);
+    filter: none;
 }
 
 .projects-hub-btn-muted {
@@ -542,7 +676,7 @@
 }
 
 .projects-hub-page a:focus-visible {
-    outline: 2px solid rgba(205, 229, 245, 0.96);
+    outline: 3px solid var(--hub-focus-ring);
     outline-offset: 3px;
 }
 
@@ -571,7 +705,7 @@
     }
 
     .projects-hub-topbar-inner {
-        min-height: calc(100vh - 36px);
+        min-height: 0;
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -636,8 +770,8 @@
         align-items: stretch;
         justify-content: flex-start;
         gap: 10px;
-        flex: 1 1 auto;
-        min-height: 140px;
+        flex: 0 0 auto;
+        min-height: 0;
         border: 1px solid rgba(193, 203, 216, 0.22);
         border-radius: 12px;
         background:
@@ -651,7 +785,7 @@
         font-size: 0.74rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(208, 217, 229, 0.84);
+        color: var(--hub-muted);
         font-weight: 700;
     }
 
@@ -680,7 +814,7 @@
         font-size: 0.69rem;
         letter-spacing: 0.07em;
         text-transform: uppercase;
-        color: rgba(203, 214, 227, 0.82);
+        color: var(--hub-muted);
         line-height: 1.2;
     }
 
@@ -722,8 +856,12 @@
 @media (max-width: 980px) {
     .projects-hub-meta,
     .projects-hub-grid,
-    .projects-hub-feature-card {
+    .projects-hub-feature-list {
         grid-template-columns: 1fr;
+    }
+
+    .projects-hub-feature-card {
+        grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
     }
 
     .projects-hub-card-wide {
@@ -767,13 +905,34 @@
         box-shadow: none;
     }
 
+    .projects-hub-feature-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+
     .projects-hub-feature-frame {
+        min-height: 0;
         max-height: none;
+        padding: 12px 8px 0;
     }
 
     .projects-hub-feature-frame img {
         height: auto;
         max-height: 440px;
+    }
+
+    .projects-hub-feature-copy {
+        padding: 0 2px 2px;
+    }
+
+    .projects-hub-feature-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .projects-hub-feature-copy .projects-hub-actions {
+        justify-content: flex-start;
     }
 
     .projects-hub-card-head {
