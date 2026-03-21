@@ -67,9 +67,19 @@ const getVisibleTopNavOffset = () => {
     return Math.ceil(topBar.getBoundingClientRect().height + 12);
 };
 
+const getElementDocumentTop = (element) => {
+    let top = 0;
+    let current = element;
+    while (current) {
+        top += current.offsetTop || 0;
+        current = current.offsetParent;
+    }
+    return top;
+};
+
 const scrollToAnchorTarget = (target, behavior = 'auto') => {
     if (!target) return;
-    const top = window.pageYOffset + target.getBoundingClientRect().top - getVisibleTopNavOffset();
+    const top = getElementDocumentTop(target) - getVisibleTopNavOffset();
     const nextTop = Math.max(0, top);
     try {
         window.scrollTo({ top: nextTop, behavior });
@@ -79,26 +89,11 @@ const scrollToAnchorTarget = (target, behavior = 'auto') => {
 };
 
 const prepareSectionLayoutForAnchors = () => {
-    if (hashLayoutOverrides.length) return;
-    // Prevent content-visibility estimates from shifting deep-link anchor positions.
-    document.querySelectorAll('section').forEach((section) => {
-        hashLayoutOverrides.push({
-            section,
-            contentVisibility: section.style.contentVisibility,
-            containIntrinsicSize: section.style.containIntrinsicSize
-        });
-        section.style.contentVisibility = 'visible';
-        section.style.containIntrinsicSize = 'auto';
-    });
+    // No-op: section geometry is now kept stable in CSS.
 };
 
 const restoreSectionLayoutForAnchors = () => {
-    if (!hashLayoutOverrides.length) return;
-
-    hashLayoutOverrides.forEach(({ section, contentVisibility, containIntrinsicSize }) => {
-        section.style.contentVisibility = contentVisibility;
-        section.style.containIntrinsicSize = containIntrinsicSize;
-    });
+    // No-op: section geometry is now kept stable in CSS.
     hashLayoutOverrides = [];
 };
 
@@ -121,7 +116,6 @@ const alignToHashTarget = () => {
 
 const runHashAlignmentPasses = () => {
     if (!window.location.hash) return;
-    prepareHashLayout();
     [0, 80, 220, 420, 800].forEach((delay) => {
         window.setTimeout(alignToHashTarget, delay);
     });
@@ -130,10 +124,7 @@ const runHashAlignmentPasses = () => {
         document.fonts.ready.then(() => {
             alignToHashTarget();
             window.setTimeout(alignToHashTarget, 120);
-            window.setTimeout(restoreHashLayout, 360);
         });
-    } else {
-        window.setTimeout(restoreHashLayout, 1200);
     }
 };
 
@@ -230,53 +221,11 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
         });
     };
 
-    const scrollToSection = (target) => {
-        if (!target) return;
-        prepareSectionLayoutForAnchors();
-        scrollToAnchorTarget(target, prefersReducedMotion ? 'auto' : 'smooth');
-
-        if (prefersReducedMotion) {
-            restoreSectionLayoutForAnchors();
-            return;
-        }
-
-        // Re-align as layout settles so section links don't drift to neighboring blocks.
-        [140, 360, 680].forEach((delay) => {
-            window.setTimeout(() => {
-                scrollToAnchorTarget(target, 'auto');
-            }, delay);
-        });
-        window.setTimeout(restoreSectionLayoutForAnchors, 920);
-    };
-
-    const moveFocusToSection = (target) => {
-        if (!target) return;
-        target.setAttribute('tabindex', '-1');
-        target.focus({ preventScroll: true });
-        target.addEventListener('blur', () => {
-            target.removeAttribute('tabindex');
-        }, { once: true });
-    };
-
     hrefToLinks.forEach((links, href) => {
-        const target = hrefToTarget.get(href);
-        if (!target) return;
-
         links.forEach((link) => link.addEventListener('click', (e) => {
-            e.preventDefault();
-            scrollToSection(target);
+            // Use native anchor behavior for maximum browser consistency.
             setActiveLink(href);
-            window.setTimeout(() => {
-                moveFocusToSection(target);
-            }, prefersReducedMotion ? 0 : 480);
-            if (history.pushState) {
-                // Keep URL clean (Apple/Tesla-style nav) so refresh opens at page top.
-                try {
-                    history.replaceState(null, '', window.location.pathname + window.location.search);
-                } catch (err) {
-                    // Ignore browsers that restrict history writes in some contexts.
-                }
-            }
+            // Let browser perform default hash scrolling.
         }));
     });
 

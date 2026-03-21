@@ -748,8 +748,12 @@ body {
     line-height: 1.6;
 }
 
+main {
+    padding-bottom: clamp(80px, 12vh, 140px);
+}
+
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-behavior: auto;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
@@ -1109,9 +1113,9 @@ section {
     transition: all 0.4s ease;
     transform-style: preserve-3d;
     perspective: 1000px;
-    /* Paint containment for performance on large sections */
-    content-visibility: auto;
-    contain-intrinsic-size: 600px 800px;
+    /* Keep section geometry stable for deterministic anchor navigation. */
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
     scroll-margin-top: 84px;
 }
 
