@@ -8,6 +8,8 @@
     <title>Project Showcase Hub | Tyler Malovrh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/showz/screens/showz-v3-foryou-liked.png?v=2">
+    <link rel="preload" as="image" href="assets/worldtour/screens/worldtour-v2-home.png?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="projects-hub.css">
 </head>
@@ -62,24 +64,37 @@
             <h2 class="projects-hub-subheading">Featured Project Hub</h2>
             <div class="projects-hub-feature-list">
                 <article class="projects-hub-feature-card" id="showz">
-                    <div class="projects-hub-feature-frame">
-                        <img src="assets/showz/screens/showz-v3-foryou-liked.png" alt="ShowZ featured preview screenshot" loading="lazy" decoding="async">
-                    </div>
-                    <div class="projects-hub-feature-copy">
-                        <div class="projects-hub-feature-head">
-                            <h3>ShowZ Project Showcase Hub</h3>
-                            <span class="projects-hub-pill">Featured iOS App</span>
+                    <div class="projects-hub-feature-media">
+                        <div class="projects-hub-feature-frame">
+                            <img
+                                src="assets/showz/screens/showz-v3-foryou-liked.png?v=2"
+                                alt="ShowZ featured preview screenshot"
+                                width="725"
+                                height="1547"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync">
                         </div>
-                        <p>
-                            Deep-dive experience for ShowZ, including release progression, screenshot version history, demo status,
-                            and technical architecture notes.
-                        </p>
-                        <div class="projects-hub-feature-footer">
+                        <div class="projects-hub-feature-tags">
                             <div class="projects-hub-tag-list" aria-label="ShowZ tags">
                                 <span class="projects-hub-tag">SwiftUI</span>
                                 <span class="projects-hub-tag">TVMaze API</span>
                                 <span class="projects-hub-tag">Local-first Chat</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="projects-hub-feature-content">
+                        <div class="projects-hub-feature-copy">
+                            <div class="projects-hub-feature-head">
+                                <h3>ShowZ Project Showcase Hub</h3>
+                                <span class="projects-hub-pill">Featured iOS App</span>
+                            </div>
+                            <p>
+                                Deep-dive experience for ShowZ, including release progression, screenshot version history, demo status,
+                                and technical architecture notes.
+                            </p>
+                        </div>
+                        <div class="projects-hub-feature-cta">
                             <div class="projects-hub-actions">
                                 <a href="showz-showcase.html" class="projects-hub-btn projects-hub-btn-featured">Open ShowZ Hub</a>
                             </div>
@@ -87,24 +102,37 @@
                     </div>
                 </article>
                 <article class="projects-hub-feature-card" id="worldtour-featured">
-                    <div class="projects-hub-feature-frame">
-                        <img src="assets/worldtour/screens/worldtour-v2-home.png" alt="World Tour featured preview screenshot" loading="lazy" decoding="async">
-                    </div>
-                    <div class="projects-hub-feature-copy">
-                        <div class="projects-hub-feature-head">
-                            <h3>World Tour Project Showcase Hub</h3>
-                            <span class="projects-hub-pill">Featured iOS App</span>
+                    <div class="projects-hub-feature-media">
+                        <div class="projects-hub-feature-frame">
+                            <img
+                                src="assets/worldtour/screens/worldtour-v2-home.png?v=2"
+                                alt="World Tour featured preview screenshot"
+                                width="717"
+                                height="1548"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="sync">
                         </div>
-                        <p>
-                            Deep-dive showcase for World Tour, covering legacy-to-SwiftUI modernization, redesigned trip-planning flows,
-                            Guide assistant UI direction, and active iteration milestones.
-                        </p>
-                        <div class="projects-hub-feature-footer">
+                        <div class="projects-hub-feature-tags">
                             <div class="projects-hub-tag-list" aria-label="World Tour tags">
                                 <span class="projects-hub-tag">SwiftUI</span>
                                 <span class="projects-hub-tag">Travel Planning UX</span>
                                 <span class="projects-hub-tag">AI-Assisted Iteration</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="projects-hub-feature-content">
+                        <div class="projects-hub-feature-copy">
+                            <div class="projects-hub-feature-head">
+                                <h3>World Tour Project Showcase Hub</h3>
+                                <span class="projects-hub-pill">Featured iOS App</span>
+                            </div>
+                            <p>
+                                Deep-dive showcase for World Tour, covering legacy-to-SwiftUI modernization, redesigned trip-planning flows,
+                                Guide assistant UI direction, and active iteration milestones.
+                            </p>
+                        </div>
+                        <div class="projects-hub-feature-cta">
                             <div class="projects-hub-actions">
                                 <a href="worldtour-showcase.html" class="projects-hub-btn projects-hub-btn-featured">Open World Tour Hub</a>
                             </div>

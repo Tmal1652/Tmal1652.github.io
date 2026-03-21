@@ -499,6 +499,11 @@
     gap: 12px;
 }
 
+#build .showz-overview-grid {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 .showz-info-card {
     border-radius: var(--showz-radius-md);
     border: 1px solid rgba(192, 201, 214, 0.22);

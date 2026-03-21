@@ -534,6 +534,11 @@
     gap: 12px;
 }
 
+#build .worldtour-overview-grid {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 .worldtour-info-card {
     border-radius: var(--worldtour-radius-md);
     border: 1px solid rgba(192, 201, 214, 0.22);

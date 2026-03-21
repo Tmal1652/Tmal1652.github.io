@@ -63,36 +63,6 @@
                         </ul>
                     </aside>
                 </div>
-                <div class="showz-description-divider" aria-hidden="true"></div>
-                <div class="showz-overview-grid">
-                    <article class="showz-info-card" aria-label="Core capabilities">
-                        <h3>Core Capabilities</h3>
-                        <ul>
-                            <li>For You feed powered by explicit likes and on-device personalization.</li>
-                            <li>Distinct For You, Trending, and Popular rails for structured discovery.</li>
-                            <li>TVMaze-first search and detail enrichment for seasons, episodes, and summaries.</li>
-                            <li>Immersive room-based chat with General, Season, and Episode contexts.</li>
-                        </ul>
-                    </article>
-                    <article class="showz-info-card" aria-label="v2.8 alpha focus">
-                        <h3>v2.8 Alpha Focus</h3>
-                        <ul>
-                            <li>Stabilizing local-first chat timelines across per-show room contexts.</li>
-                            <li>Improving readability and performance under heavier chat histories.</li>
-                            <li>Tuning immersive per-show theming consistency and fallback guardrails.</li>
-                            <li>Polishing search-to-detail-to-chat transitions and spoiler controls.</li>
-                        </ul>
-                    </article>
-                    <article class="showz-info-card" aria-label="reliability and data strategy">
-                        <h3>Reliability + Data Strategy</h3>
-                        <ul>
-                            <li>Primary source: TVMaze API.</li>
-                            <li>Fallback chain: in-memory cache, 24h disk cache, then local catalog.</li>
-                            <li>Query-driven debounced search (300ms, minimum 2 characters).</li>
-                            <li>Deterministic on-device personalization with no backend dependency in alpha.</li>
-                        </ul>
-                    </article>
-                </div>
             </div>
         </section>
 
@@ -268,7 +238,36 @@
 
         <section class="showz-panel" id="build" aria-labelledby="build-title">
             <h2 id="build-title">Technical Project Notes</h2>
-            <p class="showz-helper">Implementation details for evaluating architecture decisions, data strategy, and local run setup.</p>
+            <p class="showz-helper">Deeper product context plus implementation details for evaluating architecture decisions, data strategy, and local run setup.</p>
+            <div class="showz-overview-grid">
+                <article class="showz-info-card" aria-label="Core capabilities">
+                    <h3>Core Capabilities</h3>
+                    <ul>
+                        <li>For You feed powered by explicit likes and on-device personalization.</li>
+                        <li>Distinct For You, Trending, and Popular rails for structured discovery.</li>
+                        <li>TVMaze-first search and detail enrichment for seasons, episodes, and summaries.</li>
+                        <li>Immersive room-based chat with General, Season, and Episode contexts.</li>
+                    </ul>
+                </article>
+                <article class="showz-info-card" aria-label="v2.8 alpha focus">
+                    <h3>v2.8 Alpha Focus</h3>
+                    <ul>
+                        <li>Stabilizing local-first chat timelines across per-show room contexts.</li>
+                        <li>Improving readability and performance under heavier chat histories.</li>
+                        <li>Tuning immersive per-show theming consistency and fallback guardrails.</li>
+                        <li>Polishing search-to-detail-to-chat transitions and spoiler controls.</li>
+                    </ul>
+                </article>
+                <article class="showz-info-card" aria-label="reliability and data strategy">
+                    <h3>Reliability + Data Strategy</h3>
+                    <ul>
+                        <li>Primary source: TVMaze API.</li>
+                        <li>Fallback chain: in-memory cache, 24h disk cache, then local catalog.</li>
+                        <li>Query-driven debounced search (300ms, minimum 2 characters).</li>
+                        <li>Deterministic on-device personalization with no backend dependency in alpha.</li>
+                    </ul>
+                </article>
+            </div>
             <div class="showz-build-grid">
                 <article class="showz-build-card">
                     <h3>Architecture</h3>

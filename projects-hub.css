@@ -405,6 +405,23 @@
     gap: 14px;
 }
 
+.projects-hub-feature-media,
+.projects-hub-feature-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-hub-feature-media {
+    gap: 12px;
+    align-self: start;
+}
+
+.projects-hub-feature-content {
+    gap: 12px;
+    min-height: 100%;
+}
+
 .projects-hub-feature-frame {
     border-radius: 14px;
     border: 1px solid rgba(188, 201, 218, 0.24);
@@ -440,7 +457,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-height: 100%;
+    min-height: 0;
 }
 
 .projects-hub-feature-copy .projects-hub-feature-head {
@@ -534,19 +551,23 @@
     align-items: center;
 }
 
-.projects-hub-feature-copy .projects-hub-tag-list {
-    margin-top: 0;
-    width: 100%;
+.projects-hub-feature-tags {
+    margin-top: 2px;
 }
 
-.projects-hub-feature-footer {
-    margin-top: auto;
-    padding-top: 14px;
+.projects-hub-feature-tags .projects-hub-tag-list {
+    margin-top: 0;
+    width: 100%;
+    min-width: 0;
+}
+
+.projects-hub-feature-cta {
+    margin-top: 8px;
+    padding-top: 12px;
     border-top: 1px solid rgba(184, 204, 226, 0.24);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .projects-hub-tag {
@@ -602,20 +623,17 @@
     margin-top: auto;
 }
 
-.projects-hub-feature-copy .projects-hub-actions {
+.projects-hub-feature-cta .projects-hub-actions {
     margin-top: 0;
-    padding-top: 0;
-    border-top: 0;
     width: auto;
-    align-self: flex-start;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
-.projects-hub-feature-copy .projects-hub-actions .projects-hub-btn-featured {
-    min-height: 48px;
-    min-width: 0;
+.projects-hub-feature-cta .projects-hub-actions .projects-hub-btn-featured {
+    min-height: 46px;
+    min-width: 200px;
+    width: auto;
     max-width: 100%;
-    width: fit-content;
 }
 
 .projects-hub-btn {
@@ -926,12 +944,21 @@
         padding: 0 2px 2px;
     }
 
-    .projects-hub-feature-footer {
+    .projects-hub-feature-media,
+    .projects-hub-feature-content {
+        gap: 10px;
+    }
+
+    .projects-hub-feature-cta {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .projects-hub-feature-copy .projects-hub-actions {
+    .projects-hub-feature-tags .projects-hub-tag-list {
+        width: 100%;
+    }
+
+    .projects-hub-feature-cta .projects-hub-actions {
         justify-content: flex-start;
     }
 
