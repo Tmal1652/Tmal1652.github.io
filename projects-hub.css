@@ -423,6 +423,7 @@
 }
 
 .projects-hub-feature-frame {
+    width: 100%;
     border-radius: 14px;
     border: 1px solid rgba(188, 201, 218, 0.24);
     background:
@@ -439,10 +440,10 @@
 }
 
 .projects-hub-feature-frame img {
-    width: auto;
+    width: 100%;
     max-width: 100%;
-    height: auto;
-    max-height: 100%;
+    height: 100%;
+    max-height: none;
     object-fit: contain;
     object-position: center top;
     display: block;
@@ -936,6 +937,7 @@
     }
 
     .projects-hub-feature-frame img {
+        width: 100%;
         height: auto;
         max-height: 440px;
     }
