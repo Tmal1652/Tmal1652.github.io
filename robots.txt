@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /*.pdf$
+Disallow: /Letter%20of%20Recommendation%20UMP.pdf
+Disallow: /Recommendation%20Letter%20Lakeland.pdf
+Disallow: /Tyler%20Malovrh%20Recommendation.pdf
