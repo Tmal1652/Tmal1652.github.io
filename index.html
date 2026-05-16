@@ -4,9 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tyler Malovrh's Professional Portfolio showcasing education, projects, work experience, and recommendations.">
+    <meta name="description" content="Tyler Malovrh's portfolio: software developer and accessibility analyst showcasing projects, engineering experience, WCAG-focused testing, and recommendations.">
+    <meta name="author" content="Tyler Malovrh">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Tyler Malovrh, software developer, accessibility analyst, frontend engineer, WCAG, Lighthouse, SEO, semantic HTML, ARIA">
     <meta name="theme-color" content="#0b0b0b">
-    <title>Tyler Malovrh's Portfolio</title>
+    <title>Tyler Malovrh | Software Developer & Accessibility Analyst</title>
+    <link rel="canonical" href="https://tmal1652.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tyler Malovrh | Software Developer & Accessibility Analyst">
+    <meta property="og:description" content="Portfolio featuring software projects, accessibility engineering expertise, and professional recommendations.">
+    <meta property="og:url" content="https://tmal1652.github.io/">
+    <meta property="og:image" content="https://tmal1652.github.io/Malovrh%20Tyler.jpeg">
+    <meta property="og:site_name" content="Tyler Malovrh Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tyler Malovrh | Software Developer & Accessibility Analyst">
+    <meta name="twitter:description" content="Portfolio featuring software projects, accessibility engineering expertise, and professional recommendations.">
+    <meta name="twitter:image" content="https://tmal1652.github.io/Malovrh%20Tyler.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
@@ -28,34 +42,38 @@
 
 
     <!-- Desktop / Tablet Navigation -->
-    <nav class="floating-tab-bar" aria-label="Primary navigation">
+    <nav class="floating-tab-bar" aria-label="Primary navigation desktop">
         <a href="#about" class="tab-link">About</a>
         <a href="#projects" class="tab-link">Projects</a>
         <a href="#experience" class="tab-link">Experience</a>
+        <a href="#accessibility-engineering" class="tab-link">Accessibility</a>
         <a href="#education" class="tab-link">Education</a>
         <a href="#contact" class="tab-link">Contact</a>
     </nav>
 
     <!-- Mobile Navigation Dock -->
-    <nav class="mobile-tab-dock" aria-label="Primary navigation">
+    <nav class="mobile-tab-dock" aria-label="Primary navigation mobile">
         <a href="#about" class="tab-link" aria-label="About">About</a>
         <a href="#projects" class="tab-link" aria-label="Projects">Work</a>
         <a href="#experience" class="tab-link" aria-label="Experience">Exp</a>
+        <a href="#accessibility-engineering" class="tab-link" aria-label="Accessibility">A11y</a>
         <a href="#education" class="tab-link" aria-label="Education">Edu</a>
         <a href="#contact" class="tab-link" aria-label="Contact">Contact</a>
     </nav>
 
     
+    <header class="site-header">
+        <section class="hero" aria-labelledby="page-title">
+            <h1 id="page-title">Tyler Malovrh</h1>
+            <p>Software Developer | Web Enthusiast | Accessibility Advocate</p>
+        </section>
+    </header>
+
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Tyler Malovrh</h1>
-        <p>Software Developer | Web Enthusiast | Accessibility Advocate</p>
-    </section>
 
     <!-- About Me Section -->
-    <section class="intro" id="about">
-        <h2>About Me</h2>
+    <section class="intro" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
         <div class="about-container">
             <img src="Malovrh Tyler.jpeg" alt="Profile Picture of Tyler Malovrh" class="profile-picture" loading="lazy" decoding="async" fetchpriority="low">
             <p>
@@ -67,8 +85,8 @@
     </section>
 
     <!-- Skills Snapshot -->
-    <section class="skills" id="skills">
-        <h2>Tech Stack & Core Strengths</h2>
+    <section class="skills" id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Tech Stack & Core Strengths</h2>
         <div class="card-container">
             <div class="card">
                 <h3>Tech Stack</h3>
@@ -102,10 +120,10 @@
     </section>
 
     <!-- Project Showcase -->
-    <section class="projects projects-entry" id="projects">
+    <section class="projects projects-entry" id="projects" aria-labelledby="projects-heading">
         <div class="projects-entry-header">
             <div class="projects-entry-copy-block">
-                <h2>Project Showcase Hub</h2>
+                <h2 id="projects-heading">Project Showcase Hub</h2>
                 <p class="projects-entry-copy">
                     Projects now live in a dedicated hub. Open the Project Showcase Hub to discover and browse each project.
                 </p>
@@ -134,8 +152,8 @@
     </section>
 
     <!-- Work Experience Section -->
-    <section class="experience" id="experience">
-        <h2>Work Experience</h2>
+    <section class="experience" id="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Work Experience</h2>
         <div class="card-container">
             <div class="card">
                 <h3>Systems Accessibility Analyst</h3>
@@ -166,9 +184,61 @@
         </div>
     </section>
 
+    <!-- Accessibility Engineering Section -->
+    <section class="accessibility-engineering" id="accessibility-engineering" aria-labelledby="accessibility-heading">
+        <h2 id="accessibility-heading">Accessibility Engineering</h2>
+        <p class="section-description">I build and test inclusive experiences through practical audits, manual validation, and accessibility-first frontend implementation.</p>
+        <div class="card-container">
+            <div class="card">
+                <h3>Quality Snapshot</h3>
+                <p><strong>Audit Focus:</strong> Accessibility, performance, and SEO are tracked with Lighthouse during QA.</p>
+                <div class="chip-list" aria-label="Quality summary">
+                    <span class="chip">Accessibility: High</span>
+                    <span class="chip">Performance: High</span>
+                    <span class="chip">SEO: High</span>
+                </div>
+                <p>Scores vary by page and release, and each iteration focuses on maintaining strong quality baselines.</p>
+                <ul>
+                    <li>Evaluations align with WCAG 2.1 AA expectations for structure, contrast, and interaction patterns.</li>
+                    <li>Tracks render-impacting patterns that can affect both speed and assistive technology usability.</li>
+                    <li>Findings are documented with remediation notes for developers and stakeholders.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Testing & Validation</h3>
+                <ul>
+                    <li>Screen reader testing across NVDA and VoiceOver to verify usable reading and interaction flows.</li>
+                    <li>Keyboard navigation reviews to confirm complete functionality without a mouse.</li>
+                    <li>Color contrast validation to improve readability and support WCAG-aligned visual accessibility.</li>
+                    <li>Lighthouse accessibility audits used to maintain strong accessibility outcomes across releases.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Implementation & Tooling</h3>
+                <ul>
+                    <li>Semantic HTML patterns that improve structure, landmarks, and assistive technology interpretation.</li>
+                    <li>ARIA usage applied when native semantics need enhancement for custom UI components.</li>
+                    <li>Axe and WAVE for automated issue discovery and prioritization.</li>
+                    <li>NVDA and VoiceOver for manual assistive technology checks.</li>
+                    <li>Issue remediation with clear reproduction notes and practical developer guidance.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Accessibility Demonstrations</h3>
+                <p id="a11y-demo-help">Use Tab and Shift+Tab to move between controls, then press Enter or Space to activate them.</p>
+                <div class="a11y-demo-controls" role="group" aria-labelledby="a11y-demo-help">
+                    <button type="button" class="btn a11y-demo-btn" data-demo="Keyboard navigation demo active">Keyboard Navigation Demo</button>
+                    <button type="button" class="btn a11y-demo-btn" data-demo="Focus-visible styles are active on interactive controls">Focus-Visible Demo</button>
+                    <button type="button" class="btn a11y-demo-btn" data-demo="Screen-reader-only announcement demo active">Screen Reader Label Demo</button>
+                </div>
+                <p id="a11y-demo-status" class="sr-only" role="status" aria-live="polite">Accessibility demonstration ready.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
-    <section class="education" id="education">
-        <h2>Education</h2>
+    <section class="education" id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
         <div class="card-container">
             <div class="card">
                 <h3>University of Cincinnati</h3>
@@ -200,8 +270,8 @@
     </section>
 
     <!-- Recommendations Section -->
-    <section class="recommendations" id="recommendations">
-        <h2>Recommendations</h2>
+    <section class="recommendations" id="recommendations" aria-labelledby="recommendations-heading">
+        <h2 id="recommendations-heading">Recommendations</h2>
         <p class="section-description">Full recommendation letters are available upon request.</p>
         <div class="card-container">
             <div class="card">
@@ -223,8 +293,8 @@
     </section>
 
     <!-- Diploma Section -->
-    <section class="diploma" id="diploma">
-        <h2>Diploma</h2>
+    <section class="diploma" id="diploma" aria-labelledby="diploma-heading">
+        <h2 id="diploma-heading">Diploma</h2>
         <div class="card diploma-card">
                         <div class="diploma-badge" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
@@ -263,8 +333,8 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact</h2>
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
         <p>Have a question or want to work together? Feel free to reach out!</p>
         <a href="mailto:malovrh1652tyler@gmail.com" class="btn" aria-label="Send me an email">
             <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">

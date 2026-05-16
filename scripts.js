@@ -314,3 +314,24 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
         copy(target.textContent.trim());
     });
 })();
+
+// Accessibility demo status announcements
+(function accessibilityDemos() {
+    const status = document.getElementById('a11y-demo-status');
+    const buttons = Array.from(document.querySelectorAll('.a11y-demo-btn'));
+    if (!status || !buttons.length) return;
+
+    const announce = (message) => {
+        status.textContent = '';
+        window.setTimeout(() => {
+            status.textContent = message;
+        }, 20);
+    };
+
+    buttons.forEach((button) => {
+        const message = button.getAttribute('data-demo');
+        if (!message) return;
+        button.addEventListener('focus', () => announce(`${message}. Focus moved by keyboard.`));
+        button.addEventListener('click', () => announce(`${message}. Activated.`));
+    });
+})();
