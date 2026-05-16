@@ -2,81 +2,76 @@
 
 A responsive developer portfolio website showcasing my projects, experience, education, and accessibility-focused work.
 
-**Current Version:** `v2026.1`
+**Version:** `4.0`
+
+## Overview
+
+This repository contains my public portfolio website and project showcase hubs.  
+The goal is to provide a clear, recruiter-friendly view of my frontend development and accessibility engineering work.
 
 ## Live Site
 
-[View Portfolio](https://tmal1652.github.io/)
-
-### ShowZ Showcase
-
-- Showcase URL: `https://tmal1652.github.io/showz-showcase.html`
-- Status: `v2.8.0-alpha` (active development, chat stabilization before beta)
-
-
-## About
-
-This repository contains my personal portfolio site, built to present my software development work in a clean, modern, and recruiter-friendly format.
-
-The site is designed to adapt across desktop, tablet, and mobile devices while maintaining a consistent glass/metal inspired visual style.
+- Portfolio: `https://tmal1652.github.io/`
+- Projects Hub: `https://tmal1652.github.io/projects-hub.html`
+- ShowZ Hub: `https://tmal1652.github.io/showz-showcase.html`
+- World Tour Hub: `https://tmal1652.github.io/worldtour-showcase.html`
 
 ## Tech Stack
 
 - HTML5
 - CSS3
-- JavaScript (vanilla)
-- GitHub Pages (hosting)
+- Vanilla JavaScript
+- GitHub Pages
 
-## Highlights
+## Core Sections
 
-- Responsive UX tailored for desktop, tablet, and mobile
-- Project showcase with clean, swipe/scroll-friendly horizontal browsing
-- Accessibility-minded structure and interaction patterns
-- Modern glass/liquid visual system with metallic styling accents
-- Smooth section navigation with active state tracking
+- About
+- Tech Stack and Core Strengths
+- Project Showcase Hub
+- Work Experience
+- Accessibility Engineering
+- Education
+- Recommendations (quote-based, no public recommendation PDF links)
+- Diploma verification guidance
+- Contact
 
-## Latest Updates (v2026.1)
+## Accessibility Focus
 
-- Refined mobile layout behavior for small screens (including iPhone SE sizing)
-- Improved project-card and button containment to prevent horizontal overflow
-- Updated navigation behavior for cleaner desktop vs mobile experiences
-- Polished visual consistency across light/dark system modes using a unified dark-forward theme
+- Semantic HTML landmarks and structured headings
+- Keyboard-first navigation support
+- Visible focus styles
+- Reduced-motion support
+- System-aware light/dark behavior
+- Contrast-tuned UI and accessibility-minded content strategy
 
-## Featured Work Included
+## What’s New in v4.0
 
-- ShowZ (native iOS TV discovery + local-first themed chat, v2.8 Alpha)
-- Protify (AI-powered calendar/productivity concept)
-- CollabConnect (collaborative web app)
-- ClearText AI (accessibility-focused summarization tool)
-- Portfolio Website (this project)
+- Refined Projects, ShowZ, and World Tour hubs into a cleaner, portfolio-aligned design system
+- Reduced decorative color noise to improve readability and recruiter scanability
+- Removed public recommendation PDF links while preserving recommendation content in the UI
+- Added crawler guidance in `robots.txt` to discourage PDF indexing
+- Improved accessibility demonstrations and visual consistency across portfolio surfaces
 
-## ShowZ Media Contract
+## Data Handling
 
-- Screenshot path pattern: `assets/showz/screens/showz-v1-*.png`, `assets/showz/screens/showz-v2-*.png`, and `assets/showz/screens/showz-v3-*.png`
-- Demo video path: `assets/showz/video/showz-demo.mp4`
-
-
-## AI-Assisted Workflow
-
-I use AI tools as part of my development workflow for iteration, code refinement, UI exploration, and productivity support, including:
-
-- ChatGPT
-- Google Gemini
-- Codex
+- Sensitive credential identifiers are not published in the repo or public UI.
+- Recommendation PDFs are not linked in the public interface.
+- This is a public GitHub Pages portfolio; private documents and secrets are not committed.
 
 ## Run Locally
 
-This is a static site, so you can open `index.html` directly in a browser.
-
-For a better local preview, run a simple local server from the repo root (example):
+Open `index.html` directly, or run a local server from the repo root:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Then visit `http://localhost:8000`.
 
-## Contact
+## Deployment
 
-- Email: [malovrh1652tyler@gmail.com](mailto:malovrh1652tyler@gmail.com)
-- GitHub: [@Tmal1652](https://github.com/Tmal1652)
+This site is deployed with GitHub Pages from this repository.
+
+## License
+
+This repository is for personal portfolio presentation.
