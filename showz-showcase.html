@@ -74,6 +74,7 @@
                 <button type="button" class="showz-version-btn" data-version="v1" aria-pressed="false">Version 1 - Foundation</button>
                 <button type="button" class="showz-version-btn" data-version="v2" aria-pressed="false">Version 2 - Overhaul</button>
                 <button type="button" class="showz-version-btn active" data-version="v3" aria-pressed="true">Version 3 - Refinement</button>
+                <button type="button" class="showz-version-btn" data-version="v3.5" aria-pressed="false">Version 3.5 - Search+AI</button>
             </div>
 
             <article class="showz-season-note" data-version="v1" hidden>
@@ -90,6 +91,11 @@
                 <p class="showz-season-kicker">Version 3</p>
                 <h3>Recommendation and Chat Polish</h3>
                 <p>Grouped liked shows into a dedicated state, improved recommendations, and polished chat visuals.</p>
+            </article>
+            <article class="showz-season-note" data-version="v3.5" hidden>
+                <p class="showz-season-kicker">Version 3.5</p>
+                <h3>Search + AI</h3>
+                <p>Redesigned search interface for a better experience, added AI via Apple Intelligence foundation model, and created a TV AI assistant for richer show discovery.</p>
             </article>
 
             <div class="showz-shot-lane" data-version="v1" hidden>
@@ -219,6 +225,36 @@
                     <p>Design tweaks were made to the chat experience for better clarity.</p>
                 </article>
             </div>
+            <div class="showz-shot-lane" data-version="v3.5" hidden>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-5-recommended.png" alt="ShowZ V3.5 recommended feed screen">
+                    </div>
+                    <h3>V3.5 - Search Icon</h3>
+                    <p>Search icon redesign.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-5-ai-search.png" alt="ShowZ V3.5 AI search prompt screen">
+                    </div>
+                    <h3>V3.5 - Search Interface</h3>
+                    <p>Rebuilt the search interface for better usability and performance.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-5-search-results.png" alt="ShowZ V3.5 search results screen">
+                    </div>
+                    <h3>V3.5 - Search Results</h3>
+                    <p>Improved search result presentation with clearer show metadata and scrolling context.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v3-5-search-filters.png" alt="ShowZ V3.5 search filters screen">
+                    </div>
+                    <h3>V3.5 - TV AI</h3>
+                    <p>Built a TV AI in Xcode using Apple Intelligence models to answer questions about television shows.</p>
+                </article>
+            </div>
         </section>
 
         <section class="showz-panel" id="trailer" aria-labelledby="trailer-title">
@@ -322,7 +358,7 @@
             const video = trailer?.querySelector('.showz-trailer-video');
             let trailerRequested = false;
 
-            const readVersionFromHash = (hash) => hash.match(/versions-(v[123])/i)?.[1]?.toLowerCase() || null;
+            const readVersionFromHash = (hash) => hash.match(/versions-(v(?:1|2|3(?:\.5)?))/i)?.[1]?.toLowerCase() || null;
 
             const resolveSectionFromHash = (hash) => {
                 const normalized = (hash || '').replace('#', '').toLowerCase();
