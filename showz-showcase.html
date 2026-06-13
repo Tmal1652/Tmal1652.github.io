@@ -31,7 +31,7 @@
             <aside class="showz-hub-snapshot" aria-label="ShowZ hub snapshot">
                 <p class="showz-hub-snapshot-title">Hub Snapshot</p>
                 <ul class="showz-hub-snapshot-list">
-                    <li><span>Current Build</span><strong>v2.8 Alpha</strong></li>
+                    <li><span>Current Build</span><strong>Version 4.0 Alpha</strong></li>
                     <li><span>Main Focus</span><strong>Discovery + Chat Polish</strong></li>
                     <li><span>Review Path</span><strong>Description -> Screenshots -> Demo -> Technical</strong></li>
                 </ul>
@@ -56,7 +56,7 @@
                     <aside class="showz-intro-card" aria-label="Project at a glance">
                         <p class="showz-intro-eyebrow">At a Glance</p>
                         <ul class="showz-intro-list">
-                            <li><span>Current Stage</span><strong>v2.8 Alpha</strong></li>
+                            <li><span>Current Stage</span><strong>Version 4.0 Alpha</strong></li>
                             <li><span>Core Pillars</span><strong>Discovery, Personalization, Shared Chat</strong></li>
                             <li><span>Primary Data</span><strong>TVMaze API + deterministic cache fallback</strong></li>
                             <li><span>Current Focus</span><strong>Readability, stability, and beta readiness</strong></li>
@@ -71,10 +71,14 @@
             <p class="showz-helper">Select a release, then browse the screenshots in order to see the product progression.</p>
 
             <div class="showz-version-picker" aria-label="Version selector">
-                <button type="button" class="showz-version-btn" data-version="v1" aria-pressed="false">Version 1 - Foundation</button>
-                <button type="button" class="showz-version-btn" data-version="v2" aria-pressed="false">Version 2 - Overhaul</button>
-                <button type="button" class="showz-version-btn active" data-version="v3" aria-pressed="true">Version 3 - Refinement</button>
-                <button type="button" class="showz-version-btn" data-version="v3.5" aria-pressed="false">Version 3.5 - Search+AI</button>
+                <label class="showz-sr-only" for="showz-version-select">Select screenshot version</label>
+                <select id="showz-version-select" class="showz-version-select" aria-label="ShowZ screenshot version">
+                    <option value="v1" selected>Version 1 - Foundation</option>
+                    <option value="v2">Version 2 - Overhaul</option>
+                    <option value="v3">Version 3 - Refinement</option>
+                    <option value="v3.5">Version 3.5 - Search+AI</option>
+                    <option value="v4">Version 4 - Logo design + Z Guide</option>
+                </select>
             </div>
 
             <article class="showz-season-note" data-version="v1" hidden>
@@ -96,6 +100,11 @@
                 <p class="showz-season-kicker">Version 3.5</p>
                 <h3>Search + AI</h3>
                 <p>Redesigned search interface for a better experience, added AI via Apple Intelligence foundation model, and created a TV AI assistant for richer show discovery.</p>
+            </article>
+            <article class="showz-season-note" data-version="v4" hidden>
+                <p class="showz-season-kicker">Version 4</p>
+                <h3>Logo Refinement + Z Guide</h3>
+                <p>Refined the ShowZ brand identity and launched Ask Z Guide as the official AI assistant for smarter discovery.</p>
             </article>
 
             <div class="showz-shot-lane" data-version="v1" hidden>
@@ -255,6 +264,29 @@
                     <p>Built a TV AI in Xcode using Apple Intelligence models to answer questions about television shows.</p>
                 </article>
             </div>
+            <div class="showz-shot-lane" data-version="v4" hidden>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v4-recommended.png" alt="ShowZ V4 logo redesign screen">
+                    </div>
+                    <h3>V4 - Logo Redesign</h3>
+                    <p>Updated the ShowZ logo and visual branding across the app.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v4-search-popular.png" alt="ShowZ V4 Ask Z Guide introduction screen">
+                    </div>
+                    <h3>V4 - Ask Z Guide</h3>
+                    <p>Introduced Ask Z Guide as the official AI assistant for natural show discovery.</p>
+                </article>
+                <article class="showz-poster-card">
+                    <div class="showz-poster-frame">
+                        <img loading="lazy" decoding="async" src="assets/showz/screens/showz-v4-ask-z-guide.png" alt="ShowZ V4 Ask Z Guide interface screen">
+                    </div>
+                    <h3>V4 - Z Guide Interface</h3>
+                    <p>Presented the Ask Z Guide conversation interface for asking questions and exploring shows.</p>
+                </article>
+            </div>
         </section>
 
         <section class="showz-panel" id="trailer" aria-labelledby="trailer-title">
@@ -284,8 +316,8 @@
                         <li>Immersive room-based chat with General, Season, and Episode contexts.</li>
                     </ul>
                 </article>
-                <article class="showz-info-card" aria-label="v2.8 alpha focus">
-                    <h3>v2.8 Alpha Focus</h3>
+                <article class="showz-info-card" aria-label="Version 4.0 Alpha focus">
+                    <h3>Version 4.0 Alpha Focus</h3>
                     <ul>
                         <li>Stabilizing local-first chat timelines across per-show room contexts.</li>
                         <li>Improving readability and performance under heavier chat histories.</li>
@@ -300,6 +332,13 @@
                         <li>Fallback chain: in-memory cache, 24h disk cache, then local catalog.</li>
                         <li>Query-driven debounced search (300ms, minimum 2 characters).</li>
                         <li>Deterministic on-device personalization with no backend dependency in alpha.</li>
+                    </ul>
+                </article>
+                <article class="showz-info-card" aria-label="AI + Assistants">
+                    <h3>AI + Assistants</h3>
+                    <ul>
+                        <li>Ask Z Guide: integrated assistant for natural-language show discovery powered by Apple Intelligence.</li>
+                        <li>The Ask Z Guide UI and conversation flow are showcased in Version 4; model access respects platform privacy and runtime controls.</li>
                     </ul>
                 </article>
             </div>
@@ -326,7 +365,7 @@
                         <li>Open `ShowZ.xcodeproj`.</li>
                         <li>Select `ShowZ` scheme.</li>
                         <li>Choose compatible iPhone runtime.</li>
-                        <li>Build and run (target: iOS 26.2).</li>
+                        <li>Build and run (target: iOS 26.5).</li>
                     </ol>
                 </article>
                 <article class="showz-build-card">
@@ -419,16 +458,14 @@
             let setVersion = null;
 
             if (picker) {
-                const buttons = Array.from(picker.querySelectorAll('.showz-version-btn'));
+                const select = picker.querySelector('select');
                 const notes = Array.from(document.querySelectorAll('.showz-season-note[data-version]'));
                 const lanes = Array.from(document.querySelectorAll('.showz-shot-lane[data-version]'));
 
                 setVersion = (version, updateHash = false) => {
-                    buttons.forEach((button) => {
-                        const isActive = button.dataset.version === version;
-                        button.classList.toggle('active', isActive);
-                        button.setAttribute('aria-pressed', String(isActive));
-                    });
+                    if (select) {
+                        select.value = version;
+                    }
 
                     notes.forEach((note) => {
                         note.hidden = note.dataset.version !== version;
@@ -444,13 +481,13 @@
                     }
                 };
 
-                picker.addEventListener('click', (event) => {
-                    const button = event.target.closest('.showz-version-btn');
-                    if (!button) return;
-                    setVersion(button.dataset.version, true);
-                });
+                if (select) {
+                    select.addEventListener('change', () => {
+                        setVersion(select.value, true);
+                    });
+                }
 
-                const initial = buttons.find((button) => button.classList.contains('active'))?.dataset.version || 'v3';
+                const initial = select?.value || 'v1';
                 setVersion(initial);
             }
 
